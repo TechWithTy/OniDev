@@ -44,20 +44,33 @@ function Brand() {
     };
 
     return (
-        <section className="brand-slider">
-            <Container>
-                <Slider {...settings}>
-                    {Branddata.map((data) => (
-                        <div className="brand-item" key={data.id}>
-                            <div className="brand-content">
-                                <Image Path={data.img} />
-                            </div>
-                        </div>
-                    ))
-                    }
-                </Slider>
-            </Container>
-        </section >
+      <section className="brand-slider">
+        <Container>
+          <Slider {...settings}>
+            {Branddata.map((data) => (
+              <div className="brand-item" key={data.id}>
+                <div className="brand-content">
+                  <Image Path={data.img} />
+                  <br />
+                  <div className="text-brand">
+                    <a
+                      className="align-center"
+                      href={`${data.url}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {' '}
+                      <span>{data.desc}</span>
+                    </a>
+                  </div>
+
+                  <p>{data.blerp}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </Container>
+      </section>
     );
 }
 

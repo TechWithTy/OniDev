@@ -5233,7 +5233,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\13054\\Documents\\Templates\\themeforest-RiDLEsIY-busline-react-next-business-landing-page\\Busline\\BusLine\\.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\.next");
       return error;
     }
   };

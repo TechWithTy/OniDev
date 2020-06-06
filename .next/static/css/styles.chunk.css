@@ -12339,6 +12339,9 @@ a.text-dark:hover, a.text-dark:focus {
     .brand-slider .brand-content:hover {
       filter: hue-rotate(100deg); }
 
+.align-center span {
+  margin: 0 5em; }
+
 /* brand section css end */
 
 /* footer css start */

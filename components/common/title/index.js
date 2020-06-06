@@ -17,9 +17,19 @@ function Subtitle(props) {
 }
 
 function Description(props) {
-    return (
-        <p className={props.Class}>{props.Name}</p>
-    );
+    if (!props.Num) {
+        return (
+            <p className={props.Class}>{props.Name}</p>
+        );
+    } else {
+           return( <p className={props.Class}>
+                <a href={`tel:${props.Num}`}>{props.Name}</a>
+            </p>);
+    }
+}
+
+function phoneDescription(props) {
+  return <p className={props.Class}>{props.Name}</p>;
 }
 
 function Title(props) {
@@ -40,4 +50,12 @@ function Titlespan2(props) {
     );
 }
 
-export { Maintitle, Subtitle, Description, Title, Titlespan, Titlespan2 };
+export {
+  Maintitle,
+  Subtitle,
+  Description,
+  Title,
+  Titlespan,
+  Titlespan2,
+  phoneDescription,
+};
