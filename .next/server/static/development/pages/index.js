@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -274,20 +274,6 @@ const BusinessTheme = props => {
       lineNumber: 49,
       columnNumber: 21
     }
-  }), __jsx(_containers_themecolor__WEBPACK_IMPORTED_MODULE_17__["default"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 21
-    }
-  }), __jsx(_containers_themeoptions__WEBPACK_IMPORTED_MODULE_18__["default"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51,
-      columnNumber: 21
-    }
   }))) : __jsx("div", {
     className: "theme-loader",
     __self: undefined,
@@ -470,7 +456,11 @@ function InputBox(_ref) {
       props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["Type", "Name"]);
 
   const onChangeValue = e => {
-    props.ChangeValue(e.target.value);
+    console.log("Run2");
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    props.ChangeValue(name, value);
   };
 
   return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -480,11 +470,11 @@ function InputBox(_ref) {
     value: props.Value,
     className: props.Class,
     placeholder: props.PlaceHolder,
-    onChange: props.changeValue ? onChangeValue : null,
+    onChange: onChangeValue,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 16,
       columnNumber: 9
     }
   });
@@ -1444,6 +1434,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_contact__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../data/contact */ "./data/contact/index.js");
 /* harmony import */ var _contact_contact_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../contact/contact.scss */ "./containers/contact/contact.scss");
 /* harmony import */ var _contact_contact_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_contact_contact_scss__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../pages/oniContext */ "./pages/oniContext.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\containers\\contact\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1456,7 +1447,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-function Contact() {
+const initialState = {
+  name: '',
+  number: '',
+  message: '',
+  email: '',
+  messageSent: false
+};
+
+function Contact(props) {
+  const productConsumer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_9__["ProductContext"]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    console.log('ProductContext', productConsumer);
+    productConsumer.setValue('name', 'Tyrique Daniel');
+  }, []);
   const {
     0: name,
     1: setName
@@ -1472,31 +1476,26 @@ function Contact() {
   const {
     0: errors,
     1: setErrors
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({});
-
-  const handelSubmit = () => {
-    const error = {};
-
-    if (!name) {
-      error.name = 'First Name field shouldn’t be empty';
-    }
-
-    if (!email) {
-      error.email = 'Email field shouldn’t be empty';
-    }
-
-    if (!message) {
-      error.message = 'Message field shouldn’t be empty';
-    }
-
-    if (error) {
-      setErrors(error);
-    } else {
-      setName('');
-      setEmail('');
-      setMessage('');
-    }
-  };
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}); // const { name, email } = productConsumer;
+  // const handelSubmit2 = () => {
+  //     const error = {}
+  //     if (!name) {
+  //         error.name = 'First Name field shouldn’t be empty';
+  //     }
+  //     if (!email) {
+  //         error.email = 'Email field shouldn’t be empty';
+  //     }
+  //     if (!message) {
+  //         error.message = 'Message field shouldn’t be empty';
+  //     }
+  //     if (error) {
+  //         setErrors(error)
+  //     } else {
+  //         setName('');
+  //         setEmail('');
+  //         setMessage('');
+  //     }
+  // }
 
   return __jsx("section", {
     className: "contact-wrapper",
@@ -1504,16 +1503,16 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
-      columnNumber: 7
+      lineNumber: 61,
+      columnNumber: 5
     }
   }, __jsx("div", {
     className: "contact-animation-images",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 9
+      lineNumber: 62,
+      columnNumber: 7
     }
   }, _data_contact__WEBPACK_IMPORTED_MODULE_7__["default"].map((img, index) => __jsx("span", {
     key: `contact-img-${index}`,
@@ -1521,30 +1520,30 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
-      columnNumber: 13
+      lineNumber: 64,
+      columnNumber: 11
     }
   }, __jsx(_components_common_image_index__WEBPACK_IMPORTED_MODULE_3__["default"], {
     Path: img.img,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
-      columnNumber: 15
+      lineNumber: 65,
+      columnNumber: 13
     }
   })))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 9
+      lineNumber: 69,
+      columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 11
+      lineNumber: 70,
+      columnNumber: 9
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     sm: 0,
@@ -1552,16 +1551,16 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 13
+      lineNumber: 71,
+      columnNumber: 11
     }
   }, __jsx("div", {
     className: "contact-image",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
-      columnNumber: 15
+      lineNumber: 72,
+      columnNumber: 13
     }
   }, __jsx(_components_common_image_index__WEBPACK_IMPORTED_MODULE_3__["default"], {
     Path: _public_assets_images_contact_contact_us_img_png__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -1569,24 +1568,24 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
-      columnNumber: 17
+      lineNumber: 73,
+      columnNumber: 15
     }
   }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     md: 6,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 13
+      lineNumber: 76,
+      columnNumber: 11
     }
   }, __jsx("div", {
     className: "contact-content-block main-title-wrapper",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 15
+      lineNumber: 77,
+      columnNumber: 13
     }
   }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Subtitle"], {
     Class: "sitemain-subtitle",
@@ -1594,8 +1593,8 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 17
+      lineNumber: 78,
+      columnNumber: 15
     }
   }), __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Subtitle"], {
     Class: "site-subtitle2",
@@ -1603,8 +1602,8 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 17
+      lineNumber: 82,
+      columnNumber: 15
     }
   }), __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Description"], {
     Class: "contact-dec",
@@ -1613,31 +1612,31 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
-      columnNumber: 17
+      lineNumber: 86,
+      columnNumber: 15
     }
   }), __jsx("div", {
     className: "form",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
-      columnNumber: 17
+      lineNumber: 91,
+      columnNumber: 15
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
     method: "POST",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
-      columnNumber: 19
+      lineNumber: 92,
+      columnNumber: 17
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
-      columnNumber: 21
+      lineNumber: 93,
+      columnNumber: 19
     }
   }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Title"], {
     Class: "form-label",
@@ -1645,28 +1644,29 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 23
+      lineNumber: 94,
+      columnNumber: 21
     }
   }), __jsx(_components_common_input_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
     Type: "text",
     Name: "name",
+    handlechange: productConsumer.setValue,
     PlaceHolder: "John Doe",
-    value: name,
-    ChangeValue: setName,
-    Class: errors && errors.name && 'error',
+    value: productConsumer.name,
+    ChangeValue: productConsumer.setValue,
+    Class: productConsumer.errors && productConsumer.errors.name && 'error',
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 23
+      lineNumber: 95,
+      columnNumber: 21
     }
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
-      columnNumber: 21
+      lineNumber: 109,
+      columnNumber: 19
     }
   }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Title"], {
     Class: "form-label",
@@ -1674,28 +1674,28 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
-      columnNumber: 23
+      lineNumber: 110,
+      columnNumber: 21
     }
   }), __jsx(_components_common_input_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
     Type: "text",
     Name: "email",
     PlaceHolder: "example@gmail.com",
-    value: email,
-    ChangeValue: setEmail,
-    Class: errors && errors.email && 'error',
+    value: productConsumer.email,
+    ChangeValue: productConsumer.setValue,
+    Class: productConsumer.errors && productConsumer.errors.email && 'error',
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
-      columnNumber: 23
+      lineNumber: 111,
+      columnNumber: 21
     }
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
-      columnNumber: 21
+      lineNumber: 124,
+      columnNumber: 19
     }
   }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Title"], {
     Class: "form-label",
@@ -1703,32 +1703,32 @@ function Contact() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
-      columnNumber: 23
+      lineNumber: 125,
+      columnNumber: 21
     }
   }), __jsx(_components_common_input_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
     Type: "textarea",
-    Name: "text",
+    Name: "message",
     PlaceHolder: "write your message",
-    Class: `textbox ${errors && errors.message && 'error'}`,
-    value: message,
-    ChangeValue: setMessage,
+    Class: `textbox ${productConsumer.errors && productConsumer.errors.message && 'error'}`,
+    value: productConsumer.message,
+    ChangeValue: productConsumer.setValue,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
-      columnNumber: 23
+      lineNumber: 126,
+      columnNumber: 21
     }
   })))), __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_6__["default"], {
     Class: "button1 btn button2 gradient-color",
     Name: "SUBMIT",
-    Clickble: handelSubmit,
+    Clickble: productConsumer.handleSubmit,
     BtnIcon: "btn-icon",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
-      columnNumber: 17
+      lineNumber: 141,
+      columnNumber: 15
     }
   }))))));
 }
@@ -5850,6 +5850,50 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/assign */ "co
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/define-properties */ "core-js/library/fn/object/define-properties");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/define-property */ "core-js/library/fn/object/define-property");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptors */ "core-js/library/fn/object/get-own-property-descriptors");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
 /*!****************************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
@@ -5869,6 +5913,36 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-prope
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core-js/library/fn/object/keys");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
 
 /***/ }),
 
@@ -6037,35 +6111,198 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_businesstheme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/businesstheme */ "./components/businesstheme.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_businesstheme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/businesstheme */ "./components/businesstheme.js");
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/oniContext */ "./pages/oniContext.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\pages\\index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
 
 
 
 const Home = () => {
-  return __jsx("div", {
+  return __jsx(_pages_oniContext__WEBPACK_IMPORTED_MODULE_3__["ProductProvider"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
     className: "main-wrapper",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 11,
       columnNumber: 9
     }
-  }, __jsx(_components_businesstheme__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, __jsx(_components_businesstheme__WEBPACK_IMPORTED_MODULE_2__["default"], {
     ThemeClass: "demo1",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
-      columnNumber: 13
+      lineNumber: 13,
+      columnNumber: 11
     }
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./pages/oniContext.js":
+/*!*****************************!*\
+  !*** ./pages/oniContext.js ***!
+  \*****************************/
+/*! exports provided: ProductProvider, ProductConsumer, ProductContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductProvider", function() { return ProductProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductConsumer", function() { return ProductConsumer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductContext", function() { return ProductContext; });
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\pages\\oniContext.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
+
+
+const ProductContext = react__WEBPACK_IMPORTED_MODULE_7___default.a.createContext();
+
+class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "state", {
+      name: '',
+      number: '',
+      message: '',
+      email: '',
+      messageSent: false,
+      errors: {},
+      addONS: {
+        'name': 'price'
+      },
+      total: 0
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "sendEmail", e => {
+      alert('E Sent');
+      this.handleErrors();
+      console.log(this.state);
+      emailjs.send('default_service', 'responsive_renovations', {
+        senderEmail: this.state.email,
+        senderName: this.state.name,
+        senderMessage: this.state.message,
+        senderPhoneNumber: this.state.number,
+        receiverEmail: 'responsiverenovations@gmail.com'
+      }, 'user_ra9kLqa47SSFhb4QI3Swp').then(result => {
+        console.log(result.text);
+        this.setState({
+          messageSent: True
+        });
+        setTimeout(() => {
+          setstate(prev => _objectSpread({}, prev, {}, initialState));
+          this.setState(prev => _objectSpread({}, prev, {}, initialState));
+        }, 3000);
+      }, error => {
+        console.log(error.text);
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "setField", (targetID, textValue) => {
+      console.log('Run');
+      this.setState(() => {
+        return {
+          [targetID]: textValue
+        };
+      });
+      setTimeout(() => {
+        console.log(this.state);
+      }, 300);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "handleErrors", e => {
+      const error = {};
+
+      if (!this.state.name) {
+        error.name = 'First Name field shouldn’t be empty';
+        this.setField('name', error.name);
+      }
+
+      if (!this.state.email) {
+        error.email = 'Email field shouldn’t be empty';
+        this.setField('email', error.name);
+      }
+
+      if (!this.state.message) {
+        error.message = 'Message field shouldn’t be empty';
+        this.setField('message', error.name);
+      }
+
+      if (this.state.error) {
+        setErrors(this.state.error);
+      } else {
+        console.log("PASS");
+      }
+
+      if (!error) {
+        console.log('PASS');
+      } else {
+        return;
+      }
+    });
+  }
+
+  render() {
+    return __jsx(ProductContext.Provider, {
+      value: _objectSpread({}, this.state, {
+        setValue: this.setField,
+        handleSubmit: this.sendEmail
+      }),
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 105,
+        columnNumber: 8
+      }
+    }, this.props.children);
+  }
+
+}
+
+const ProductConsumer = ProductContext.Consumer;
+
 
 /***/ }),
 
@@ -6715,7 +6952,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -6771,6 +7008,50 @@ module.exports = require("core-js/library/fn/object/assign");
 
 /***/ }),
 
+/***/ "core-js/library/fn/object/define-properties":
+/*!**************************************************************!*\
+  !*** external "core-js/library/fn/object/define-properties" ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/define-properties");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/define-property":
+/*!************************************************************!*\
+  !*** external "core-js/library/fn/object/define-property" ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/define-property");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-descriptor":
+/*!************************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-descriptor" ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-descriptors":
+/*!*************************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-descriptors" ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-descriptors");
+
+/***/ }),
+
 /***/ "core-js/library/fn/object/get-own-property-symbols":
 /*!*********************************************************************!*\
   !*** external "core-js/library/fn/object/get-own-property-symbols" ***!
@@ -6812,6 +7093,17 @@ module.exports = require("firebase/app");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase/auth");
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 

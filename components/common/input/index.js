@@ -4,7 +4,12 @@ import { Input } from 'reactstrap';
 export default function InputBox({ Type, Name, ...props }) {
 
     const onChangeValue = (e) => {
-        props.ChangeValue(e.target.value)
+        console.log("Run2")
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        
+        props.ChangeValue(name,value)
     }
 
     return (
@@ -12,10 +17,11 @@ export default function InputBox({ Type, Name, ...props }) {
             type={Type}
             name={Name}
             id={props.Id}
+           
             value={props.Value}
             className={props.Class}
             placeholder={props.PlaceHolder}
-            onChange={props.changeValue ? onChangeValue : null}
+            onChange={onChangeValue}
         />
     )
 }

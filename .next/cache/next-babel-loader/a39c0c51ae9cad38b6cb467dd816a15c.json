@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport { FontAwesomeIcon } from '@fortawesome/react-fontawesome';\n\nfunction Icon(props) {\n  return __jsx(FontAwesomeIcon, {\n    icon: props.icon\n  });\n}\n\nexport default Icon;","map":null,"metadata":{},"sourceType":"module"}

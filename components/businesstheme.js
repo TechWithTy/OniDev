@@ -47,8 +47,8 @@ const BusinessTheme = (props) => {
                     <Brand />
                     <Footer />
                     <CopyRight />
-                    <ThemeColor />
-                    <ThemeOption />
+                    {/* <ThemeColor /> */}
+                    {/* <ThemeOption /> */}
                 </div>
             </React.Fragment>
             :
