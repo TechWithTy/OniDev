@@ -15,19 +15,13 @@ import ContactBackgroundImages from '../../data/contact';
 import '../contact/contact.scss';
 import { ProductContext } from '../../pages/oniContext';
 
-const initialState = {
-  name: '',
-  number: '',
-  message: '',
-  email: '',
-  messageSent: false,
-};
+
 
 function Contact(props) {
   const productConsumer = useContext(ProductContext);
 
   useEffect(() => {
-    console.log('ProductContext', productConsumer);
+    console.log('ProductContext', productConsumer.messageSent);
     productConsumer.setValue('name', 'Tyrique Daniel');
   }, []);
   const [name, setName] = useState('');
@@ -97,7 +91,23 @@ function Contact(props) {
                       Name="name"
                       handlechange={productConsumer.setValue}
                       PlaceHolder="John Doe"
-                      value={productConsumer.name}
+                      Value={productConsumer.name}
+                      ChangeValue={productConsumer.setValue}
+                      Class={
+                        productConsumer.errors &&
+                        productConsumer.errors.name &&
+                        'error'
+                      }
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Title Class="form-label" Name="Number *" />
+                    <InputBox
+                      Type="text"
+                      Name="number"
+                      handlechange={productConsumer.setValue}
+                      PlaceHolder="3054"
+                      Value={productConsumer.number}
                       ChangeValue={productConsumer.setValue}
                       Class={
                         productConsumer.errors &&
@@ -112,7 +122,7 @@ function Contact(props) {
                       Type="text"
                       Name="email"
                       PlaceHolder="example@gmail.com"
-                      value={productConsumer.email}
+                      Value={productConsumer.email}
                       ChangeValue={productConsumer.setValue}
                       Class={
                         productConsumer.errors &&
@@ -132,7 +142,7 @@ function Contact(props) {
                         productConsumer.errors.message &&
                         'error'
                       }`}
-                      value={productConsumer.message}
+                      Value={productConsumer.message}
                       ChangeValue={productConsumer.setValue}
                     />
                   </FormGroup>
@@ -140,8 +150,9 @@ function Contact(props) {
               </div>
               <Button
                 Class="button1 btn button2 gradient-color"
-                Name="SUBMIT"
+                Name={!productConsumer.messageSent ? 'SUBMIT' : 'SENT'}
                 Clickble={productConsumer.handleSubmit}
+                send={productConsumer.messageSent}
                 BtnIcon="btn-icon"
               />
             </div>

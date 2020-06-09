@@ -74,7 +74,7 @@ Error.getInitialProps = function (_ref2) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 30:
 /*!*********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F_error&absolutePagePath=C%3A%5CUsers%5C13054%5CDocuments%5CGitHub%5COniDev%5Cpages%5C_error.js ***!
   \*********************************************************************************************************************************************/
@@ -97,5 +97,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[30,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=_error.js.map

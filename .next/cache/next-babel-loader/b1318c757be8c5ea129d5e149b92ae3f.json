@@ -1,1 +1,0 @@
-{"ast":null,"code":"const Counterdata = [{\n  id: 1,\n  number: 100,\n  title: 'Clients'\n}, {\n  id: 2,\n  number: 60,\n  title: 'Live Projects'\n}, {\n  id: 3,\n  number: 20,\n  title: 'Expert Team Members'\n}, {\n  id: 4,\n  number: 50,\n  title: '5 Star Reviews'\n}];\nexport default Counterdata;","map":null,"metadata":{},"sourceType":"module"}

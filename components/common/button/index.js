@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight } from 'react-feather';
+import { ChevronRight,Send } from 'react-feather';
 
 function Button(props) {
     return (
@@ -7,7 +7,7 @@ function Button(props) {
             <span className={`title ${props.Title ? props.Title : ''}`}>{props.Name}</span>
             {props.BtnIcon &&
                 <span className={props.BtnIcon}>
-                    <ChevronRight />
+                   {!props.send ? <ChevronRight />: <Send/>}
                 </span>
             }
         </button>

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -346,12 +346,19 @@ function Button(props) {
       lineNumber: 9,
       columnNumber: 17
     }
-  }, __jsx(react_feather__WEBPACK_IMPORTED_MODULE_1__["ChevronRight"], {
+  }, !props.send ? __jsx(react_feather__WEBPACK_IMPORTED_MODULE_1__["ChevronRight"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10,
-      columnNumber: 21
+      columnNumber: 35
+    }
+  }) : __jsx(react_feather__WEBPACK_IMPORTED_MODULE_1__["Send"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 53
     }
   })));
 }
@@ -1447,18 +1454,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const initialState = {
-  name: '',
-  number: '',
-  message: '',
-  email: '',
-  messageSent: false
-};
 
 function Contact(props) {
   const productConsumer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_9__["ProductContext"]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    console.log('ProductContext', productConsumer);
+    console.log('ProductContext', productConsumer.messageSent);
     productConsumer.setValue('name', 'Tyrique Daniel');
   }, []);
   const {
@@ -1503,7 +1503,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 55,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -1511,7 +1511,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 56,
       columnNumber: 7
     }
   }, _data_contact__WEBPACK_IMPORTED_MODULE_7__["default"].map((img, index) => __jsx("span", {
@@ -1520,7 +1520,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 58,
       columnNumber: 11
     }
   }, __jsx(_components_common_image_index__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1528,21 +1528,21 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 59,
       columnNumber: 13
     }
   })))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 63,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 64,
       columnNumber: 9
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1551,7 +1551,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 65,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -1559,7 +1559,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 66,
       columnNumber: 13
     }
   }, __jsx(_components_common_image_index__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1568,7 +1568,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 67,
       columnNumber: 15
     }
   }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1576,7 +1576,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 70,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -1584,7 +1584,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 71,
       columnNumber: 13
     }
   }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Subtitle"], {
@@ -1593,7 +1593,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 72,
       columnNumber: 15
     }
   }), __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Subtitle"], {
@@ -1602,7 +1602,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 76,
       columnNumber: 15
     }
   }), __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Description"], {
@@ -1612,7 +1612,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 80,
       columnNumber: 15
     }
   }), __jsx("div", {
@@ -1620,7 +1620,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 85,
       columnNumber: 15
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
@@ -1628,14 +1628,14 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 86,
       columnNumber: 17
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 87,
       columnNumber: 19
     }
   }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Title"], {
@@ -1644,7 +1644,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 88,
       columnNumber: 21
     }
   }), __jsx(_components_common_input_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1652,20 +1652,50 @@ function Contact(props) {
     Name: "name",
     handlechange: productConsumer.setValue,
     PlaceHolder: "John Doe",
-    value: productConsumer.name,
+    Value: productConsumer.name,
     ChangeValue: productConsumer.setValue,
     Class: productConsumer.errors && productConsumer.errors.name && 'error',
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 89,
       columnNumber: 21
     }
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 103,
+      columnNumber: 19
+    }
+  }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Title"], {
+    Class: "form-label",
+    Name: "Number *",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104,
+      columnNumber: 21
+    }
+  }), __jsx(_components_common_input_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    Type: "text",
+    Name: "number",
+    handlechange: productConsumer.setValue,
+    PlaceHolder: "3054",
+    Value: productConsumer.number,
+    ChangeValue: productConsumer.setValue,
+    Class: productConsumer.errors && productConsumer.errors.name && 'error',
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105,
+      columnNumber: 21
+    }
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119,
       columnNumber: 19
     }
   }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Title"], {
@@ -1674,27 +1704,27 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 120,
       columnNumber: 21
     }
   }), __jsx(_components_common_input_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
     Type: "text",
     Name: "email",
     PlaceHolder: "example@gmail.com",
-    value: productConsumer.email,
+    Value: productConsumer.email,
     ChangeValue: productConsumer.setValue,
     Class: productConsumer.errors && productConsumer.errors.email && 'error',
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 121,
       columnNumber: 21
     }
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 134,
       columnNumber: 19
     }
   }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_2__["Title"], {
@@ -1703,7 +1733,7 @@ function Contact(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 135,
       columnNumber: 21
     }
   }), __jsx(_components_common_input_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1711,23 +1741,24 @@ function Contact(props) {
     Name: "message",
     PlaceHolder: "write your message",
     Class: `textbox ${productConsumer.errors && productConsumer.errors.message && 'error'}`,
-    value: productConsumer.message,
+    Value: productConsumer.message,
     ChangeValue: productConsumer.setValue,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 136,
       columnNumber: 21
     }
   })))), __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_6__["default"], {
     Class: "button1 btn button2 gradient-color",
-    Name: "SUBMIT",
+    Name: !productConsumer.messageSent ? 'SUBMIT' : 'SENT',
     Clickble: productConsumer.handleSubmit,
+    send: productConsumer.messageSent,
     BtnIcon: "btn-icon",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141,
+      lineNumber: 151,
       columnNumber: 15
     }
   }))))));
@@ -6182,6 +6213,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! emailjs-com */ "emailjs-com");
+/* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(emailjs_com__WEBPACK_IMPORTED_MODULE_8__);
 
 
 
@@ -6197,7 +6230,20 @@ function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_cor
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 
+
 const ProductContext = react__WEBPACK_IMPORTED_MODULE_7___default.a.createContext();
+let initstate = {
+  name: '',
+  number: '',
+  message: '',
+  email: '',
+  messageSent: false,
+  errors: {},
+  addONS: {
+    name: 'price'
+  },
+  total: 0
+};
 
 class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
   constructor(...args) {
@@ -6211,7 +6257,7 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       messageSent: false,
       errors: {},
       addONS: {
-        'name': 'price'
+        name: 'price'
       },
       total: 0
     });
@@ -6219,25 +6265,34 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "sendEmail", e => {
       alert('E Sent');
       this.handleErrors();
-      console.log(this.state);
-      emailjs.send('default_service', 'responsive_renovations', {
-        senderEmail: this.state.email,
-        senderName: this.state.name,
-        senderMessage: this.state.message,
-        senderPhoneNumber: this.state.number,
-        receiverEmail: 'responsiverenovations@gmail.com'
-      }, 'user_ra9kLqa47SSFhb4QI3Swp').then(result => {
-        console.log(result.text);
-        this.setState({
-          messageSent: True
+
+      if (!this.state.errors) {
+        console.log(this.state);
+        emailjs_com__WEBPACK_IMPORTED_MODULE_8___default.a.send('OniDev', 'onidev', {
+          senderEmail: this.state.email,
+          senderName: this.state.name,
+          senderMessage: this.state.message,
+          senderPhoneNumber: this.state.number,
+          receiverEmail: 'tyriquedaniel14@gmail.com',
+          number: 0,
+          total: '10000',
+          addOns: 'Everything'
+        }, 'user_ra9kLqa47SSFhb4QI3Swp').then(result => {
+          console.log(result.text);
+          this.setState({
+            messageSent: true
+          });
+          setTimeout(() => {
+            this.setState(prev => _objectSpread({}, prev, {}, initstate));
+            console.log(this.state);
+          }, 3000);
+        }, error => {
+          console.log(error.text);
+          alert(error.text);
         });
-        setTimeout(() => {
-          setstate(prev => _objectSpread({}, prev, {}, initialState));
-          this.setState(prev => _objectSpread({}, prev, {}, initialState));
-        }, 3000);
-      }, error => {
-        console.log(error.text);
-      });
+      } else {
+        console.log("Error");
+      }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "setField", (targetID, textValue) => {
@@ -6257,28 +6312,41 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
 
       if (!this.state.name) {
         error.name = 'First Name field shouldn’t be empty';
-        this.setField('name', error.name);
+        this.setState({
+          name: 'First Name field shouldn’t be empty'
+        });
+      }
+
+      if (!this.state.number) {
+        error.number = 'Number field shouldn’t be empty';
+        this.setState({
+          number: 'Number field shouldn’t be empty'
+        });
       }
 
       if (!this.state.email) {
         error.email = 'Email field shouldn’t be empty';
-        this.setField('email', error.name);
+        this.setState({
+          email: 'Email field shouldn’t be empty'
+        });
       }
 
       if (!this.state.message) {
         error.message = 'Message field shouldn’t be empty';
-        this.setField('message', error.name);
+        this.setState({
+          message: 'Message field shouldn’t be empty'
+        });
       }
 
-      if (this.state.error) {
-        setErrors(this.state.error);
+      if (_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(error).length === 0) {
+        alert('PASS');
+        this.setState({
+          errors: false
+        });
       } else {
-        console.log("PASS");
-      }
-
-      if (!error) {
-        console.log('PASS');
-      } else {
+        this.setState({
+          errors: error
+        });
         return;
       }
     });
@@ -6293,8 +6361,8 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105,
-        columnNumber: 8
+        lineNumber: 119,
+        columnNumber: 7
       }
     }, this.props.children);
   }
@@ -6952,7 +7020,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -7071,6 +7139,17 @@ module.exports = require("core-js/library/fn/object/get-own-property-symbols");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/keys");
+
+/***/ }),
+
+/***/ "emailjs-com":
+/*!******************************!*\
+  !*** external "emailjs-com" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("emailjs-com");
 
 /***/ }),
 
