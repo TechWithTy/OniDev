@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Container, Row, Col, Form, FormGroup } from 'reactstrap';
+import { Container, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 import {
   Subtitle,
   Description,
@@ -10,11 +10,11 @@ import {
 import Image from '../../components/common/image/index';
 import ContactImg from '../../public/assets/images/contact/contact-us-img.png';
 import InputBox from '../../components/common/input/index';
-import Button from '../../components/common/button';
+import {Button} from '../../components/common/button';
 import ContactBackgroundImages from '../../data/contact';
 import '../contact/contact.scss';
 import { ProductContext } from '../../pages/oniContext';
-
+import {webAppPackages} from '../../data/business-services'
 
 
 function Contact(props) {
@@ -106,7 +106,7 @@ function Contact(props) {
                       Type="text"
                       Name="number"
                       handlechange={productConsumer.setValue}
-                      PlaceHolder="3054"
+                      PlaceHolder="000-000-0000"
                       Value={productConsumer.number}
                       ChangeValue={productConsumer.setValue}
                       Class={
@@ -136,7 +136,7 @@ function Contact(props) {
                     <InputBox
                       Type="textarea"
                       Name="message"
-                      PlaceHolder="write your message"
+                      PlaceHolder="Tell us more about your business"
                       Class={`textbox ${
                         productConsumer.errors &&
                         productConsumer.errors.message &&
@@ -148,13 +148,26 @@ function Contact(props) {
                   </FormGroup>
                 </Form>
               </div>
-              <Button
-                Class="button1 btn button2 gradient-color"
-                Name={!productConsumer.messageSent ? 'SUBMIT' : 'SENT'}
-                Clickble={productConsumer.handleSubmit}
-                send={productConsumer.messageSent}
-                BtnIcon="btn-icon"
-              />
+
+              {!productConsumer.moreInfoNeeded ? (
+                <Button
+                  Class="button1 btn button2 gradient-color"
+                  Name={!productConsumer.messageSent ? 'SUBMIT' : 'SENT'}
+                  Clickble={productConsumer.handleSubmit}
+                  send={productConsumer.messageSent}
+                  BtnIcon="btn-icon"
+                  type="contact"
+                />
+              ) : (
+                <Button
+                  Class="button1 btn button2 gradient-color"
+                  Name={'Tell Us More'}
+                  Clickble={productConsumer.handleModal}
+                  moreInfo={productConsumer.moreInfoNeeded}
+                  BtnIcon="btn-icon"
+                  type="contact"
+                />
+              )}
             </div>
           </Col>
         </Row>
@@ -163,4 +176,12 @@ function Contact(props) {
   );
 }
 
+// webAppPackages.map((service, index) => (
+//                 <span
+//                   key={`contact-img-${index}`}
+//                   className={`image${index + 1}`}
+//                 >
+//                  {service.title}
+//                 </span>
+//               ))}
 export default Contact;

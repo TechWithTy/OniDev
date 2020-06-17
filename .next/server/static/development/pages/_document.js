@@ -1358,7 +1358,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         lineNumber: 13,
         columnNumber: 21
       }
-    }, "BusLine - React Landing Page"), __jsx("link", {
+    }, "Oni Solutions - Business Solutions"), __jsx("link", {
       rel: "shortcut icon",
       href: _public_assets_images_favicon_png__WEBPACK_IMPORTED_MODULE_2__["default"],
       __self: this,

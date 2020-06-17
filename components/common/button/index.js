@@ -1,17 +1,26 @@
 import React from 'react';
-import { ChevronRight,Send } from 'react-feather';
+import { ChevronRight,Send,Plus } from 'react-feather';
 
-function Button(props) {
+export function Button(props) {
     return (
-        <button a={`#`+props.href} className={props.Class} onClick={props.Clickble}>
-            <span className={`title ${props.Title ? props.Title : ''}`}>{props.Name}</span>
-            {props.BtnIcon &&
-                <span className={props.BtnIcon}>
-                   {!props.send ? <ChevronRight />: <Send/>}
-                </span>
-            }
-        </button>
+      <button
+        a={`#` + props.href}
+        className={props.Class}
+        onClick={props.Clickble}
+      >
+        <span className={`title ${props.Title ? props.Title : ''}`}>
+          {props.Name}
+        </span>
+        {props.BtnIcon && props.type == 'contact' ? (
+          <span className={props.BtnIcon}>
+            {!props.send ? <ChevronRight /> : <Send />}
+          </span>
+        ) : (
+          <span className={props.BtnIcon}>{<Plus />}</span>
+        )}
+      </button>
     );
 }
 
-export default Button;
+
+

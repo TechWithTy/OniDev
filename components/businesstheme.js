@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
+import Modal from '../components/modal/index'
 import Navbar from '../containers/navbar';
 import Loader from 'react-loader-spinner'
 import Banner from '../containers/banner';
@@ -47,6 +48,7 @@ const BusinessTheme = (props) => {
                     <Brand />
                     <Footer />
                     <CopyRight />
+                    <Modal/>
                     {/* <ThemeColor /> */}
                     {/* <ThemeOption /> */}
                 </div>

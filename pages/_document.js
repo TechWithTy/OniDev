@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
         return (
             <html>
                 <Head>
-                    <title>BusLine - React Landing Page</title>
+                    <title>Oni Solutions - Business Solutions</title>
                     <link rel="shortcut icon" href={Logo} />
                 </Head>
                 <body>

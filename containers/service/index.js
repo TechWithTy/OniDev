@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { Subtitle, Description, Title, Titlespan2 } from '../../components/common/title/index';
-import Button from '../../components/common/button';
+import {rectButton} from '../../components/common/button';
 import { Servicedata, Servicedata1 } from '../../data/service/index';
 import FontAwesomeIcon from '../../components/common/icon';
 import '../service/service.scss';
@@ -30,7 +30,7 @@ function Service() {
                                 Class="service-dec"
                                 Name="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot."
                             />
-                            <Button
+                            <rectButton
                                 Class="button1 btn button2 gradient-color"
                                 Name="Get a free quote"
                                 BtnIcon="btn-icon"

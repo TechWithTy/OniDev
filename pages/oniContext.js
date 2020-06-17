@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import emailjs from 'emailjs-com';
-
+import {
+  webAppPackages,
+  mobileAppPackages,
+  softwareDeveleopmentPackages,
+  seoMarketingPackages,
+} from '../data/business-services/index';
 const ProductContext = React.createContext();
 
 let initstate = {
@@ -14,6 +19,9 @@ let initstate = {
     name: 'price',
   },
   total: 0,
+  moreInfoNeeded: true,
+  isModalOpen: false,
+  activePackage: [],
 };
 
 class ProductProvider extends Component {
@@ -28,6 +36,37 @@ class ProductProvider extends Component {
       name: 'price',
     },
     total: 0,
+    moreInfoNeeded: true,
+    isModalOpen: false,
+    activePackage: []
+  };
+
+  handleActivePackage = (packageName) => {
+    
+    switch (packageName) {
+      case 'webPackages':
+        this.setState({ activePackage: webAppPackages });
+
+        break;
+      case 'mobileAppPackages':
+        this.setState({ activePackage: mobileAppPackages });
+        break;
+      case 'softwareDevelopmentPackages':
+        this.setState({ activePackage: softwareDeveleopmentPackages });
+
+        break;
+      case 'seoMarketingPackages':
+        this.setState({ activePackage: seoMarketingPackages });
+        break;
+      default:
+      // code block
+    }
+    setTimeout(() => {
+      console.log(this.state.activePackage,'Active Package')
+    }, 300);
+  };
+  handleModal = (e) => {
+    this.setState({ isModalOpen: !this.state.isModalOpen });
   };
 
   sendEmail = (e) => {
@@ -66,8 +105,8 @@ class ProductProvider extends Component {
             alert(error.text);
           }
         );
-    }else{
-      console.log("Error")
+    } else {
+      console.log('Error');
     }
   };
   //Set FieldS State
@@ -121,6 +160,8 @@ class ProductProvider extends Component {
           ...this.state,
           setValue: this.setField,
           handleSubmit: this.sendEmail,
+          handleModal: this.handleModal,
+          handleActPackage: this.handleActivePackage
         }}
       >
         {this.props.children}

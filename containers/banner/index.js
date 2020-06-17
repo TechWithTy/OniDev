@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import Button from '../../components/common/button';
+import {Button} from '../../components/common/button';
 import { Titlespan, Description } from '../../components/common/title/index';
 import Image from '../../components/common/image/index';
 import BannerImg1 from '../../public/assets/images/banner/bannerimg2.png';
