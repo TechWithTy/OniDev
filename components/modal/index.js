@@ -5,9 +5,12 @@ import { webAppPackages } from '../../data/business-services';
 import { CardComp } from '../cards/card'
 import {PackageCarousel} from '../carousel/packageCarousel'
 import './modal.scss'
-import {Button} from '../../components/common/button';
-import Fade from 'react-reveal/Fade';
+import { Button } from '../../components/common/button';
+import { PrevButton } from '../common/button/prevButton';
 
+import { SelectPackage } from '../selectPackage';
+import Fade from 'react-reveal/Fade';
+import {QuoteSteps} from '../quoteSteps'
 const ModalExample = (props) => {
   const productConsumer = useContext(ProductContext);
  const [packageShowing, setpackageShowing] = useState([])
@@ -34,59 +37,35 @@ const ModalExample = (props) => {
           Choose a package
         </ModalHeader>
         <ModalBody>
-          <div className="list-buttons">
-            <Button
-              Class="button-rectangular btn button2 gradient-color"
-              Name={'Web App Packages'}
-              Clickble={() => productConsumer.handleActPackage('webPackages')}
-              iconFalse={true}
-              BtnIcon="btn-icon"
-              type="touchAction"
-            >
-              Do Something
-            </Button>{' '}
-            <Button
-              Class="button-rectangular btn button2 gradient-color"
-              Name={'Mobile Application Packages'}
-              Clickble={() =>
-                productConsumer.handleActPackage('mobileAppPackages')
-              }
-              iconFalse={true}
-              BtnIcon="btn-icon"
-              type="touchAction"
-            >
-              Cancel
-            </Button>
-          </div>
-          <div>
-            {productConsumer.activePackage.length > 0 && (
-              <Fade >
-                <PackageCarousel />
-              </Fade>
-            )}
-          </div>
+          <SelectPackage />
+          <QuoteSteps />
         </ModalBody>
 
         <ModalFooter>
-          <Button
-            Class="button1 btn button2 gradient-color"
-            Name={!productConsumer.messageSent ? 'SUBMIT' : 'SENT'}
-            Clickble={productConsumer.handleSubmit}
-            send={productConsumer.messageSent}
-            BtnIcon="btn-icon"
-            type="contact"
-            onClick={productConsumer.handleModal}
-          />
-
-          <Button
-            Class="button1 btn button2 gradient-color"
-            Name={!productConsumer.messageSent ? 'SUBMIT' : 'SENT'}
-            Clickble={productConsumer.handleSubmit}
-            send={productConsumer.messageSent}
-            BtnIcon="btn-icon"
-            type="contact"
-            onClick={productConsumer.handleModal}
-          />
+          
+            <div style={{'margin-right': '7em'}}>
+              <PrevButton
+                Class="button1 btn button2 gradient-color btn-icon-left"
+                Name={'Previous'}
+                Clickble={productConsumer.handleSubmit}
+               
+                BtnIcon="btn-icon"
+                type="navigation"
+                
+              />
+            </div>
+            <div>
+              <Button
+                Class="button1 btn button2 gradient-color"
+                Name={!productConsumer.messageSent ? 'SUBMIT' : 'SENT'}
+                Clickble={productConsumer.handleSubmit}
+                send={productConsumer.messageSent}
+                BtnIcon="btn-icon"
+                type="contact"
+                onClick={productConsumer.handleModal}
+              />
+            </div>
+         
         </ModalFooter>
       </Modal>
     </div>

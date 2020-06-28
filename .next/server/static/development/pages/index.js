@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -129,6 +129,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _public_assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_public_assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var react_loader_spinner_dist_loader_css_react_spinner_loader_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-loader-spinner/dist/loader/css/react-spinner-loader.css */ "./node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css");
 /* harmony import */ var react_loader_spinner_dist_loader_css_react_spinner_loader_css__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(react_loader_spinner_dist_loader_css_react_spinner_loader_css__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../pages/oniContext */ "./pages/oniContext.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\businesstheme.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -154,154 +155,157 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const BusinessTheme = props => {
   const [loader, setLoader] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(false);
+  const productConsumer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_22__["ProductContext"]);
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(() => {
     const interval = setInterval(() => {
       setLoader(true);
     }, 3000);
+    productConsumer.setBackground('blue');
     return () => clearInterval(interval);
   }, []);
   return loader ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
-      columnNumber: 13
+      lineNumber: 38,
+      columnNumber: 7
     }
   }, __jsx(_containers_navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
-      columnNumber: 17
+      lineNumber: 39,
+      columnNumber: 9
     }
   }), __jsx("div", {
     id: "main-content",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
-      columnNumber: 17
+      lineNumber: 40,
+      columnNumber: 9
     }
   }, __jsx(_containers_banner__WEBPACK_IMPORTED_MODULE_5__["default"], {
     ChangeClass: props.ThemeClass,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
-      columnNumber: 21
+      lineNumber: 41,
+      columnNumber: 11
     }
   }), __jsx(_containers_service__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 21
+      lineNumber: 42,
+      columnNumber: 11
     }
   }), __jsx(_containers_about__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
-      columnNumber: 21
+      lineNumber: 43,
+      columnNumber: 11
     }
   }), __jsx(_containers_blog__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 21
+      lineNumber: 44,
+      columnNumber: 11
     }
   }), __jsx(_containers_video__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 21
+      lineNumber: 45,
+      columnNumber: 11
     }
   }), __jsx(_containers_skills__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
-      columnNumber: 21
+      lineNumber: 46,
+      columnNumber: 11
     }
   }), __jsx(_containers_project__WEBPACK_IMPORTED_MODULE_11__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
-      columnNumber: 21
+      lineNumber: 47,
+      columnNumber: 11
     }
   }), __jsx(_containers_portfolio__WEBPACK_IMPORTED_MODULE_12__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
-      columnNumber: 21
+      lineNumber: 48,
+      columnNumber: 11
     }
   }), __jsx(_containers_testimonial__WEBPACK_IMPORTED_MODULE_13__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 21
+      lineNumber: 49,
+      columnNumber: 11
     }
   }), __jsx(_containers_contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 21
+      lineNumber: 50,
+      columnNumber: 11
     }
   }), __jsx(_containers_brands__WEBPACK_IMPORTED_MODULE_15__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 21
+      lineNumber: 51,
+      columnNumber: 11
     }
   }), __jsx(_containers_footer__WEBPACK_IMPORTED_MODULE_16__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 21
+      lineNumber: 52,
+      columnNumber: 11
     }
   }), __jsx(_containers_copyright_text__WEBPACK_IMPORTED_MODULE_17__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 21
+      lineNumber: 53,
+      columnNumber: 11
     }
   }), __jsx(_components_modal_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
-      columnNumber: 21
+      lineNumber: 54,
+      columnNumber: 11
     }
   }))) : __jsx("div", {
     className: "theme-loader",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 13
+      lineNumber: 60,
+      columnNumber: 7
     }
   }, __jsx(react_loader_spinner__WEBPACK_IMPORTED_MODULE_4___default.a, {
     type: "Triangle",
-    color: "#e100ff ",
+    color: "#3366ff",
     height: 150,
     width: 150,
     timeout: 3000,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 17
+      lineNumber: 61,
+      columnNumber: 9
     }
   }));
 };
@@ -324,11 +328,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _data_image_source__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data/image_source */ "./data/image_source.js");
-/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./card.scss */ "./components/cards/card.scss");
-/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_card_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-loader-spinner */ "react-loader-spinner");
-/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_loader_spinner__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./card.scss */ "./components/cards/card.scss");
+/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_card_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-loader-spinner */ "react-loader-spinner");
+/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_loader_spinner__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pages/oniContext */ "./pages/oniContext.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\cards\\card.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -341,6 +345,7 @@ const domLoaded = __webpack_require__(/*! dom-loaded */ "dom-loaded"); //p = pro
 
 
 const CardComp = props => {
+  const productConsumer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_4__["ProductContext"]);
   const {
     0: loading,
     1: setloading
@@ -349,6 +354,27 @@ const CardComp = props => {
     0: imageloading,
     1: setimageloading
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
+
+  const handleImages = imageName => {
+    packageImages.map((image, index) => {
+      let packageTitle = p.title.toLowerCase();
+
+      if (packageTitle.includes(image.uID)) {
+        return image.src;
+      } else {
+        console.log(p.title, image.uID);
+      }
+
+      switch (imageName) {
+        case value:
+          break;
+
+        default:
+          break;
+      }
+    });
+  };
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     (async () => {
       await domLoaded;
@@ -362,7 +388,7 @@ const CardComp = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 42,
         columnNumber: 7
       }
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardImg"], {
@@ -371,21 +397,13 @@ const CardComp = props => {
         setimageloading(false);
       },
       width: "100%",
-      src: _data_image_source__WEBPACK_IMPORTED_MODULE_2__["packageImages"].map((image, index) => {
-        let packageTitle = p.title.toLowerCase();
-
-        if (packageTitle.includes(image.uID)) {
-          return image.src;
-        } else {
-          console.log(p.title, image.uID);
-        }
-      }),
+      src: p.image,
       alt: "Card image cap",
       className: !imageloading ? '' : 'display-none',
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 43,
         columnNumber: 9
       }
     }), imageloading && __jsx("div", {
@@ -393,10 +411,10 @@ const CardComp = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 54,
         columnNumber: 10
       }
-    }, " ", __jsx(react_loader_spinner__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    }, " ", __jsx(react_loader_spinner__WEBPACK_IMPORTED_MODULE_3___default.a, {
       type: "Triangle",
       color: "#e100ff ",
       height: 50,
@@ -405,57 +423,75 @@ const CardComp = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 54,
         columnNumber: 41
       }
     })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], {
+      className: "text-center",
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50,
+        lineNumber: 62,
         columnNumber: 9
       }
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51,
+        lineNumber: 63,
         columnNumber: 11
       }
     }, p.title), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardText"], {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52,
+        lineNumber: 64,
         columnNumber: 11
       }
     }, p.text, __jsx("br", {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 66,
         columnNumber: 13
       }
-    }), p.addOns.map(addOn => __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+    }), __jsx("div", {
+      className: "text-center",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 67,
+        columnNumber: 13
+      }
+    }, p.addOns.map(addOn => __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+      className: "badge",
       color: "primary",
       pill: true,
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56,
+        lineNumber: 69,
         columnNumber: 15
       }
-    }, addOn))), ' '));
+    }, addOn))), __jsx("button", {
+      onClick: () => productConsumer.handleFinalPackage(p.package),
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 74,
+        columnNumber: 13
+      }
+    }, " click me ")), ' '));
   } else {
     return __jsx("div", {
       className: "theme-loader",
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 81,
         columnNumber: 7
       }
-    }, __jsx(react_loader_spinner__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    }, __jsx(react_loader_spinner__WEBPACK_IMPORTED_MODULE_3___default.a, {
       type: "Triangle",
       color: "#e100ff ",
       height: 50,
@@ -464,7 +500,7 @@ const CardComp = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67,
+        lineNumber: 82,
         columnNumber: 9
       }
     }));
@@ -495,6 +531,52 @@ const CardComp = props => {
 
 /***/ }),
 
+/***/ "./components/carousel/customArrows.js":
+/*!*********************************************!*\
+  !*** ./components/carousel/customArrows.js ***!
+  \*********************************************/
+/*! exports provided: CustomRightArrow */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomRightArrow", function() { return CustomRightArrow; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_common_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/common/button */ "./components/common/button/index.js");
+
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\carousel\\customArrows.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+const CustomRightArrow = (_ref) => {
+  let {
+    onClick
+  } = _ref,
+      rest = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["onClick"]);
+
+  const {
+    onMove,
+    carouselState: {
+      currentSlide,
+      deviceType
+    }
+  } = rest; // onMove means if dragging or swiping in progress.
+
+  return __jsx("button", {
+    onClick: () => onClick(),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 17
+    }
+  });
+};
+
+/***/ }),
+
 /***/ "./components/carousel/packageCarousel.js":
 /*!************************************************!*\
   !*** ./components/carousel/packageCarousel.js ***!
@@ -512,12 +594,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/oniContext */ "./pages/oniContext.js");
 /* harmony import */ var _cards_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../cards/card */ "./components/cards/card.js");
 /* harmony import */ var _components_common_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/common/button */ "./components/common/button/index.js");
-/* harmony import */ var react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-multi-carousel/lib/styles.css */ "./node_modules/react-multi-carousel/lib/styles.css");
-/* harmony import */ var react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _customArrows__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./customArrows */ "./components/carousel/customArrows.js");
+/* harmony import */ var react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-multi-carousel/lib/styles.css */ "./node_modules/react-multi-carousel/lib/styles.css");
+/* harmony import */ var react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\carousel\\packageCarousel.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
 
 
 
@@ -557,22 +641,22 @@ const responsive = {
   }
 };
 const PackageCarousel = props => {
-  const productConsumer = Object(react__WEBPACK_IMPORTED_MODULE_6__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_2__["ProductContext"]);
+  const productConsumer = Object(react__WEBPACK_IMPORTED_MODULE_7__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_2__["ProductContext"]);
   return __jsx(react_multi_carousel__WEBPACK_IMPORTED_MODULE_1___default.a, {
     swipeable: true,
     responsive: responsive,
-    showDots: true,
+    showDots: false,
     infinite: true,
-    ssr: true,
-    removeArrowOnDeviceType: ['tablet', 'mobile'],
+    ssr: false,
     dotListClass: "custom-dot-list-style",
+    removeArrowOnDeviceType: ['tablet', 'mobile'],
     itemClass: "carousel-item-padding-40-px",
-    arrows: true // dotListClass="custom-dot-list-style"
+    arrows: false // dotListClass="custom-dot-list-style"
     ,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 7
     }
   }, productConsumer.activePackage.map((service, index) => __jsx(_cards_card__WEBPACK_IMPORTED_MODULE_3__["CardComp"], {
@@ -580,10 +664,12 @@ const PackageCarousel = props => {
     title: service.title,
     text: service.content,
     addOns: service.addOns,
+    image: service.src,
+    package: service,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 11
     }
   })));
@@ -666,6 +752,61 @@ function Button(props) {
       columnNumber: 44
     }
   })));
+}
+
+/***/ }),
+
+/***/ "./components/common/button/prevButton.js":
+/*!************************************************!*\
+  !*** ./components/common/button/prevButton.js ***!
+  \************************************************/
+/*! exports provided: PrevButton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrevButton", function() { return PrevButton; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_feather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-feather */ "react-feather");
+/* harmony import */ var react_feather__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_feather__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\common\\button\\prevButton.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+function PrevButton(props) {
+  return __jsx("button", {
+    className: props.Class,
+    onClick: props.Clickble,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6,
+      columnNumber: 5
+    }
+  }, __jsx("span", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 11
+    }
+  }, __jsx(react_feather__WEBPACK_IMPORTED_MODULE_1__["ChevronLeft"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 11
+    }
+  })), __jsx("span", {
+    className: `title ${props.Title ? props.Title : ''}`,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 7
+    }
+  }, props.Name));
 }
 
 /***/ }),
@@ -972,10 +1113,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modal.scss */ "./components/modal/modal.scss");
 /* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _components_common_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/common/button */ "./components/common/button/index.js");
-/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
-/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _common_button_prevButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../common/button/prevButton */ "./components/common/button/prevButton.js");
+/* harmony import */ var _selectPackage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../selectPackage */ "./components/selectPackage.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _quoteSteps__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../quoteSteps */ "./components/quoteSteps.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\modal\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
 
 
 
@@ -1006,7 +1153,7 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 27,
       columnNumber: 5
     }
   }, __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
@@ -1015,7 +1162,7 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 28,
       columnNumber: 7
     }
   }, buttonLabel), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
@@ -1025,7 +1172,7 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 31,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalHeader"], {
@@ -1033,77 +1180,65 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 36,
       columnNumber: 9
     }
   }, "Choose a package"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 39,
+      columnNumber: 9
+    }
+  }, __jsx(_selectPackage__WEBPACK_IMPORTED_MODULE_9__["SelectPackage"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 11
+    }
+  }), __jsx(_quoteSteps__WEBPACK_IMPORTED_MODULE_11__["QuoteSteps"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 11
+    }
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
       columnNumber: 9
     }
   }, __jsx("div", {
-    className: "list-buttons",
+    style: {
+      'margin-right': '7em'
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
-      columnNumber: 11
-    }
-  }, __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
-    Class: "button-rectangular btn button2 gradient-color",
-    Name: 'Web App Packages',
-    Clickble: () => productConsumer.handleActPackage('webPackages'),
-    iconFalse: true,
-    BtnIcon: "btn-icon",
-    type: "touchAction",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 46,
       columnNumber: 13
     }
-  }, "Do Something"), ' ', __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
-    Class: "button-rectangular btn button2 gradient-color",
-    Name: 'Mobile Application Packages',
-    Clickble: () => productConsumer.handleActPackage('mobileAppPackages'),
-    iconFalse: true,
+  }, __jsx(_common_button_prevButton__WEBPACK_IMPORTED_MODULE_8__["PrevButton"], {
+    Class: "button1 btn button2 gradient-color btn-icon-left",
+    Name: 'Previous',
+    Clickble: productConsumer.handleSubmit,
     BtnIcon: "btn-icon",
-    type: "touchAction",
+    type: "navigation",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 13
-    }
-  }, "Cancel")), __jsx("div", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 11
-    }
-  }, productConsumer.activePackage.length > 0 && __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8___default.a, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 47,
       columnNumber: 15
     }
-  }, __jsx(_carousel_packageCarousel__WEBPACK_IMPORTED_MODULE_5__["PackageCarousel"], {
+  })), __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
-      columnNumber: 17
-    }
-  })))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70,
-      columnNumber: 9
+      lineNumber: 57,
+      columnNumber: 13
     }
   }, __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
     Class: "button1 btn button2 gradient-color",
@@ -1116,24 +1251,10 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
-      columnNumber: 11
+      lineNumber: 58,
+      columnNumber: 15
     }
-  }), __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
-    Class: "button1 btn button2 gradient-color",
-    Name: !productConsumer.messageSent ? 'SUBMIT' : 'SENT',
-    Clickble: productConsumer.handleSubmit,
-    send: productConsumer.messageSent,
-    BtnIcon: "btn-icon",
-    type: "contact",
-    onClick: productConsumer.handleModal,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81,
-      columnNumber: 11
-    }
-  }))));
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ModalExample);
@@ -1148,6 +1269,179 @@ const ModalExample = props => {
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ "./components/quoteSteps.js":
+/*!**********************************!*\
+  !*** ./components/quoteSteps.js ***!
+  \**********************************/
+/*! exports provided: QuoteSteps */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuoteSteps", function() { return QuoteSteps; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_sweet_progress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-sweet-progress */ "react-sweet-progress");
+/* harmony import */ var react_sweet_progress__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_sweet_progress__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-sweet-progress/lib/style.css */ "./node_modules/react-sweet-progress/lib/style.css");
+/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/oniContext */ "./pages/oniContext.js");
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\quoteSteps.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const QuoteSteps = () => {
+  const pCR = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_3__["ProductContext"]);
+  return __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 7
+    }
+  }, __jsx(react_sweet_progress__WEBPACK_IMPORTED_MODULE_1__["Progress"], {
+    percent: pCR.progress,
+    status: "success",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 9
+    }
+  }));
+};
+
+/***/ }),
+
+/***/ "./components/selectPackage.js":
+/*!*************************************!*\
+  !*** ./components/selectPackage.js ***!
+  \*************************************/
+/*! exports provided: SelectPackage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectPackage", function() { return SelectPackage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _carousel_packageCarousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carousel/packageCarousel */ "./components/carousel/packageCarousel.js");
+/* harmony import */ var _common_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./common/button */ "./components/common/button/index.js");
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/oniContext */ "./pages/oniContext.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\selectPackage.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const SelectPackage = () => {
+  const productConsumer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_3__["ProductContext"]);
+  return __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
+    className: "list-buttons",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 9
+    }
+  }, __jsx(_common_button__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    Class: "button-rectangular btn button2 gradient-color",
+    Name: 'Web App Packages',
+    Clickble: () => productConsumer.handleActPackage('webPackages', false),
+    iconFalse: true,
+    BtnIcon: "btn-icon",
+    type: "touchAction",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 11
+    }
+  }, "Do Something"), ' ', __jsx(_common_button__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    Class: "button-rectangular btn button2 gradient-color",
+    Name: 'Mobile Application Packages',
+    Clickble: () => productConsumer.handleActPackage('mobileAppPackages', false),
+    iconFalse: true,
+    BtnIcon: "btn-icon",
+    type: "touchAction",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 11
+    }
+  }, "Cancel")), __jsx("div", {
+    className: "list-buttons",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 9
+    }
+  }, __jsx(_common_button__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    Class: "button-rectangular btn button2 gradient-color",
+    Name: 'Software Packages',
+    Clickble: () => productConsumer.handleActPackage('softwareDevelopmentPackages', false),
+    iconFalse: true,
+    BtnIcon: "btn-icon",
+    type: "touchAction",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 11
+    }
+  }), __jsx(_common_button__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    Class: "button-rectangular btn button2 gradient-color",
+    Name: 'Marketing  Packages',
+    Clickble: () => productConsumer.handleActPackage('seoMarketingPackages', false),
+    iconFalse: true,
+    BtnIcon: "btn-icon",
+    type: "touchAction",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 11
+    }
+  })), __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63,
+      columnNumber: 9
+    }
+  }, productConsumer.activePackage.length > 0 && __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 13
+    }
+  }, __jsx(_carousel_packageCarousel__WEBPACK_IMPORTED_MODULE_1__["PackageCarousel"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 15
+    }
+  }))));
+};
 
 /***/ }),
 
@@ -6119,62 +6413,74 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dataAddOns", function() { return dataAddOns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scriptingAddOns", function() { return scriptingAddOns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "marketingAddOns", function() { return marketingAddOns; });
+/* harmony import */ var _data_image_source__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../data/image_source */ "./data/image_source.js");
+
 const webAppPackages = [{
   id: 1,
   title: 'Start Up Business Website Development',
   addOns: ['Mobile Optimized', '(3) maximum pages', 'Built with latest technologies', 'Custom Design', '', '(3)Standard Changes', 'Free Uncopyrighten Images', 'Standard SEO'],
-  content: 'Get Started With Our Most Cost Efficient Web Package'
+  content: 'Get Started With Our Most Cost Efficient Web Package',
+  src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["startUp"],
+  alt: "Start Up"
 }, {
   id: 2,
   title: 'Established Business Website Development',
   addOns: ['Mobile Optimized', '7 Maximum Pages', 'Built with latest technologies', 'Custom Design', 'News Letters Signup', '(5-7)Standard Changes', 'Free Uncopyrighten Images', '(2) Months Customized  SEO', '3 Free  Adverts', 'Customer Contact Automation', 'Customer Scheduling Automation', 'Auto Lead Generation'],
-  content: 'Start Boosting Your Sales and Leads With Our Established Business Package'
+  content: 'Start Boosting Your Sales and Leads With Our Established Business Package',
+  src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["establishedBusiness"],
+  alt: "Established Business"
 }, {
   id: 3,
   title: 'Full Launch Business Website Development',
   addOns: ['Mobile Optimized', 'Unl Maximum Pages', 'Built with latest technologies', 'Custom Design', 'News Letters Signup', '(1)Premium Customer Support', 'Free Uncopyrighten Images', '(6) Months Premium Customized  SEO', '10 Free  Adverts', 'Customer Contact Automation', 'Customer Scheduling Automation', 'Landing Page', 'Auto Lead Generation', 'Team Administrative Dashboard', 'Custom Graphics', 'Personal Web Content Writer', 'Personal Marketing Agent'],
-  content: 'Reach Your Companies Full Potential with Our Full Launch Package'
+  content: 'Reach Your Companies Full Potential with Our Full Launch Package',
+  src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["launchBusiness"],
+  alt: 'Launch Business'
 }, {
   id: 4,
   title: 'Landing Web Page Package',
   addOns: ['Mobile Optimized', '(1) maximum pages', 'Built with latest technologies', 'Custom Design', 'NewsLetters', '(3)Standard Changes', 'Free Uncopyrighten Images', '(1) month Custom SEO', '5 Free Adverts', 'Auto Lead Generation'],
-  content: 'Help Capture Leads and Sales Directly From Advertisments'
+  content: 'Help Capture Leads and Sales Directly From Advertisments',
+  src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["landingPage"],
+  alt: 'Landing Page'
 }, {
   id: 5,
   title: 'Ecommerce Webb App',
   addOns: ['Mobile Optimized', 'Unlimited maximum pages', 'Built with latest technologies', 'Custom Design', 'Customer order tracking', '(3)Standard Changes', 'Free Uncopyrighten Images', '(6) Months Integrated  SEO', 'Administration Panel', 'Customer Contact Automation', 'One Click Payment System', 'Fully Automatable', 'Customer Service Integratable'],
-  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
+  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+  src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["ecommercePage"],
+  alt: 'Ecommerce Page'
 }];
 const mobileAppPackages = [{
   id: 1,
-  title: 'Premium Business Integrtation Applications',
+  title: 'Premium Business Integrtation Mobile Application',
   addOns: ['Android/IOS', 'Business ideology integration', 'Premium Customer Service', 'Custom Design', 'Custom Functionality', '(3)Standard Changes', 'Custom Uncopyrighten Images', '(6) months of SEO'],
   content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
 }, {
   id: 2,
-  title: 'Premium Ecommerce Application',
+  title: 'Premium Ecommerce Mobile Application',
   addOns: ['Android/IOS', 'Business ideology integration', 'Premium Customer Service', 'Custom Design', 'Custom Functionality', '(3)Standard Changes', 'Free Uncopyrighten Images', '(6) months of SEO', 'Administration Panel', 'Customer Contact Automation', 'One Click Payment System', 'Fully Automatable', 'Customer Service Integratable'],
   content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
 }];
 const softwareDeveleopmentPackages = [{
   id: 1,
-  title: 'Data Gather Package',
+  title: 'Data Gather Software Package',
   addOns: ['Data Scraping - Custom Web/App Integration', 'Premium Oni Customer Service', ' ___Customized Data Targets', 'Custom Data Functionality', '(3)Standard Changes'],
   content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
 },, {
   id: 2,
-  title: 'Scripting Package',
+  title: 'Scripting Software Package',
   addOns: ['Task Automation', 'Custom Bot Goals', 'Premium Customer Service', 'Customized Targeting', 'Custom Functionality', '(3)Standard Changes'],
   content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
 }];
 const seoMarketingPackages = [{
   id: 1,
-  title: 'Basic Business',
+  title: 'Basic Business Marketing',
   addOns: ['(5) Adverts', '(1) Month Premium SEO', 'Custom Content Writing', '(1) Month Web Hosting'],
   content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
 },, {
   id: 2,
-  title: 'Intermediate Package',
+  title: 'Intermediate Package Marketing',
   addOns: ['(10) Adverts', '(3) Months Premium SEO', '(3) Months Web Hosting', 'Custom Content Writing', 'Premium Customer Service', 'Landing Page', 'Customized Targeting', 'Custom Functionality', 'Auto Lead Generation', 'Easy Lead Contact'],
   content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
 }, {
@@ -6437,29 +6743,21 @@ const ContactBackgroundImages = [{
 /*!******************************!*\
   !*** ./data/image_source.js ***!
   \******************************/
-/*! exports provided: packageImages */
+/*! exports provided: startUp, establishedBusiness, launchBusiness, landingPage, ecommercePage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "packageImages", function() { return packageImages; });
-const packageImages = [{
-  id: 1,
-  uID: 'web',
-  src: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'
-}, {
-  id: 2,
-  uID: 'mobileApp',
-  src: 'https://images.unsplash.com/photo-1542641728-6ca359b085f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80'
-}, {
-  id: 3,
-  uID: 'automation',
-  src: 'https://images.unsplash.com/photo-1528038719194-6f72b64cf78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'
-}, {
-  id: 4,
-  uID: 'marketing',
-  src: 'https://images.unsplash.com/photo-1514580426463-fd77dc4d0672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=630&q=80'
-}];
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "startUp", function() { return startUp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "establishedBusiness", function() { return establishedBusiness; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "launchBusiness", function() { return launchBusiness; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "landingPage", function() { return landingPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ecommercePage", function() { return ecommercePage; });
+const startUp = "https://images.pexels.com/photos/933964/pexels-photo-933964.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+const establishedBusiness = 'https://cdn.stocksnap.io/img-thumbs/960w/conference-room_KQNZJCQYZY.jpg';
+const launchBusiness = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1302&q=80';
+const landingPage = 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=786&q=80';
+const ecommercePage = 'https://images.unsplash.com/photo-1586880244406-556ebe35f282?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80';
 
 /***/ }),
 
@@ -7029,7 +7327,7 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 9,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -7037,7 +7335,7 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 10,
       columnNumber: 9
     }
   }, __jsx(_components_businesstheme__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -7045,7 +7343,7 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 12,
       columnNumber: 11
     }
   })));
@@ -7116,7 +7414,9 @@ let initstate = {
   total: 0,
   moreInfoNeeded: true,
   isModalOpen: false,
-  activePackage: []
+  activePackage: [],
+  finalPackage: {},
+  progress: 0
 };
 
 class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
@@ -7136,7 +7436,42 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       total: 0,
       moreInfoNeeded: true,
       isModalOpen: false,
-      activePackage: []
+      activePackage: [],
+      finalPackage: {},
+      progress: 0
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "setThemeColor", color => {
+      switch (color) {
+        case 'blue':
+          document.body.style.setProperty('--primary', 'linear-gradient(to right, #33ccff 0%, #3366ff 100%)');
+          document.body.style.setProperty('--primary1', '#3366ff');
+          document.body.style.setProperty('--primary2', '#33ccff');
+          document.body.style.setProperty('--primary3', 'rgba(52, 106, 255, 0.1)');
+          document.body.style.setProperty('--bannerimg', 'url(/assets/images/banner/bg1.png)');
+          break;
+
+        case 'green':
+          document.body.style.setProperty('--primary', 'linear-gradient(to right, #184e68 0%, #57ca85 100%)');
+          document.body.style.setProperty('--primary1', '#57ca85');
+          document.body.style.setProperty('--primary2', '#184e68');
+          document.body.style.setProperty('--primary3', 'rgba(24, 78, 104, 0.1)');
+          document.body.style.setProperty('--bannerimg', 'url(/assets/images/banner/bg4.png)');
+          break;
+
+        default:
+          break;
+      }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "handleFinalPackage", servicePackage => {
+      this.setState({
+        finalPackage: servicePackage
+      });
+      setTimeout(() => {
+        alert("Package Final");
+        console.log(this.state.finalPackage);
+      }, 300);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "handleActivePackage", packageName => {
@@ -7170,7 +7505,7 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       }
 
       setTimeout(() => {
-        console.log(this.state.activePackage, 'Active Package');
+        console.log(this.state.activePackage);
       }, 300);
     });
 
@@ -7276,12 +7611,14 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         setValue: this.setField,
         handleSubmit: this.sendEmail,
         handleModal: this.handleModal,
-        handleActPackage: this.handleActivePackage
+        handleActPackage: this.handleActivePackage,
+        handleFinalPackage: this.handleFinalPackage,
+        setBackground: this.setThemeColor
       }),
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 158,
+        lineNumber: 211,
         columnNumber: 7
       }
     }, this.props.children);
@@ -7940,7 +8277,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

@@ -22,6 +22,8 @@ let initstate = {
   moreInfoNeeded: true,
   isModalOpen: false,
   activePackage: [],
+  finalPackage: {},
+  progress: 0
 };
 
 class ProductProvider extends Component {
@@ -38,10 +40,61 @@ class ProductProvider extends Component {
     total: 0,
     moreInfoNeeded: true,
     isModalOpen: false,
-    activePackage: []
+    activePackage: [],
+    finalPackage: {},
+    progress: 0
   };
 
+  setThemeColor = (color) => {
+    switch (color) {
+      case 'blue':
+        document.body.style.setProperty(
+          '--primary',
+          'linear-gradient(to right, #33ccff 0%, #3366ff 100%)'
+        );
+        document.body.style.setProperty('--primary1', '#3366ff');
+        document.body.style.setProperty('--primary2', '#33ccff');
+        document.body.style.setProperty(
+          '--primary3',
+          'rgba(52, 106, 255, 0.1)'
+        );
+        document.body.style.setProperty(
+          '--bannerimg',
+          'url(/assets/images/banner/bg1.png)'
+        );
+
+        break;
+
+      case 'green':
+        document.body.style.setProperty(
+          '--primary',
+          'linear-gradient(to right, #184e68 0%, #57ca85 100%)'
+        );
+        document.body.style.setProperty('--primary1', '#57ca85');
+        document.body.style.setProperty('--primary2', '#184e68');
+        document.body.style.setProperty('--primary3', 'rgba(24, 78, 104, 0.1)');
+        document.body.style.setProperty(
+          '--bannerimg',
+          'url(/assets/images/banner/bg4.png)'
+        );
+               
+
+        break;
+      default:
+        break;
+    }
+  }
+  handleFinalPackage = (servicePackage) => {
+    this.setState({ finalPackage: servicePackage })
+    
+    setTimeout(() => {
+      alert("Package Final")
+      console.log(this.state.finalPackage)
+    }, 300);
+  }
+
   handleActivePackage = (packageName) => {
+    
     
     switch (packageName) {
       case 'webPackages':
@@ -62,7 +115,7 @@ class ProductProvider extends Component {
       // code block
     }
     setTimeout(() => {
-      console.log(this.state.activePackage,'Active Package')
+     console.log(this.state.activePackage)
     }, 300);
   };
   handleModal = (e) => {
@@ -161,7 +214,9 @@ class ProductProvider extends Component {
           setValue: this.setField,
           handleSubmit: this.sendEmail,
           handleModal: this.handleModal,
-          handleActPackage: this.handleActivePackage
+          handleActPackage: this.handleActivePackage,
+          handleFinalPackage: this.handleFinalPackage,
+          setBackground: this.setThemeColor
         }}
       >
         {this.props.children}

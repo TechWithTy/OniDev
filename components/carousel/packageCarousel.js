@@ -2,9 +2,10 @@ import './carousel.scss'
 import Carousel from 'react-multi-carousel';
 import { ProductContext } from '../../pages/oniContext';
 import { CardComp } from '../cards/card';
-import Button from '../../components/common/button';
-
+import {Button} from '../../components/common/button';
+import {customArrows} from './customArrows'
 import 'react-multi-carousel/lib/styles.css';
+
 import React, {useState,useEffect,useContext} from 'react'
 
 const responsive = {
@@ -34,13 +35,13 @@ export const PackageCarousel = (props) => {
       <Carousel
         swipeable={true}
         responsive={responsive}
-        showDots={true}
+        showDots={false}
         infinite={true}
-        ssr={true}
-        removeArrowOnDeviceType={['tablet', 'mobile']}
+        ssr={false}
         dotListClass="custom-dot-list-style"
+        removeArrowOnDeviceType={['tablet', 'mobile']}
         itemClass="carousel-item-padding-40-px"
-        arrows={true}
+        arrows={false}
         // dotListClass="custom-dot-list-style"
       >
         {productConsumer.activePackage.map((service, index) => (
@@ -49,6 +50,8 @@ export const PackageCarousel = (props) => {
             title={service.title}
             text={service.content}
             addOns={service.addOns}
+            image={service.src}
+            package={service}
             
           />
         ))}

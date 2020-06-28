@@ -1,111 +1,121 @@
+import {startUp,establishedBusiness,launchBusiness,landingPage,ecommercePage} from '../../data/image_source'
 export const webAppPackages = [
-  {
-    id: 1,
-    title: 'Start Up Business Website Development',
-    addOns: [
-      'Mobile Optimized',
-      '(3) maximum pages',
-      'Built with latest technologies',
-      'Custom Design',
-      '',
-      '(3)Standard Changes',
-      'Free Uncopyrighten Images',
-      'Standard SEO',
-    ],
-    content:
-      'Get Started With Our Most Cost Efficient Web Package',
+         {
+           id: 1,
+           title: 'Start Up Business Website Development',
+           addOns: [
+             'Mobile Optimized',
+             '(3) maximum pages',
+             'Built with latest technologies',
+             'Custom Design',
+             '',
+             '(3)Standard Changes',
+             'Free Uncopyrighten Images',
+             'Standard SEO',
+           ],
+           content: 'Get Started With Our Most Cost Efficient Web Package',
+    src: startUp,
+           alt: "Start Up"
+         },
+         {
+           id: 2,
+           title: 'Established Business Website Development',
+           addOns: [
+             'Mobile Optimized',
+             '7 Maximum Pages',
+             'Built with latest technologies',
+             'Custom Design',
+             'News Letters Signup',
+             '(5-7)Standard Changes',
+             'Free Uncopyrighten Images',
+             '(2) Months Customized  SEO',
+             '3 Free  Adverts',
+             'Customer Contact Automation',
+             'Customer Scheduling Automation',
+             'Auto Lead Generation',
+           ],
+           content:
+             'Start Boosting Your Sales and Leads With Our Established Business Package',
+           src:
+             establishedBusiness,
+           alt: "Established Business"
+         },
+         {
+           id: 3,
+           title: 'Full Launch Business Website Development',
+           addOns: [
+             'Mobile Optimized',
+             'Unl Maximum Pages',
+             'Built with latest technologies',
+             'Custom Design',
+             'News Letters Signup',
+             '(1)Premium Customer Support',
+             'Free Uncopyrighten Images',
+             '(6) Months Premium Customized  SEO',
+             '10 Free  Adverts',
+             'Customer Contact Automation',
+             'Customer Scheduling Automation',
+             'Landing Page',
+             'Auto Lead Generation',
+             'Team Administrative Dashboard',
+             'Custom Graphics',
+             'Personal Web Content Writer',
+             'Personal Marketing Agent',
+           ],
+           content:
+             'Reach Your Companies Full Potential with Our Full Launch Package',
+           src: launchBusiness,
+             alt: 'Launch Business'
+         },
+         {
+           id: 4,
+           title: 'Landing Web Page Package',
+           addOns: [
+             'Mobile Optimized',
+             '(1) maximum pages',
+             'Built with latest technologies',
+             'Custom Design',
+             'NewsLetters',
+             '(3)Standard Changes',
+             'Free Uncopyrighten Images',
+             '(1) month Custom SEO',
+             '5 Free Adverts',
+             'Auto Lead Generation',
+           ],
+           content: 'Help Capture Leads and Sales Directly From Advertisments',
+           src: landingPage,
+           alt: 'Landing Page'
+         },
+         {
+           id: 5,
+           title: 'Ecommerce Webb App',
+           addOns: [
+             'Mobile Optimized',
+             'Unlimited maximum pages',
+             'Built with latest technologies',
+             'Custom Design',
+             'Customer order tracking',
+             '(3)Standard Changes',
+             'Free Uncopyrighten Images',
+             '(6) Months Integrated  SEO',
+             'Administration Panel',
+             'Customer Contact Automation',
+             'One Click Payment System',
+             'Fully Automatable',
+             'Customer Service Integratable',
+           ],
+           content:
+             'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+           src: ecommercePage,
+           alt: 'Ecommerce Page'
+
   },
-  {
-    id: 2,
-    title: 'Established Business Website Development',
-    addOns: [
-      'Mobile Optimized',
-      '7 Maximum Pages',
-      'Built with latest technologies',
-      'Custom Design',
-      'News Letters Signup',
-      '(5-7)Standard Changes',
-      'Free Uncopyrighten Images',
-      '(2) Months Customized  SEO',
-      '3 Free  Adverts',
-      'Customer Contact Automation',
-        'Customer Scheduling Automation',
-      'Auto Lead Generation'
-    ],
-    content:
-      'Start Boosting Your Sales and Leads With Our Established Business Package',
-  },
-  {
-    id: 3,
-    title: 'Full Launch Business Website Development',
-    addOns: [
-      'Mobile Optimized',
-      'Unl Maximum Pages',
-      'Built with latest technologies',
-      'Custom Design',
-      'News Letters Signup',
-      '(1)Premium Customer Support',
-      'Free Uncopyrighten Images',
-      '(6) Months Premium Customized  SEO',
-      '10 Free  Adverts',
-      'Customer Contact Automation',
-        'Customer Scheduling Automation',
-        'Landing Page',
-        'Auto Lead Generation',
-        'Team Administrative Dashboard',
-        'Custom Graphics',
-        'Personal Web Content Writer',
-        'Personal Marketing Agent'
-      
-    ],
-    content:
-      'Reach Your Companies Full Potential with Our Full Launch Package',
-  },
-  {
-    id: 4,
-    title: 'Landing Web Page Package',
-    addOns: [
-      'Mobile Optimized',
-      '(1) maximum pages',
-      'Built with latest technologies',
-      'Custom Design',
-      'NewsLetters',
-      '(3)Standard Changes',
-      'Free Uncopyrighten Images',
-      '(1) month Custom SEO',
-      '5 Free Adverts',
-      'Auto Lead Generation',
-    ],
-    content:
-      'Help Capture Leads and Sales Directly From Advertisments',
-  },
-  {
-    id: 5,
-    title: 'Ecommerce Webb App',
-    addOns: [
-      'Mobile Optimized',
-      'Unlimited maximum pages',
-      'Built with latest technologies',
-      'Custom Design',
-      'Customer order tracking',
-      '(3)Standard Changes',
-      'Free Uncopyrighten Images',
-      '(6) Months Integrated  SEO',
-      'Administration Panel',
-      'Customer Contact Automation',
-      'One Click Payment System',
-        'Fully Automatable',
-      'Customer Service Integratable'
-    ],
-    content:
-      'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
-  },
-];
+       ];
 
 export const mobileAppPackages = [
   {
     id: 1,
-    title: 'Premium Business Integrtation Applications',
+    title: 'Premium Business Integrtation Mobile Application',
     addOns: [
       'Android/IOS',
       'Business ideology integration',
@@ -121,7 +131,7 @@ export const mobileAppPackages = [
   },
   {
     id: 2,
-    title: 'Premium Ecommerce Application',
+    title: 'Premium Ecommerce Mobile Application',
     addOns: [
       'Android/IOS',
       'Business ideology integration',
@@ -145,7 +155,7 @@ export const mobileAppPackages = [
 export const softwareDeveleopmentPackages = [
   {
     id: 1,
-    title: 'Data Gather Package',
+    title: 'Data Gather Software Package',
     addOns: [
       'Data Scraping - Custom Web/App Integration',
       'Premium Oni Customer Service',
@@ -159,7 +169,7 @@ export const softwareDeveleopmentPackages = [
   ,
   {
     id: 2,
-    title: 'Scripting Package',
+    title: 'Scripting Software Package',
     addOns: [
       'Task Automation',
        'Custom Bot Goals',  
@@ -179,7 +189,7 @@ export const softwareDeveleopmentPackages = [
 export const seoMarketingPackages = [
   {
     id: 1,
-    title: 'Basic Business',
+    title: 'Basic Business Marketing',
     addOns: ['(5) Adverts', '(1) Month Premium SEO', 'Custom Content Writing', '(1) Month Web Hosting'],
     content:
       'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
@@ -187,7 +197,7 @@ export const seoMarketingPackages = [
   ,
   {
     id: 2,
-    title: 'Intermediate Package',
+    title: 'Intermediate Package Marketing',
     addOns: [
       '(10) Adverts',
       '(3) Months Premium SEO',

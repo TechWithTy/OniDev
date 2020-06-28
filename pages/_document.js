@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import Logo from '../public/assets/images/favicon.png'
+import 'react-multi-carousel/lib/styles.css';
 
 export default class MyDocument extends Document {
     static getInitialProps({ renderPage }) {
