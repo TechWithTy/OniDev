@@ -10277,6 +10277,18 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.react-multi-carousel-item .card {
+  display: none; }
+
+.react-multi-carousel-item--active .card {
+  display: block; }
+
+.react-multi-carousel-list button.react-multiple-carousel__arrow--right::before {
+  content: "\203A"; }
+
+.react-multi-carousel-list button.react-multiple-carousel__arrow--left::before {
+  content: "\2039"; }
+
 .display-none {
   display: none; }
 
@@ -10287,11 +10299,18 @@ a.text-dark:hover, a.text-dark:focus {
 .text-center {
   text-align: center; }
 
-
 @font-face{font-family:"revicons";fallback:fallback;src:url([object Module]) format('woff'),url([object Module]) format('ttf'),url([object Module]) format('ttf')}.react-multi-carousel-list{display:flex;align-items:center;overflow:hidden;position:relative}.react-multi-carousel-track{list-style:none;padding:0;margin:0;display:flex;flex-direction:row;position:relative;transform-style:preserve-3d;backface-visibility:hidden;will-change:transform,transition}.react-multiple-carousel__arrow{position:absolute;outline:0;transition:all .5s;border-radius:35px;z-index:1000;border:0;background:rgba(0,0,0,0.5);min-width:43px;min-height:43px;opacity:1;cursor:pointer}.react-multiple-carousel__arrow:hover{background:rgba(0,0,0,0.8)}.react-multiple-carousel__arrow::before{font-size:20px;color:#fff;display:block;font-family:revicons;text-align:center;z-index:2;position:relative}.react-multiple-carousel__arrow--left{left:calc(4% + 1px)}.react-multiple-carousel__arrow--left::before{content:"\E824"}.react-multiple-carousel__arrow--right{right:calc(4% + 1px)}.react-multiple-carousel__arrow--right::before{content:"\E825"}.react-multi-carousel-dot-list{position:absolute;bottom:0;display:flex;left:0;right:0;justify-content:center;margin:auto;padding:0;margin:0;list-style:none;text-align:center}.react-multi-carousel-dot button{display:inline-block;width:12px;height:12px;border-radius:50%;opacity:1;padding:5px 5px 5px 5px;box-shadow:none;transition:background .5s;border-width:2px;border-style:solid;border-color:grey;padding:0;margin:0;margin-right:6px;outline:0;cursor:pointer}.react-multi-carousel-dot button:hover:active{background:#080808}.react-multi-carousel-dot--active button{background:#080808}.react-multi-carousel-item{transform-style:preserve-3d;backface-visibility:hidden}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.react-multi-carousel-item{flex-shrink:0 !important}.react-multi-carousel-track{overflow:visible !important}}
 .list-buttons {
   display: flex;
   align-items: center; }
+
+.prev-btn {
+  margin-right: 7em; }
+
+@media only screen and (max-width: 600px) {
+  .prev-btn {
+    margin-right: 5em;
+    text-align: right; } }
 
 .react-sweet-progress {
   display: -ms-flexbox;
@@ -13226,24 +13245,57 @@ header {
     top: 0;
     bottom: 0;
     margin: auto; }
-    .button1 .btn-icon .btn-icon-left {
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
-      border-radius: 100%;
-      text-align: center;
-      margin-left: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #ffffff;
-      transition: all 0.5s ease-in-out;
-      position: absolute;
-      left: 12px;
-      top: 0;
-      bottom: 0;
-      margin: auto; }
     .button1 .btn-icon svg {
+      color: #ffffff;
+      width: 18px;
+      margin-left: 2px; }
+
+.button2-left {
+  background-color: #ffffff;
+  border-radius: 100px;
+  min-width: 160px;
+  height: 50px;
+  text-align: right;
+  padding: 13px 46px 11px 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-size: 200% auto;
+  transition: all 0.5s ease-in-out; }
+  .button2-left:hover {
+    box-shadow: 0 6px 22px 3px rgba(0, 0, 0, 0.12);
+    background-position: right center;
+    transform: translateY(-2px); }
+  .button2-left.button3 {
+    padding-left: 18px;
+    padding-right: 18px;
+    min-width: auto; }
+  .button2-left .title {
+    font-size: calc(13px + (16 - 13) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-left: 3em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .button2-left .btn-icon {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 100%;
+    text-align: right;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    margin: auto; }
+    .button2-left .btn-icon svg {
       color: #ffffff;
       width: 18px;
       margin-left: 2px; }
@@ -13317,6 +13369,9 @@ header {
   .button4 .btn-icon i {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
+
+.react-sweet-progress-symbol {
+  margin-right: 1em; }
 
 .main-title-wrapper {
   text-align: center;

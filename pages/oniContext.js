@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import emailjs from 'emailjs-com';
+import { SelectPackage } from '../components/selectPackage';
+//Function Order From earliest to latest
 import {
   webAppPackages,
   mobileAppPackages,
@@ -42,7 +44,7 @@ class ProductProvider extends Component {
     isModalOpen: false,
     activePackage: [],
     finalPackage: {},
-    progress: 0
+    progress: 0,
   };
 
   setThemeColor = (color) => {
@@ -77,25 +79,41 @@ class ProductProvider extends Component {
           '--bannerimg',
           'url(/assets/images/banner/bg4.png)'
         );
-               
 
         break;
       default:
         break;
     }
-  }
+  };
+
+  
+
+  //99,99 = sum of 3 steps 33.33*3
+  progressIncrement = (incrBy) => {
+    if (this.state.progress < 99.99) { this.setState({ progress: this.state.progress + incrBy }); }
+    else {
+      return 
+    }
+  };
+
+  progressDecrement = (decrBy) => {
+    if (this.state.progress > 0) {
+      this.setState({ progress: this.state.progress - decrBy });
+    } else {
+      return
+    }
+  };
+
   handleFinalPackage = (servicePackage) => {
-    this.setState({ finalPackage: servicePackage })
-    
+    this.setState({ finalPackage: servicePackage });
+    this.progressIncrement(33.33)
     setTimeout(() => {
-      alert("Package Final")
-      console.log(this.state.finalPackage)
+      alert('Package Final');
+      console.log(this.state.finalPackage);
     }, 300);
-  }
+  };
 
   handleActivePackage = (packageName) => {
-    
-    
     switch (packageName) {
       case 'webPackages':
         this.setState({ activePackage: webAppPackages });
@@ -115,7 +133,7 @@ class ProductProvider extends Component {
       // code block
     }
     setTimeout(() => {
-     console.log(this.state.activePackage)
+      console.log(this.state.activePackage);
     }, 300);
   };
   handleModal = (e) => {
@@ -216,7 +234,10 @@ class ProductProvider extends Component {
           handleModal: this.handleModal,
           handleActPackage: this.handleActivePackage,
           handleFinalPackage: this.handleFinalPackage,
-          setBackground: this.setThemeColor
+          setBackground: this.setThemeColor,
+          incrProgress: this.progressIncrement,
+          decrProgress: this.progressDecrement,
+          
         }}
       >
         {this.props.children}

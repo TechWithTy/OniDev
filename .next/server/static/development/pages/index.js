@@ -531,52 +531,6 @@ const CardComp = props => {
 
 /***/ }),
 
-/***/ "./components/carousel/customArrows.js":
-/*!*********************************************!*\
-  !*** ./components/carousel/customArrows.js ***!
-  \*********************************************/
-/*! exports provided: CustomRightArrow */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomRightArrow", function() { return CustomRightArrow; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_common_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/common/button */ "./components/common/button/index.js");
-
-var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\carousel\\customArrows.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-const CustomRightArrow = (_ref) => {
-  let {
-    onClick
-  } = _ref,
-      rest = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["onClick"]);
-
-  const {
-    onMove,
-    carouselState: {
-      currentSlide,
-      deviceType
-    }
-  } = rest; // onMove means if dragging or swiping in progress.
-
-  return __jsx("button", {
-    onClick: () => onClick(),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 17
-    }
-  });
-};
-
-/***/ }),
-
 /***/ "./components/carousel/packageCarousel.js":
 /*!************************************************!*\
   !*** ./components/carousel/packageCarousel.js ***!
@@ -594,14 +548,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/oniContext */ "./pages/oniContext.js");
 /* harmony import */ var _cards_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../cards/card */ "./components/cards/card.js");
 /* harmony import */ var _components_common_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/common/button */ "./components/common/button/index.js");
-/* harmony import */ var _customArrows__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./customArrows */ "./components/carousel/customArrows.js");
-/* harmony import */ var react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-multi-carousel/lib/styles.css */ "./node_modules/react-multi-carousel/lib/styles.css");
-/* harmony import */ var react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-multi-carousel/lib/styles.css */ "./node_modules/react-multi-carousel/lib/styles.css");
+/* harmony import */ var react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_multi_carousel_lib_styles_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\carousel\\packageCarousel.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
-
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
 
@@ -630,7 +582,7 @@ const responsive = {
       max: 1024,
       min: 464
     },
-    items: 2
+    items: 1
   },
   mobile: {
     breakpoint: {
@@ -641,7 +593,7 @@ const responsive = {
   }
 };
 const PackageCarousel = props => {
-  const productConsumer = Object(react__WEBPACK_IMPORTED_MODULE_7__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_2__["ProductContext"]);
+  const productConsumer = Object(react__WEBPACK_IMPORTED_MODULE_6__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_2__["ProductContext"]);
   return __jsx(react_multi_carousel__WEBPACK_IMPORTED_MODULE_1___default.a, {
     swipeable: true,
     responsive: responsive,
@@ -649,15 +601,13 @@ const PackageCarousel = props => {
     infinite: true,
     ssr: false,
     dotListClass: "custom-dot-list-style",
-    removeArrowOnDeviceType: ['tablet', 'mobile'],
+    removeArrowOnDeviceType: ["tablet", "mobile"],
     itemClass: "carousel-item-padding-40-px",
-    arrows: false // dotListClass="custom-dot-list-style"
-    ,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
-      columnNumber: 7
+      lineNumber: 34,
+      columnNumber: 9
     }
   }, productConsumer.activePackage.map((service, index) => __jsx(_cards_card__WEBPACK_IMPORTED_MODULE_3__["CardComp"], {
     key: index,
@@ -669,8 +619,8 @@ const PackageCarousel = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 11
+      lineNumber: 45,
+      columnNumber: 17
     }
   })));
 };
@@ -785,25 +735,26 @@ function PrevButton(props) {
       columnNumber: 5
     }
   }, __jsx("span", {
+    className: props.BtnIcon,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
-      columnNumber: 11
+      lineNumber: 7,
+      columnNumber: 7
     }
   }, __jsx(react_feather__WEBPACK_IMPORTED_MODULE_1__["ChevronLeft"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 11
+      lineNumber: 8,
+      columnNumber: 9
     }
   })), __jsx("span", {
-    className: `title ${props.Title ? props.Title : ''}`,
+    className: ` title ${props.Title ? props.Title : ''}`,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 10,
       columnNumber: 7
     }
   }, props.Name));
@@ -1093,6 +1044,34 @@ function Titlespan2(props) {
 
 /***/ }),
 
+/***/ "./components/finalQuote.js":
+/*!**********************************!*\
+  !*** ./components/finalQuote.js ***!
+  \**********************************/
+/*! exports provided: finalQuote */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "finalQuote", function() { return finalQuote; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\finalQuote.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const finalQuote = () => {
+  return __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5,
+      columnNumber: 9
+    }
+  });
+};
+
+/***/ }),
+
 /***/ "./components/modal/index.js":
 /*!***********************************!*\
   !*** ./components/modal/index.js ***!
@@ -1114,12 +1093,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _components_common_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/common/button */ "./components/common/button/index.js");
 /* harmony import */ var _common_button_prevButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../common/button/prevButton */ "./components/common/button/prevButton.js");
-/* harmony import */ var _selectPackage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../selectPackage */ "./components/selectPackage.js");
-/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
-/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _quoteSteps__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../quoteSteps */ "./components/quoteSteps.js");
+/* harmony import */ var _selectAddons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../selectAddons */ "./components/selectAddons.js");
+/* harmony import */ var _selectPackage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../selectPackage */ "./components/selectPackage.js");
+/* harmony import */ var _scheduleConsultation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../scheduleConsultation */ "./components/scheduleConsultation.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _quoteSteps__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../quoteSteps */ "./components/quoteSteps.js");
+/* harmony import */ var _finalQuote__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../finalQuote */ "./components/finalQuote.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\modal\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
 
 
 
@@ -1153,7 +1138,7 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 5
     }
   }, __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
@@ -1162,7 +1147,7 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 7
     }
   }, buttonLabel), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
@@ -1172,7 +1157,7 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalHeader"], {
@@ -1180,70 +1165,94 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, "Choose a package"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 9
     }
-  }, __jsx(_selectPackage__WEBPACK_IMPORTED_MODULE_9__["SelectPackage"], {
+  }, {
+    0: __jsx(_selectPackage__WEBPACK_IMPORTED_MODULE_10__["SelectPackage"], {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43,
+        columnNumber: 18
+      }
+    }),
+    33.33: __jsx(_selectAddons__WEBPACK_IMPORTED_MODULE_9__["SelectAddons"], {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44,
+        columnNumber: 22
+      }
+    }),
+    66.66: __jsx("finalQuote", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45,
+        columnNumber: 22
+      }
+    }),
+    99.99: __jsx(_scheduleConsultation__WEBPACK_IMPORTED_MODULE_11__["ScheduleConsultation"], {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46,
+        columnNumber: 22
+      }
+    })
+  }[productConsumer.progress], __jsx(_quoteSteps__WEBPACK_IMPORTED_MODULE_13__["QuoteSteps"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
-      columnNumber: 11
-    }
-  }), __jsx(_quoteSteps__WEBPACK_IMPORTED_MODULE_11__["QuoteSteps"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 49,
       columnNumber: 11
     }
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 52,
       columnNumber: 9
     }
   }, __jsx("div", {
-    style: {
-      'margin-right': '7em'
-    },
+    className: "prev-btn",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 13
+      lineNumber: 53,
+      columnNumber: 11
     }
   }, __jsx(_common_button_prevButton__WEBPACK_IMPORTED_MODULE_8__["PrevButton"], {
-    Class: "button1 btn button2 gradient-color btn-icon-left",
+    Class: "button2-left btn button2 gradient-color",
     Name: 'Previous',
-    Clickble: productConsumer.handleSubmit,
+    Clickble: () => productConsumer.decrProgress(33.33),
     BtnIcon: "btn-icon",
     type: "navigation",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 15
+      lineNumber: 54,
+      columnNumber: 13
     }
   })), __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 13
+      lineNumber: 62,
+      columnNumber: 11
     }
   }, __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
     Class: "button1 btn button2 gradient-color",
     Name: !productConsumer.messageSent ? 'SUBMIT' : 'SENT',
-    Clickble: productConsumer.handleSubmit,
+    Clickble: () => productConsumer.incrProgress(33.33),
     send: productConsumer.messageSent,
     BtnIcon: "btn-icon",
     type: "contact",
@@ -1251,8 +1260,8 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 15
+      lineNumber: 63,
+      columnNumber: 13
     }
   })))));
 };
@@ -1294,26 +1303,94 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+ //pCR = Product Consumer
 
 const QuoteSteps = () => {
+  const {
+    0: status,
+    1: setstatus
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('active');
   const pCR = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_3__["ProductContext"]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (pCR.progress >= 99.99) {
+      setstatus('success');
+    } else {
+      setstatus('active');
+    }
+  }, [pCR.progress]);
   return __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 18,
       columnNumber: 7
     }
   }, __jsx(react_sweet_progress__WEBPACK_IMPORTED_MODULE_1__["Progress"], {
     percent: pCR.progress,
-    status: "success",
+    status: status,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 19,
       columnNumber: 9
     }
   }));
+};
+
+/***/ }),
+
+/***/ "./components/scheduleConsultation.js":
+/*!********************************************!*\
+  !*** ./components/scheduleConsultation.js ***!
+  \********************************************/
+/*! exports provided: ScheduleConsultation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScheduleConsultation", function() { return ScheduleConsultation; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\scheduleConsultation.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const ScheduleConsultation = () => {
+  return __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5,
+      columnNumber: 9
+    }
+  });
+};
+
+/***/ }),
+
+/***/ "./components/selectAddons.js":
+/*!************************************!*\
+  !*** ./components/selectAddons.js ***!
+  \************************************/
+/*! exports provided: SelectAddons */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectAddons", function() { return SelectAddons; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\selectAddons.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const SelectAddons = () => {
+  return __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5,
+      columnNumber: 9
+    }
+  });
 };
 
 /***/ }),
@@ -7382,7 +7459,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! emailjs-com */ "emailjs-com");
 /* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(emailjs_com__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _data_business_services_index__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../data/business-services/index */ "./data/business-services/index.js");
+/* harmony import */ var _components_selectPackage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/selectPackage */ "./components/selectPackage.js");
+/* harmony import */ var _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../data/business-services/index */ "./data/business-services/index.js");
 
 
 
@@ -7398,6 +7476,8 @@ function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_cor
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 
+
+ //Function Order From earliest to latest
 
 
 const ProductContext = react__WEBPACK_IMPORTED_MODULE_7___default.a.createContext();
@@ -7464,12 +7544,33 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       }
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "progressIncrement", incrBy => {
+      if (this.state.progress < 99.99) {
+        this.setState({
+          progress: this.state.progress + incrBy
+        });
+      } else {
+        return;
+      }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "progressDecrement", decrBy => {
+      if (this.state.progress > 0) {
+        this.setState({
+          progress: this.state.progress - decrBy
+        });
+      } else {
+        return;
+      }
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "handleFinalPackage", servicePackage => {
       this.setState({
         finalPackage: servicePackage
       });
+      this.progressIncrement(33.33);
       setTimeout(() => {
-        alert("Package Final");
+        alert('Package Final');
         console.log(this.state.finalPackage);
       }, 300);
     });
@@ -7478,25 +7579,25 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       switch (packageName) {
         case 'webPackages':
           this.setState({
-            activePackage: _data_business_services_index__WEBPACK_IMPORTED_MODULE_9__["webAppPackages"]
+            activePackage: _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__["webAppPackages"]
           });
           break;
 
         case 'mobileAppPackages':
           this.setState({
-            activePackage: _data_business_services_index__WEBPACK_IMPORTED_MODULE_9__["mobileAppPackages"]
+            activePackage: _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__["mobileAppPackages"]
           });
           break;
 
         case 'softwareDevelopmentPackages':
           this.setState({
-            activePackage: _data_business_services_index__WEBPACK_IMPORTED_MODULE_9__["softwareDeveleopmentPackages"]
+            activePackage: _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__["softwareDeveleopmentPackages"]
           });
           break;
 
         case 'seoMarketingPackages':
           this.setState({
-            activePackage: _data_business_services_index__WEBPACK_IMPORTED_MODULE_9__["seoMarketingPackages"]
+            activePackage: _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__["seoMarketingPackages"]
           });
           break;
 
@@ -7613,12 +7714,14 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         handleModal: this.handleModal,
         handleActPackage: this.handleActivePackage,
         handleFinalPackage: this.handleFinalPackage,
-        setBackground: this.setThemeColor
+        setBackground: this.setThemeColor,
+        incrProgress: this.progressIncrement,
+        decrProgress: this.progressDecrement
       }),
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 211,
+        lineNumber: 229,
         columnNumber: 7
       }
     }, this.props.children);
