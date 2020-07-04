@@ -434,40 +434,48 @@ export  const dataAddOns = [
     title: '__Custom Data Targets',
     hours: 10,
   },
+ 
   {
     id: 4,
-    title: '__Changes',
-    hours: 5,
-  },
-  {
-    id: 5,
     title: '__Months Of Server Hosting',
     hours: 2,
   },
 ];
 
 export  const scriptingAddOns = [
-  {
-    id: 1,
-    title: 'Task Automation - Custom Web/App Integration',
-    hours: 60,
-  },
-  {
-    id: 2,
-    title: '__Number of tasks (Each task is 3 steps)',
-    hours: 10,
-  },
-  {
-    id: 3,
-    title: 'Custom Data Integration',
-    hours: 60,
-  },
-  {
-    id: 5,
-    title: '__Months Of Server Hosting',
-    hours: 2,
-  },
-];
+          {
+            id: 1,
+            title: 'Task Automation - Custom Web/App Integration',
+            hours: 60,
+          },
+          {
+            id: 2,
+            title: '__Number of tasks (Each task is 3 steps)',
+            hours: 10,
+          },
+          {
+            id: 3,
+            title: 'Custom Data Integration',
+            hours: 60,
+          },
+          {
+            id: 5,
+            title: '__Months Of Server Hosting',
+            hours: 2,
+          },
+          {
+            id: 6,
+            title: 'Data Scraping - Custom Web/App Integration',
+            hours: 60,
+          },
+          {
+            id: 7,
+            title: '__Custom Data Targets',
+            hours: 10,
+          },
+
+          
+        ];
 
 export  const marketingAddOns = [
   {

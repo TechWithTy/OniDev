@@ -197,6 +197,15 @@ body {
   text-align: center;
 }
 
+.justify-center {
+    display: flex;
+    align-items: center;
+}
+
+.form-check-label{
+  margin: 0.5em !important
+}
+
 .image-loader {
   position: relative;
   width: 100%;

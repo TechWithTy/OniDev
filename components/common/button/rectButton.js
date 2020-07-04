@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronRight, Send } from 'react-feather';
 
-export function rectButton(props) {
+export function RectButton(props) {
   return (
     <button
       a={`#` + props.href}

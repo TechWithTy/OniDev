@@ -14,7 +14,7 @@ export const SelectPackage = () => {
             Class="button-rectangular btn button2 gradient-color"
             Name={'Web App Packages'}
             Clickble={() =>
-              productConsumer.handleActPackage('webPackages', false)
+              productConsumer.handleActPackage('webPackages')
             }
             iconFalse={true}
             BtnIcon="btn-icon"

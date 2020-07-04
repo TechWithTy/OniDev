@@ -4,7 +4,7 @@ import { ChevronRight,Send,Plus } from 'react-feather';
 export function Button(props) {
     return (
       <button
-        a={`#` + props.href}
+        
         className={props.Class}
         onClick={props.Clickble}
       >

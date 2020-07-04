@@ -93,6 +93,69 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/addOns/inputBoxes.js":
+/*!*****************************************!*\
+  !*** ./components/addOns/inputBoxes.js ***!
+  \*****************************************/
+/*! exports provided: InputBoxes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputBoxes", function() { return InputBoxes; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../pages/oniContext */ "./pages/oniContext.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\addOns\\inputBoxes.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const InputBoxes = props => {
+  const pCR = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_1__["ProductContext"]);
+  return __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 7
+    }
+  }, pCR.activeAddOns.map((service, index) => __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], {
+    key: index,
+    check: true,
+    inline: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 11
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+    key: index,
+    check: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 13
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+    key: index,
+    type: "checkbox",
+    onClick: () => pCR.selectAddOn(service),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 15
+    }
+  }), " ", service.title))));
+};
+
+/***/ }),
+
 /***/ "./components/businesstheme.js":
 /*!*************************************!*\
   !*** ./components/businesstheme.js ***!
@@ -388,7 +451,7 @@ const CardComp = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 50,
         columnNumber: 7
       }
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardImg"], {
@@ -403,7 +466,7 @@ const CardComp = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 51,
         columnNumber: 9
       }
     }), imageloading && __jsx("div", {
@@ -411,10 +474,10 @@ const CardComp = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
-        columnNumber: 10
+        lineNumber: 62,
+        columnNumber: 11
       }
-    }, " ", __jsx(react_loader_spinner__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    }, ' ', __jsx(react_loader_spinner__WEBPACK_IMPORTED_MODULE_3___default.a, {
       type: "Triangle",
       color: "#e100ff ",
       height: 50,
@@ -423,72 +486,73 @@ const CardComp = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
-        columnNumber: 41
+        lineNumber: 64,
+        columnNumber: 13
       }
     })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], {
       className: "text-center",
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 73,
         columnNumber: 9
       }
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63,
+        lineNumber: 74,
         columnNumber: 11
       }
     }, p.title), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardText"], {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64,
+        lineNumber: 75,
         columnNumber: 11
       }
     }, p.text, __jsx("br", {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 77,
         columnNumber: 13
       }
-    }), __jsx("div", {
+    }), __jsx("span", {
       className: "text-center",
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67,
+        lineNumber: 78,
         columnNumber: 13
       }
-    }, p.addOns.map(addOn => __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+    }, p.addOns.map((addOn, index) => __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+      key: index,
       className: "badge",
       color: "primary",
       pill: true,
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
-        columnNumber: 15
+        lineNumber: 80,
+        columnNumber: 17
       }
     }, addOn))), __jsx("button", {
       onClick: () => productConsumer.handleFinalPackage(p.package),
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74,
+        lineNumber: 85,
         columnNumber: 13
       }
-    }, " click me ")), ' '));
+    }, ' ', "click me", ' ')), ' '));
   } else {
     return __jsx("div", {
       className: "theme-loader",
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81,
+        lineNumber: 97,
         columnNumber: 7
       }
     }, __jsx(react_loader_spinner__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -500,7 +564,7 @@ const CardComp = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82,
+        lineNumber: 98,
         columnNumber: 9
       }
     }));
@@ -647,7 +711,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function Button(props) {
   return __jsx("button", {
-    a: `#` + props.href,
     className: props.Class,
     onClick: props.Clickble,
     __self: this,
@@ -1379,18 +1442,126 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectAddons", function() { return SelectAddons; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _data_business_services_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/business-services/index */ "./data/business-services/index.js");
+/* harmony import */ var _common_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./common/button */ "./components/common/button/index.js");
+/* harmony import */ var _components_addOns_inputBoxes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/addOns/inputBoxes */ "./components/addOns/inputBoxes.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/oniContext */ "./pages/oniContext.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\selectAddons.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+
+
+
+
+
+
 const SelectAddons = () => {
+  const pCR = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_6__["ProductContext"]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {}, [pCR.addOns]);
   return __jsx("div", {
+    style: {
+      textAlign: 'center'
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5,
+      lineNumber: 17,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
+    className: "list-buttons",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
       columnNumber: 9
     }
-  });
+  }, __jsx(_common_button__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    Class: "button-rectangular btn button2 gradient-color",
+    Name: 'Web-App Add Ons',
+    Clickble: () => pCR.handleActAddOns('webPackages'),
+    iconFalse: true,
+    BtnIcon: "btn-icon",
+    type: "touchAction",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 11
+    }
+  }, "Do Something"), ' ', __jsx(_common_button__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    Class: "button-rectangular btn button2 gradient-color",
+    Name: 'Mobile-Application Add Ons',
+    Clickble: () => pCR.handleActAddOns('mobileAppPackages'),
+    iconFalse: true,
+    BtnIcon: "btn-icon",
+    type: "touchAction",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 11
+    }
+  }, "Cancel")), __jsx("div", {
+    className: "list-buttons",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 9
+    }
+  }, __jsx(_common_button__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    Class: "button-rectangular btn button2 gradient-color",
+    Name: 'Software Add Ons',
+    Clickble: () => pCR.handleActAddOns('scriptingPackages'),
+    iconFalse: true,
+    BtnIcon: "btn-icon",
+    type: "touchAction",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 11
+    }
+  }), __jsx(_common_button__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    Class: "button-rectangular btn button2 gradient-color",
+    Name: 'Marketing  Add Ons',
+    Clickble: () => pCR.handleActAddOns('marketingPackages'),
+    iconFalse: true,
+    BtnIcon: "btn-icon",
+    type: "touchAction",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
+      columnNumber: 11
+    }
+  })), __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 9
+    }
+  }, pCR.activeAddOns.length > 0 && __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 13
+    }
+  }, __jsx(_components_addOns_inputBoxes__WEBPACK_IMPORTED_MODULE_4__["InputBoxes"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62,
+      columnNumber: 15
+    }
+  }))));
 };
 
 /***/ }),
@@ -1439,7 +1610,7 @@ const SelectPackage = () => {
   }, __jsx(_common_button__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     Class: "button-rectangular btn button2 gradient-color",
     Name: 'Web App Packages',
-    Clickble: () => productConsumer.handleActPackage('webPackages', false),
+    Clickble: () => productConsumer.handleActPackage('webPackages'),
     iconFalse: true,
     BtnIcon: "btn-icon",
     type: "touchAction",
@@ -5031,7 +5202,7 @@ function Service() {
       lineNumber: 29,
       columnNumber: 29
     }
-  }), __jsx("rectButton", {
+  }), __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     Class: "button1 btn button2 gradient-color",
     Name: "Get a free quote",
     BtnIcon: "btn-icon",
@@ -6718,10 +6889,6 @@ const dataAddOns = [{
   hours: 10
 }, {
   id: 4,
-  title: '__Changes',
-  hours: 5
-}, {
-  id: 5,
   title: '__Months Of Server Hosting',
   hours: 2
 }];
@@ -6741,6 +6908,14 @@ const scriptingAddOns = [{
   id: 5,
   title: '__Months Of Server Hosting',
   hours: 2
+}, {
+  id: 6,
+  title: 'Data Scraping - Custom Web/App Integration',
+  hours: 60
+}, {
+  id: 7,
+  title: '__Custom Data Targets',
+  hours: 10
 }];
 const marketingAddOns = [{
   id: 1,
@@ -7481,6 +7656,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 const ProductContext = react__WEBPACK_IMPORTED_MODULE_7___default.a.createContext();
+const ratePerHour = 50;
 let initstate = {
   name: '',
   number: '',
@@ -7488,15 +7664,16 @@ let initstate = {
   email: '',
   messageSent: false,
   errors: {},
-  addONS: {
-    name: 'price'
-  },
-  total: 0,
+  addOns: [],
   moreInfoNeeded: true,
   isModalOpen: false,
   activePackage: [],
+  activeAddOns: [],
   finalPackage: {},
-  progress: 0
+  finalAddOns: [],
+  progress: 0,
+  total: 0,
+  hours: 0
 };
 
 class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
@@ -7510,15 +7687,16 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       email: '',
       messageSent: false,
       errors: {},
-      addONS: {
-        name: 'price'
-      },
-      total: 0,
+      addOns: [],
       moreInfoNeeded: true,
       isModalOpen: false,
+      activeAddOns: [],
       activePackage: [],
       finalPackage: {},
-      progress: 0
+      finalAddOns: [],
+      progress: 0,
+      hours: 0,
+      total: 0
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "setThemeColor", color => {
@@ -7554,6 +7732,25 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       }
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "selectAddOn", addOn => {
+      if (this.state.addOns.includes(addOn.title)) {
+        console.warn("Found");
+        this.state.addOns.pop(addOn.title);
+        this.setState({
+          hours: this.state.hours - addOn.hours
+        });
+      } else {
+        this.state.addOns.push(addOn.title);
+        this.setState({
+          hours: this.state.hours + addOn.hours
+        });
+      }
+
+      setTimeout(() => {
+        console.log(this.state.addOns, this.state.hours);
+      }, 300);
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "progressDecrement", decrBy => {
       if (this.state.progress > 0) {
         this.setState({
@@ -7569,9 +7766,58 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         finalPackage: servicePackage
       });
       this.progressIncrement(33.33);
+      {
+        servicePackage.addOns.map((addOn, index) => {
+          if (this.state.addOns.includes(addOn)) {
+            return;
+          } else {
+            this.state.addOns.push(addOn);
+          }
+        });
+      }
       setTimeout(() => {
-        alert('Package Final');
-        console.log(this.state.finalPackage);
+        console.log(this.state.finalPackage, this.state.addOns);
+      }, 300);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "handleActiveAddOns", packageName => {
+      switch (packageName) {
+        case 'webPackages':
+          this.setState({
+            activeAddOns: _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__["webAddOns"]
+          });
+          break;
+
+        case 'mobileAppPackages':
+          this.setState({
+            activeAddOns: _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__["appAddOns"]
+          });
+          break;
+
+        case 'scriptingPackages':
+          this.setState({
+            activeAddOns: _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__["scriptingAddOns"]
+          });
+          break;
+
+        case 'marketingPackages':
+          this.setState({
+            activeAddOns: _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__["marketingAddOns"]
+          });
+          break;
+
+        case 'dataPackages':
+          this.setState({
+            activeAddOns: _data_business_services_index__WEBPACK_IMPORTED_MODULE_10__["dataAddOns"]
+          });
+          break;
+
+        default:
+          console.error('No packages Found');
+      }
+
+      setTimeout(() => {
+        console.log(this.state.activeAddOns);
       }, 300);
     });
 
@@ -7617,7 +7863,6 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "sendEmail", e => {
-      alert('E Sent');
       this.handleErrors();
 
       if (!this.state.errors) {
@@ -7642,7 +7887,6 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
           }, 3000);
         }, error => {
           console.log(error.text);
-          alert(error.text);
         });
       } else {
         console.log('Error');
@@ -7693,7 +7937,6 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       }
 
       if (_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(error).length === 0) {
-        alert('PASS');
         this.setState({
           errors: false
         });
@@ -7713,15 +7956,17 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         handleSubmit: this.sendEmail,
         handleModal: this.handleModal,
         handleActPackage: this.handleActivePackage,
+        handleActAddOns: this.handleActiveAddOns,
         handleFinalPackage: this.handleFinalPackage,
         setBackground: this.setThemeColor,
+        selectAddOn: this.selectAddOn,
         incrProgress: this.progressIncrement,
         decrProgress: this.progressDecrement
       }),
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 229,
+        lineNumber: 282,
         columnNumber: 7
       }
     }, this.props.children);

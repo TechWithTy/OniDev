@@ -7,9 +7,14 @@ import {
   mobileAppPackages,
   softwareDeveleopmentPackages,
   seoMarketingPackages,
+  webAddOns,
+  appAddOns,
+  dataAddOns,
+  scriptingAddOns,
+  marketingAddOns,
 } from '../data/business-services/index';
 const ProductContext = React.createContext();
-
+const ratePerHour = 50
 let initstate = {
   name: '',
   number: '',
@@ -17,15 +22,16 @@ let initstate = {
   email: '',
   messageSent: false,
   errors: {},
-  addONS: {
-    name: 'price',
-  },
-  total: 0,
+  addOns: [],
   moreInfoNeeded: true,
   isModalOpen: false,
   activePackage: [],
+  activeAddOns: [],
   finalPackage: {},
-  progress: 0
+  finalAddOns: [],
+  progress: 0,
+  total: 0,
+  hours: 0,
 };
 
 class ProductProvider extends Component {
@@ -36,15 +42,17 @@ class ProductProvider extends Component {
     email: '',
     messageSent: false,
     errors: {},
-    addONS: {
-      name: 'price',
-    },
-    total: 0,
+    addOns: [],
+
     moreInfoNeeded: true,
     isModalOpen: false,
+    activeAddOns: [],
     activePackage: [],
     finalPackage: {},
+    finalAddOns: [],
     progress: 0,
+    hours: 0,
+    total: 0,
   };
 
   setThemeColor = (color) => {
@@ -64,9 +72,7 @@ class ProductProvider extends Component {
           '--bannerimg',
           'url(/assets/images/banner/bg1.png)'
         );
-
         break;
-
       case 'green':
         document.body.style.setProperty(
           '--primary',
@@ -79,37 +85,85 @@ class ProductProvider extends Component {
           '--bannerimg',
           'url(/assets/images/banner/bg4.png)'
         );
-
         break;
       default:
         break;
     }
   };
 
-  
-
   //99,99 = sum of 3 steps 33.33*3
   progressIncrement = (incrBy) => {
-    if (this.state.progress < 99.99) { this.setState({ progress: this.state.progress + incrBy }); }
-    else {
-      return 
+    if (this.state.progress < 99.99) {
+      this.setState({ progress: this.state.progress + incrBy });
+    } else {
+      return;
     }
   };
 
+  selectAddOn = (addOn) => {
+    
+    if (this.state.addOns.includes(addOn.title)) {
+      console.warn("Found")
+      this.state.addOns.pop(addOn.title);
+       this.setState({ hours: this.state.hours - addOn.hours });
+    } else {
+      this.state.addOns.push(addOn.title);
+      this.setState({ hours: this.state.hours + addOn.hours });
+    }
+    setTimeout(() => {
+      console.log(this.state.addOns,this.state.hours);
+    }, 300);
+  };
   progressDecrement = (decrBy) => {
     if (this.state.progress > 0) {
       this.setState({ progress: this.state.progress - decrBy });
     } else {
-      return
+      return;
     }
   };
 
   handleFinalPackage = (servicePackage) => {
     this.setState({ finalPackage: servicePackage });
-    this.progressIncrement(33.33)
+    this.progressIncrement(33.33);
+    {
+      servicePackage.addOns.map((addOn, index) => {
+          if (this.state.addOns.includes(addOn)) {
+            return;
+          } else {
+            this.state.addOns.push(addOn);
+          }
+      });
+    }
     setTimeout(() => {
-      alert('Package Final');
-      console.log(this.state.finalPackage);
+     
+      console.log(this.state.finalPackage, this.state.addOns);
+    }, 300);
+  };
+
+  handleActiveAddOns = (packageName) => {
+    switch (packageName) {
+      case 'webPackages':
+        this.setState({ activeAddOns: webAddOns });
+
+        break;
+      case 'mobileAppPackages':
+        this.setState({ activeAddOns: appAddOns });
+        break;
+      case 'scriptingPackages':
+        this.setState({ activeAddOns: scriptingAddOns });
+
+        break;
+      case 'marketingPackages':
+        this.setState({ activeAddOns: marketingAddOns });
+        break;
+      case 'dataPackages':
+        this.setState({ activeAddOns: dataAddOns });
+        break;
+      default:
+        console.error('No packages Found');
+    }
+    setTimeout(() => {
+      console.log(this.state.activeAddOns);
     }, 300);
   };
 
@@ -141,7 +195,6 @@ class ProductProvider extends Component {
   };
 
   sendEmail = (e) => {
-    alert('E Sent');
 
     this.handleErrors();
     if (!this.state.errors) {
@@ -173,7 +226,7 @@ class ProductProvider extends Component {
           },
           (error) => {
             console.log(error.text);
-            alert(error.text);
+            
           }
         );
     } else {
@@ -212,7 +265,7 @@ class ProductProvider extends Component {
       this.setState({ message: 'Message field shouldn’t be empty' });
     }
     if (Object.keys(error).length === 0) {
-      alert('PASS');
+    
       this.setState({
         errors: false,
       });
@@ -233,11 +286,12 @@ class ProductProvider extends Component {
           handleSubmit: this.sendEmail,
           handleModal: this.handleModal,
           handleActPackage: this.handleActivePackage,
+          handleActAddOns: this.handleActiveAddOns,
           handleFinalPackage: this.handleFinalPackage,
           setBackground: this.setThemeColor,
+          selectAddOn: this.selectAddOn,
           incrProgress: this.progressIncrement,
           decrProgress: this.progressDecrement,
-          
         }}
       >
         {this.props.children}
