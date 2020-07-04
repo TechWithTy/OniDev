@@ -34,7 +34,7 @@ let initstate = {
   hours: 0,
 };
 
-class ProductProvider extends Component {
+export default class ProductProvider extends Component {
   state = {
     name: '',
     number: '',

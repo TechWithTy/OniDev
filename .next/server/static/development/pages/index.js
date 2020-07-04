@@ -7609,11 +7609,12 @@ const Home = () => {
 /*!*****************************!*\
   !*** ./pages/oniContext.js ***!
   \*****************************/
-/*! exports provided: ProductProvider, ProductConsumer, ProductContext */
+/*! exports provided: default, ProductProvider, ProductConsumer, ProductContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProductProvider; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductProvider", function() { return ProductProvider; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductConsumer", function() { return ProductConsumer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductContext", function() { return ProductContext; });
@@ -7675,7 +7676,6 @@ let initstate = {
   total: 0,
   hours: 0
 };
-
 class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
   constructor(...args) {
     super(...args);
@@ -7973,7 +7973,6 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
   }
 
 }
-
 const ProductConsumer = ProductContext.Consumer;
 
 
