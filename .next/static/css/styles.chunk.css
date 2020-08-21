@@ -13393,6 +13393,13 @@ header {
     text-transform: uppercase;
     border-radius: 50px;
     padding: 7px 30px 5px; }
+  .main-title-wrapper .btn-black {
+    background: tranparent;
+    text-transform: capitalize;
+    font-size: 0.8rem !important;
+    color: var --mainDark;
+    border-radius: 0 !important;
+    border: 0.1rem solid var(--mainDark) !important; }
   .main-title-wrapper .site-subtitle2 {
     color: #606060;
     font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));

@@ -469,6 +469,15 @@ header {
     border-radius: 50px;
     padding: 7px 30px 5px;
   }
+
+  .btn-black {
+    background: tranparent;
+    text-transform: capitalize;
+    font-size: .8rem!important;
+    color: var (--mainDark);
+    border-radius: 0!important;
+    border: .1rem solid var(--mainDark)!important
+}
   .site-subtitle2 {
     color: $color-defult1;
     font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));

@@ -108,13 +108,121 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../pages/oniContext */ "./pages/oniContext.js");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _numInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./numInput */ "./components/addOns/numInput.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\addOns\\inputBoxes.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const InputBoxes = props => {
   const pCR = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_1__["ProductContext"]);
+
+  let isDisabled = addOn => {
+    if (pCR.addOns.includes(addOn)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  return __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 5
+    }
+  }, pCR.activeAddOns.map((service, index) => {
+    if (service.title.includes('_')) {
+      return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], {
+        key: index,
+        check: true,
+        inline: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20,
+          columnNumber: 17
+        }
+      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+        key: index,
+        check: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21,
+          columnNumber: 13
+        }
+      }, __jsx(_numInput__WEBPACK_IMPORTED_MODULE_3__["NumInputBoxes"], {
+        addOn: service,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22,
+          columnNumber: 15
+        }
+      }), service.title));
+    } else {
+      return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], {
+        key: index,
+        check: true,
+        inline: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27,
+          columnNumber: 17
+        }
+      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+        key: index,
+        check: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28,
+          columnNumber: 13
+        }
+      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+        checked: isDisabled(service.title),
+        key: index,
+        type: "checkbox",
+        onChange: () => pCR.selectAddOn(service),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29,
+          columnNumber: 15
+        }
+      }), ' ', service.title));
+    }
+  }));
+};
+
+/***/ }),
+
+/***/ "./components/addOns/numInput.js":
+/*!***************************************!*\
+  !*** ./components/addOns/numInput.js ***!
+  \***************************************/
+/*! exports provided: NumInputBoxes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NumInputBoxes", function() { return NumInputBoxes; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var rc_input_number__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rc-input-number */ "rc-input-number");
+/* harmony import */ var rc_input_number__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rc_input_number__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/oniContext */ "./pages/oniContext.js");
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\addOns\\numInput.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const NumInputBoxes = props => {
+  const pCR = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_2__["ProductContext"]);
   return __jsx("div", {
     __self: undefined,
     __source: {
@@ -122,36 +230,39 @@ const InputBoxes = props => {
       lineNumber: 8,
       columnNumber: 7
     }
-  }, pCR.activeAddOns.map((service, index) => __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], {
-    key: index,
-    check: true,
-    inline: true,
+  }, __jsx("span", {
+    style: {
+      cursor: 'pointer'
+    },
+    className: " btn btn-black mx-1",
+    onClick: () => pCR.addOnDecriment(props.addOn),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 11
+      lineNumber: 9,
+      columnNumber: 9
     }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], {
-    key: index,
-    check: true,
+  }, "-"), __jsx("span", {
+    className: " btn-black mx-1",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 13
+      lineNumber: 16,
+      columnNumber: 9
     }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    key: index,
-    type: "checkbox",
-    onClick: () => pCR.selectAddOn(service),
+  }, props.addOn.count), __jsx("span", {
+    style: {
+      cursor: 'pointer'
+    },
+    className: "btn btn-black mx-1",
+    onClick: () => pCR.addOnIncriment(props.addOn),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 15
+      lineNumber: 17,
+      columnNumber: 9
     }
-  }), " ", service.title))));
+  }, "+"));
 };
 
 /***/ }),
@@ -1111,26 +1222,109 @@ function Titlespan2(props) {
 /*!**********************************!*\
   !*** ./components/finalQuote.js ***!
   \**********************************/
-/*! exports provided: finalQuote */
+/*! exports provided: FinalQuote */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "finalQuote", function() { return finalQuote; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FinalQuote", function() { return FinalQuote; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/oniContext */ "./pages/oniContext.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_common_title_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/common/title/index */ "./components/common/title/index.js");
+/* harmony import */ var _components_total__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/total */ "./components/total.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\finalQuote.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const finalQuote = () => {
-  return __jsx("div", {
+
+
+
+
+const FinalQuote = () => {
+  const {
+    hours,
+    setTotal,
+    total,
+    activeAddOns
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_1__["ProductContext"]);
+  const prevCountRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  const {
+    0: initialRun,
+    1: setinitialRun
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (!initialRun) {
+      alert('Run');
+      console.log(hours, 'Final Quote Run', total);
+      setTotal();
+      console.error(hours);
+    }
+
+    setinitialRun(true);
+  }, [hours]);
+  return __jsx("section", {
+    className: "testimonial-wrapper gradient-color",
+    id: "testimonial",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5,
+      lineNumber: 27,
+      columnNumber: 5
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
+    className: "main-title-wrapper",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
       columnNumber: 9
     }
-  });
+  }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_3__["Subtitle"], {
+    Class: "site-subtitle gradient-color",
+    Name: "Your Quote",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 11
+    }
+  }), __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_3__["Titlespan2"], {
+    Class: "sitemain-subtitle",
+    Name: `$${Math.round(total)}`,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 11
+    }
+  }), __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_3__["Description"], {
+    Class: "site-dec",
+    Name: "The Shown Price is only an estimate and may increase or decrease based on demand and extent of work",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 11
+    }
+  }), activeAddOns.map((service, index) => __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Badge"], {
+    color: "info",
+    pill: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 13
+    }
+  }, service.title)))));
 };
 
 /***/ }),
@@ -1231,11 +1425,16 @@ const ModalExample = props => {
       lineNumber: 37,
       columnNumber: 9
     }
-  }, "Choose a package"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], {
+  }, {
+    0: 'Choose Your Packages',
+    33.33: 'Select Additional Add Ons',
+    66.66: 'Your Final Quote',
+    99.99: 'Schedule A Consultation'
+  }[productConsumer.progress]), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 47,
       columnNumber: 9
     }
   }, {
@@ -1243,7 +1442,7 @@ const ModalExample = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 50,
         columnNumber: 18
       }
     }),
@@ -1251,15 +1450,15 @@ const ModalExample = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44,
+        lineNumber: 51,
         columnNumber: 22
       }
     }),
-    66.66: __jsx("finalQuote", {
+    66.66: __jsx(_finalQuote__WEBPACK_IMPORTED_MODULE_14__["FinalQuote"], {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 52,
         columnNumber: 22
       }
     }),
@@ -1267,7 +1466,7 @@ const ModalExample = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
+        lineNumber: 53,
         columnNumber: 22
       }
     })
@@ -1275,14 +1474,14 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 56,
       columnNumber: 11
     }
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -1290,7 +1489,7 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 60,
       columnNumber: 11
     }
   }, __jsx(_common_button_prevButton__WEBPACK_IMPORTED_MODULE_8__["PrevButton"], {
@@ -1302,14 +1501,14 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 61,
       columnNumber: 13
     }
   })), __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 69,
       columnNumber: 11
     }
   }, __jsx(_components_common_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
@@ -1323,7 +1522,7 @@ const ModalExample = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 70,
       columnNumber: 13
     }
   })))));
@@ -1425,7 +1624,17 @@ const ScheduleConsultation = () => {
       lineNumber: 5,
       columnNumber: 9
     }
-  });
+  }, __jsx("div", {
+    className: "calendly-inline-widget",
+    "data-url": "https://calendly.com/oni-development/15min",
+    style: "min-width:320px;height:630px;",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 1
+    }
+  }));
 };
 
 /***/ }),
@@ -1450,8 +1659,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
 /* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _pages_oniContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/oniContext */ "./pages/oniContext.js");
+/* harmony import */ var _components_addOns_numInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/addOns/numInput */ "./components/addOns/numInput.js");
 var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\selectAddons.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1690,6 +1901,59 @@ const SelectPackage = () => {
     }
   }))));
 };
+
+/***/ }),
+
+/***/ "./components/total.js":
+/*!*****************************!*\
+  !*** ./components/total.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_common_title_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/common/title/index */ "./components/common/title/index.js");
+var _jsxFileName = "C:\\Users\\13054\\Documents\\GitHub\\OniDev\\components\\total.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+class Total extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor() {
+    super();
+    this.state = {
+      hours: 0,
+      total: 0,
+      ratePerHour: 10
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.hours !== this.props.hours) {
+      // Calculate total
+      this.props.totalFunc();
+    }
+  }
+
+  render() {
+    return __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_1__["Titlespan2"], {
+      Class: "sitemain-subtitle",
+      Name: this.props.total,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22,
+        columnNumber: 12
+      }
+    });
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Total);
 
 /***/ }),
 
@@ -6669,73 +6933,92 @@ const webAppPackages = [{
   addOns: ['Mobile Optimized', '(3) maximum pages', 'Built with latest technologies', 'Custom Design', '', '(3)Standard Changes', 'Free Uncopyrighten Images', 'Standard SEO'],
   content: 'Get Started With Our Most Cost Efficient Web Package',
   src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["startUp"],
-  alt: "Start Up"
+  alt: "Start Up",
+  price: 600
 }, {
   id: 2,
   title: 'Established Business Website Development',
   addOns: ['Mobile Optimized', '7 Maximum Pages', 'Built with latest technologies', 'Custom Design', 'News Letters Signup', '(5-7)Standard Changes', 'Free Uncopyrighten Images', '(2) Months Customized  SEO', '3 Free  Adverts', 'Customer Contact Automation', 'Customer Scheduling Automation', 'Auto Lead Generation'],
   content: 'Start Boosting Your Sales and Leads With Our Established Business Package',
   src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["establishedBusiness"],
-  alt: "Established Business"
+  alt: "Established Business",
+  price: 1600
 }, {
   id: 3,
   title: 'Full Launch Business Website Development',
   addOns: ['Mobile Optimized', 'Unl Maximum Pages', 'Built with latest technologies', 'Custom Design', 'News Letters Signup', '(1)Premium Customer Support', 'Free Uncopyrighten Images', '(6) Months Premium Customized  SEO', '10 Free  Adverts', 'Customer Contact Automation', 'Customer Scheduling Automation', 'Landing Page', 'Auto Lead Generation', 'Team Administrative Dashboard', 'Custom Graphics', 'Personal Web Content Writer', 'Personal Marketing Agent'],
   content: 'Reach Your Companies Full Potential with Our Full Launch Package',
   src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["launchBusiness"],
-  alt: 'Launch Business'
+  alt: 'Launch Business',
+  price: 3200
 }, {
   id: 4,
   title: 'Landing Web Page Package',
   addOns: ['Mobile Optimized', '(1) maximum pages', 'Built with latest technologies', 'Custom Design', 'NewsLetters', '(3)Standard Changes', 'Free Uncopyrighten Images', '(1) month Custom SEO', '5 Free Adverts', 'Auto Lead Generation'],
   content: 'Help Capture Leads and Sales Directly From Advertisments',
   src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["landingPage"],
-  alt: 'Landing Page'
+  alt: 'Landing Page',
+  price: 1000
 }, {
   id: 5,
   title: 'Ecommerce Webb App',
   addOns: ['Mobile Optimized', 'Unlimited maximum pages', 'Built with latest technologies', 'Custom Design', 'Customer order tracking', '(3)Standard Changes', 'Free Uncopyrighten Images', '(6) Months Integrated  SEO', 'Administration Panel', 'Customer Contact Automation', 'One Click Payment System', 'Fully Automatable', 'Customer Service Integratable'],
   content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
   src: _data_image_source__WEBPACK_IMPORTED_MODULE_0__["ecommercePage"],
-  alt: 'Ecommerce Page'
+  alt: 'Ecommerce Page',
+  price: 5500
 }];
 const mobileAppPackages = [{
   id: 1,
   title: 'Premium Business Integrtation Mobile Application',
-  addOns: ['Android/IOS', 'Business ideology integration', 'Premium Customer Service', 'Custom Design', 'Custom Functionality', '(3)Standard Changes', 'Custom Uncopyrighten Images', '(6) months of SEO'],
-  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
+  addOns: ['Android/IOS', 'Business ideology integration', '(3) Pages', 'Premium Customer Service', 'Custom Design', 'Custom Functionality', '(3)Standard Changes', 'Custom Uncopyrighten Images', '(6) months of SEO'],
+  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+  alt: 'Business Information App',
+  price: 1500
 }, {
   id: 2,
   title: 'Premium Ecommerce Mobile Application',
   addOns: ['Android/IOS', 'Business ideology integration', 'Premium Customer Service', 'Custom Design', 'Custom Functionality', '(3)Standard Changes', 'Free Uncopyrighten Images', '(6) months of SEO', 'Administration Panel', 'Customer Contact Automation', 'One Click Payment System', 'Fully Automatable', 'Customer Service Integratable'],
-  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
+  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+  alt: 'Premium Ecommerce App',
+  price: 8000
 }];
 const softwareDeveleopmentPackages = [{
   id: 1,
   title: 'Data Gather Software Package',
-  addOns: ['Data Scraping - Custom Web/App Integration', 'Premium Oni Customer Service', ' ___Customized Data Targets', 'Custom Data Functionality', '(3)Standard Changes'],
-  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
+  addOns: ['Data Scraping - Custom Web/App Integration', 'Premium Oni Customer Service', ' 3 Customized Data Targets', 'Custom Data Functionality', '(3)Standard Changes', '(2) Months Server Hosting'],
+  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+  alt: 'Data Gather Package',
+  price: 1500
 },, {
   id: 2,
   title: 'Scripting Software Package',
-  addOns: ['Task Automation', 'Custom Bot Goals', 'Premium Customer Service', 'Customized Targeting', 'Custom Functionality', '(3)Standard Changes'],
-  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
+  addOns: ['Task Automation', 'Custom Bot Goals', 'Premium Customer Service', 'Customized Targeting', 'Custom Functionality', '(3)Standard Changes', '(3) 3-Step Tasks'],
+  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+  alt: 'Scripting Software Package',
+  price: 1500
 }];
 const seoMarketingPackages = [{
   id: 1,
   title: 'Basic Business Marketing',
-  addOns: ['(5) Adverts', '(1) Month Premium SEO', 'Custom Content Writing', '(1) Month Web Hosting'],
-  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
+  addOns: ['(5) Adverts', '(1) Month Premium SEO', 'Custom Content Writing'],
+  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+  alt: "Basic Business Marketing",
+  price: 500
 },, {
   id: 2,
   title: 'Intermediate Package Marketing',
   addOns: ['(10) Adverts', '(3) Months Premium SEO', '(3) Months Web Hosting', 'Custom Content Writing', 'Premium Customer Service', 'Landing Page', 'Customized Targeting', 'Custom Functionality', 'Auto Lead Generation', 'Easy Lead Contact'],
-  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
+  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+  alt: 'Intermediate Marketing packages',
+  price: 3000
 }, {
   id: 3,
   title: 'Premium Marketing Package',
-  addOns: ['(20) Adverts', '(6) Months Premium SEO', '(6) Months Web Hosting', 'Custom Content Writing', 'Premium Customer Service', '(3)Landing Pages', 'Customized Targeting', 'Custom Functionality', 'Auto Lead Generation', 'Administrative Dashboard', 'Easy Lead Contact', 'Weekly Progress Update'],
-  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.'
+  addOns: ['(20) Adverts', '(6) Months Premium SEO', '(6) Months Web Hosting', 'Custom Content Writing', 'Premium Customer Service', '(3)Landing Customized  Pages', 'Customized Targeting', 'Custom Functionality', 'Auto Lead Generation', 'Administrative Dashboard', 'Easy Lead Contact', 'Weekly Progress Update'],
+  content: 'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+  alt: "Premium Markeint SEO",
+  price: 8500
 },,];
 const webAddOns = [{
   id: 1,
@@ -6788,27 +7071,33 @@ const webAddOns = [{
 }, {
   id: 13,
   title: '__Changes',
-  hours: 2
+  hours: 2,
+  count: 0
 }, {
   id: 14,
   title: '__Custom Graphics',
-  hours: 5
+  hours: 5,
+  count: 0
 }, {
   id: 15,
   title: '__Pages',
-  hours: 10
+  hours: 10,
+  count: 0
 }, {
   id: 16,
   title: '__Adverts',
-  hours: 3
+  hours: 3,
+  count: 0
 }, {
   id: 17,
   title: '__Month of SEO',
-  hours: 30
+  hours: 30,
+  count: 0
 }, {
   id: 18,
   title: '__Months of Web-Hosting',
-  hours: 1
+  hours: 1,
+  count: 0
 }];
 const appAddOns = [{
   id: 1,
@@ -6857,27 +7146,33 @@ const appAddOns = [{
 }, {
   id: 12,
   title: '__Changes',
-  hours: 2
+  hours: 2,
+  count: 0
 }, {
   id: 13,
   title: '__Custom Graphics',
-  hours: 5
+  hours: 5,
+  count: 0
 }, {
   id: 14,
   title: '__Pages',
-  hours: 10
+  hours: 10,
+  count: 0
 }, {
   id: 15,
   title: '__Adverts',
-  hours: 3
+  hours: 3,
+  count: 0
 }, {
   id: 16,
   title: '__Month of SEO',
-  hours: 30
+  hours: 30,
+  count: 0
 }, {
   id: 17,
   title: '__Months of Web-Hosting',
-  hours: 1
+  hours: 1,
+  count: 0
 }];
 const dataAddOns = [{
   id: 1,
@@ -6886,11 +7181,13 @@ const dataAddOns = [{
 }, {
   id: 3,
   title: '__Custom Data Targets',
-  hours: 10
+  hours: 10,
+  count: 0
 }, {
   id: 4,
   title: '__Months Of Server Hosting',
-  hours: 2
+  hours: 2,
+  count: 0
 }];
 const scriptingAddOns = [{
   id: 1,
@@ -6899,7 +7196,8 @@ const scriptingAddOns = [{
 }, {
   id: 2,
   title: '__Number of tasks (Each task is 3 steps)',
-  hours: 10
+  hours: 10,
+  count: 0
 }, {
   id: 3,
   title: 'Custom Data Integration',
@@ -6907,7 +7205,8 @@ const scriptingAddOns = [{
 }, {
   id: 5,
   title: '__Months Of Server Hosting',
-  hours: 2
+  hours: 2,
+  count: 0
 }, {
   id: 6,
   title: 'Data Scraping - Custom Web/App Integration',
@@ -6915,24 +7214,29 @@ const scriptingAddOns = [{
 }, {
   id: 7,
   title: '__Custom Data Targets',
-  hours: 10
+  hours: 10,
+  count: 0
 }];
 const marketingAddOns = [{
   id: 1,
   title: '__Months of Premium SEO(Search Engine Optimization)',
-  hours: 25
+  hours: 25,
+  count: 0
 }, {
   id: 2,
   title: '__Pages Of Content Writing',
-  hours: 10
+  hours: 10,
+  count: 0
 }, {
   id: 3,
   title: '_ Months of Google Analytics Ads',
-  hours: 50
+  hours: 50,
+  count: 0
 }, {
   id: 4,
   title: '_ Months of Social  Media Ads',
-  hours: 2
+  hours: 2,
+  count: 0
 }, {
   id: 5,
   title: 'Auto Lead Generator',
@@ -6940,11 +7244,13 @@ const marketingAddOns = [{
 }, {
   id: 6,
   title: '__Hours Of Brand and Business Development',
-  hours: 42
+  hours: 42,
+  count: 0
 }, {
   id: 7,
   title: '__Months Of Social Media Strategy',
-  hours: 42
+  hours: 42,
+  count: 0
 }, {
   id: 7,
   title: ' Introductory Branding Suite',
@@ -7722,6 +8028,29 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       }
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "addOnIncriment", addOn => {
+      alert('Ran');
+      addOn.count = addOn.count + 1;
+      this.setState({
+        hours: this.state.hours + addOn.hours * addOn.count
+      });
+      console.log(addOn.count);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "addOnDecriment", addOn => {
+      if (addOn.count > 0) {
+        console.warn(`${this.state.hours} - ${addOn.hours} * ${addOn.count}`, this.state.hours - addOn.hours * addOn.count);
+        addOn.count = addOn.count - 1;
+        this.setState({
+          hours: this.state.hours - addOn.hours * addOn.count
+        });
+      } else {
+        return;
+      }
+
+      console.log(this.state.hours, 'Decriment');
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "progressIncrement", incrBy => {
       if (this.state.progress < 99.99) {
         this.setState({
@@ -7732,22 +8061,40 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       }
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "setTotal", () => {
+      if (this.state.hours > 0) {
+        this.setState(prevState => {
+          if (prevState.hours === this.state.hours) {
+            console.log(prevState.hours);
+          }
+
+          return {
+            total: this.state.total + this.state.hours * ratePerHour * Math.PI
+          };
+        });
+        console.log(this.state.total, '+', this.state.hours, '*', ratePerHour);
+      }
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "selectAddOn", addOn => {
       if (this.state.addOns.includes(addOn.title)) {
-        console.warn("Found");
+        console.clear();
         this.state.addOns.pop(addOn.title);
         this.setState({
           hours: this.state.hours - addOn.hours
         });
+        this.setState({
+          total: this.state.total - addOn.hours * ratePerHour * Math.PI
+        }); // console.error(this.state.hours - addOn.hours);
       } else {
         this.state.addOns.push(addOn.title);
         this.setState({
           hours: this.state.hours + addOn.hours
-        });
+        }); // console.error(this.state.hours + addOn.hours);
+        // this.setState({ total: this.state.total + (this.state.hours * ratePerHour * Math.PI) })
       }
 
-      setTimeout(() => {
-        console.log(this.state.addOns, this.state.hours);
+      setTimeout(() => {// console.warn(this.state.addOns, this.state.hours, this.state.total);
       }, 300);
     });
 
@@ -7762,6 +8109,18 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "handleFinalPackage", servicePackage => {
+      let total = 0;
+
+      if (this.state.finalPackage.length === 0) {
+        this.setState({
+          total: servicePackage.price
+        });
+      } else {
+        this.setState({
+          total: this.state.total + servicePackage.price
+        });
+      }
+
       this.setState({
         finalPackage: servicePackage
       });
@@ -7776,7 +8135,7 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         });
       }
       setTimeout(() => {
-        console.log(this.state.finalPackage, this.state.addOns);
+        console.warn(this.state.total);
       }, 300);
     });
 
@@ -7816,8 +8175,7 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
           console.error('No packages Found');
       }
 
-      setTimeout(() => {
-        console.log(this.state.activeAddOns);
+      setTimeout(() => {// console.log(this.state.activeAddOns);
       }, 300);
     });
 
@@ -7961,12 +8319,15 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         setBackground: this.setThemeColor,
         selectAddOn: this.selectAddOn,
         incrProgress: this.progressIncrement,
-        decrProgress: this.progressDecrement
+        decrProgress: this.progressDecrement,
+        setTotal: this.setTotal,
+        addOnIncriment: this.addOnIncriment,
+        addOnDecriment: this.addOnDecriment
       }),
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 282,
+        lineNumber: 327,
         columnNumber: 7
       }
     }, this.props.children);
@@ -8809,6 +9170,17 @@ module.exports = require("next/head");
 /***/ (function(module, exports) {
 
 module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "rc-input-number":
+/*!**********************************!*\
+  !*** external "rc-input-number" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("rc-input-number");
 
 /***/ }),
 

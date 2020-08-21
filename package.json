@@ -23,6 +23,8 @@
     "next": "^9.1.4",
     "next-compose-plugins": "^2.2.0",
     "node-sass": "^4.13.0",
+    "paypal-checkout": "^4.0.315",
+    "rc-input-number": "^5.1.0",
     "react": "^16.12.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-countup": "^4.2.3",

@@ -1,50 +1,34 @@
 {
-  "devFiles": [],
+  "devFiles": [
+    "static/development/dll/dll_d6a88dbe3071bd165157.js",
+    "static/development/dll/dll_d6a88dbe3071bd165157.js.map"
+  ],
   "pages": {
     "/": [
-      "static/runtime/webpack-9369c5c69dbf6d4912cb.js",
-      "static/css/commons.e1c93c5d.chunk.css",
-      "static/chunks/commons.fb5964a418f3e1b62e27.js",
-      "static/runtime/main-c40114b6a8b845d4420e.js"
+      "static/runtime/webpack.js",
+      "static/css/styles.chunk.css",
+      "static/chunks/styles.js",
+      "static/runtime/main.js"
     ],
     "/_app": [
-      "static/runtime/webpack-9369c5c69dbf6d4912cb.js",
-      "static/css/commons.e1c93c5d.chunk.css",
-      "static/chunks/commons.fb5964a418f3e1b62e27.js",
-      "static/runtime/main-c40114b6a8b845d4420e.js"
+      "static/runtime/webpack.js",
+      "static/css/styles.chunk.css",
+      "static/chunks/styles.js",
+      "static/runtime/main.js"
     ],
     "/_error": [
-      "static/runtime/webpack-9369c5c69dbf6d4912cb.js",
-      "static/css/commons.e1c93c5d.chunk.css",
-      "static/chunks/commons.fb5964a418f3e1b62e27.js",
-      "static/runtime/main-c40114b6a8b845d4420e.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_polyfills": [
-      "static/runtime/polyfills-ebd4705da3402b2d78e1.js"
-    ],
-    "/demo2": [
-      "static/runtime/webpack-9369c5c69dbf6d4912cb.js",
-      "static/css/commons.e1c93c5d.chunk.css",
-      "static/chunks/commons.fb5964a418f3e1b62e27.js",
-      "static/runtime/main-c40114b6a8b845d4420e.js"
-    ],
-    "/demo3": [
-      "static/runtime/webpack-9369c5c69dbf6d4912cb.js",
-      "static/css/commons.e1c93c5d.chunk.css",
-      "static/chunks/commons.fb5964a418f3e1b62e27.js",
-      "static/runtime/main-c40114b6a8b845d4420e.js"
+      "static/runtime/polyfills.js",
+      "static/runtime/polyfills.js.map"
     ],
     "/index": [
-      "static/runtime/webpack-9369c5c69dbf6d4912cb.js",
-      "static/css/commons.e1c93c5d.chunk.css",
-      "static/chunks/commons.fb5964a418f3e1b62e27.js",
-      "static/runtime/main-c40114b6a8b845d4420e.js"
-    ],
-    "/oniContext": [
-      "static/runtime/webpack-9369c5c69dbf6d4912cb.js",
-      "static/css/commons.e1c93c5d.chunk.css",
-      "static/chunks/commons.fb5964a418f3e1b62e27.js",
-      "static/runtime/main-c40114b6a8b845d4420e.js"
+      "static/runtime/webpack.js",
+      "static/css/styles.chunk.css",
+      "static/chunks/styles.js",
+      "static/runtime/main.js"
     ]
   }
 }

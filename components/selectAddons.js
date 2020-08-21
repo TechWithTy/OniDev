@@ -5,7 +5,7 @@ import { Button } from './common/button';
 import { InputBoxes } from '../components/addOns/inputBoxes';
 import Fade from 'react-reveal/Fade';
 import { ProductContext } from '../pages/oniContext';
-
+import {NumInputBoxes} from '../components/addOns/numInput'
 export const SelectAddons = () => {
    const pCR = useContext(ProductContext);
   useEffect(() => {
@@ -60,6 +60,7 @@ export const SelectAddons = () => {
           {pCR.activeAddOns.length > 0 && (
             <Fade>
               <InputBoxes />
+              
             </Fade>
           )}
         </div>

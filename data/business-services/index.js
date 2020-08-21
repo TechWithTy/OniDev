@@ -15,7 +15,8 @@ export const webAppPackages = [
            ],
            content: 'Get Started With Our Most Cost Efficient Web Package',
     src: startUp,
-           alt: "Start Up"
+           alt: "Start Up",
+           price: 600
          },
          {
            id: 2,
@@ -38,7 +39,8 @@ export const webAppPackages = [
              'Start Boosting Your Sales and Leads With Our Established Business Package',
            src:
              establishedBusiness,
-           alt: "Established Business"
+           alt: "Established Business",
+           price: 1600
          },
          {
            id: 3,
@@ -65,7 +67,8 @@ export const webAppPackages = [
            content:
              'Reach Your Companies Full Potential with Our Full Launch Package',
            src: launchBusiness,
-             alt: 'Launch Business'
+             alt: 'Launch Business',
+             price: 3200
          },
          {
            id: 4,
@@ -84,7 +87,8 @@ export const webAppPackages = [
            ],
            content: 'Help Capture Leads and Sales Directly From Advertisments',
            src: landingPage,
-           alt: 'Landing Page'
+           alt: 'Landing Page',
+           price: 1000
          },
          {
            id: 5,
@@ -107,11 +111,12 @@ export const webAppPackages = [
            content:
              'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
            src: ecommercePage,
-           alt: 'Ecommerce Page'
+           alt: 'Ecommerce Page',
+           price: 5500
 
   },
        ];
-
+ 
 export const mobileAppPackages = [
   {
     id: 1,
@@ -119,6 +124,7 @@ export const mobileAppPackages = [
     addOns: [
       'Android/IOS',
       'Business ideology integration',
+      '(3) Pages',
       'Premium Customer Service',
       'Custom Design',
       'Custom Functionality',
@@ -128,6 +134,8 @@ export const mobileAppPackages = [
     ],
     content:
       'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+    alt: 'Business Information App',
+    price: 1500
   },
   {
     id: 2,
@@ -149,6 +157,8 @@ export const mobileAppPackages = [
     ],
     content:
       'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+    alt: 'Premium Ecommerce App',
+    price: 8000
   },
 ];
 
@@ -159,12 +169,15 @@ export const softwareDeveleopmentPackages = [
     addOns: [
       'Data Scraping - Custom Web/App Integration',
       'Premium Oni Customer Service',
-      ' ___Customized Data Targets',
+      ' 3 Customized Data Targets',
       'Custom Data Functionality',
       '(3)Standard Changes',
+      '(2) Months Server Hosting'
     ],
     content:
       'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+    alt: 'Data Gather Package',
+    price: 1500
   },
   ,
   {
@@ -177,9 +190,12 @@ export const softwareDeveleopmentPackages = [
       'Customized Targeting',
       'Custom Functionality',
       '(3)Standard Changes',
+      '(3) 3-Step Tasks'
     ],
     content:
       'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+      alt: 'Scripting Software Package',
+      price: 1500
   },
   
 ]
@@ -190,9 +206,11 @@ export const seoMarketingPackages = [
   {
     id: 1,
     title: 'Basic Business Marketing',
-    addOns: ['(5) Adverts', '(1) Month Premium SEO', 'Custom Content Writing', '(1) Month Web Hosting'],
+    addOns: ['(5) Adverts', '(1) Month Premium SEO', 'Custom Content Writing', ],
     content:
       'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+    alt: "Basic Business Marketing",
+    price: 500
   },
   ,
   {
@@ -212,6 +230,8 @@ export const seoMarketingPackages = [
     ],
     content:
       'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+    alt: 'Intermediate Marketing packages',
+    price: 3000
   },
   {
     id: 3,
@@ -222,7 +242,7 @@ export const seoMarketingPackages = [
       '(6) Months Web Hosting',
       'Custom Content Writing',
       'Premium Customer Service',
-      '(3)Landing Pages',
+      '(3)Landing Customized  Pages',
       'Customized Targeting',
       'Custom Functionality',
       'Auto Lead Generation',
@@ -232,215 +252,229 @@ export const seoMarketingPackages = [
     ],
     content:
       'Let us take your business to the next level, with a lightning fast interactive website. We can build your website from scratch with the same technology that Facebook uses, or through a third party service like squarspace.',
+    alt: "Premium Markeint SEO",
+      price: 8500
   },
 
   ,
 ];
 
 export  const webAddOns = [
-  {
-    id: 1,
-    title: 'Mobile Optimized',
-    hours: 2,
-  },
+          {
+            id: 1,
+            title: 'Mobile Optimized',
+            hours: 2,
+          },
 
-  {
-    id: 2,
-    title: 'Built with latest technologies',
-    hours: 2,
-  },
-  {
-    id: 3,
-    title: 'Custom Design',
-    hours: 10,
-  },
-  {
-    id: 4,
-    title: 'Custom Functionality',
-    hours: 5,
-  },
-  {
-    id: 5,
-    title: 'News Letters Signup',
-    hours: 2,
-  },
-  {
-    id: 6,
-    title: 'Contact Form',
-    hours: 5,
-  },
-  {
-    id: 7,
-    title: 'Customer Scheduling Automation',
-    hours: 10,
-  },
-  {
-    id: 8,
-    title: ' Team Administrative Dashboard',
-    hours: 20,
-  },
-  {
-    id: 9,
-    title: 'Customer Conatact Automation',
-    hours: 20,
-  },
-  {
-    id: 10,
-    title: 'Customer Conatact Integration',
-    hours: 20,
-  },
-  {
-    id: 11,
-    title: 'One Click Purchase Option',
-    hours: 20,
-  },
-  {
-    id: 12,
-    title: '6 Month payment plan option',
-    hours: 20,
-  },
-  {
-    id: 13,
-    title: '__Changes',
-    hours: 2,
-  },
-  {
-    id: 14,
-    title: '__Custom Graphics',
-    hours: 5,
-  },
-  {
-    id: 15,
-    title: '__Pages',
-    hours: 10,
-  },
-  {
-    id: 16,
-    title: '__Adverts',
-    hours: 3,
-  },
-  {
-    id: 17,
-    title: '__Month of SEO',
-    hours: 30,
-  },
-  {
-    id: 18,
-    title: '__Months of Web-Hosting',
-    hours: 1,
-  },
-];
+          {
+            id: 2,
+            title: 'Built with latest technologies',
+            hours: 2,
+          },
+          {
+            id: 3,
+            title: 'Custom Design',
+            hours: 10,
+          },
+          {
+            id: 4,
+            title: 'Custom Functionality',
+            hours: 5,
+          },
+          {
+            id: 5,
+            title: 'News Letters Signup',
+            hours: 2,
+          },
+          {
+            id: 6,
+            title: 'Contact Form',
+            hours: 5,
+          },
+          {
+            id: 7,
+            title: 'Customer Scheduling Automation',
+            hours: 10,
+          },
+          {
+            id: 8,
+            title: ' Team Administrative Dashboard',
+            hours: 20,
+          },
+          {
+            id: 9,
+            title: 'Customer Conatact Automation',
+            hours: 20,
+          },
+          {
+            id: 10,
+            title: 'Customer Conatact Integration',
+            hours: 20,
+          },
+          {
+            id: 11,
+            title: 'One Click Purchase Option',
+            hours: 20,
+          },
+          {
+            id: 12,
+            title: '6 Month payment plan option',
+            hours: 20,
+          },
+          {
+            id: 13,
+            title: '__Changes',
+            hours: 2,
+            count: 0,
+          },
+          {
+            id: 14,
+            title: '__Custom Graphics',
+            hours: 5,
+            count: 0,
+          },
+          {
+            id: 15,
+            title: '__Pages',
+            hours: 10,
+            count: 0,
+          },
+          {
+            id: 16,
+            title: '__Adverts',
+            hours: 3,
+            count: 0,
+          },
+          {
+            id: 17,
+            title: '__Month of SEO',
+            hours: 30,
+            count: 0,
+          },
+          {
+            id: 18,
+            title: '__Months of Web-Hosting',
+            hours: 1,
+            count: 0,
+          },
+        ];
 
 export  const appAddOns = [
-
-
-  {
-    id: 1,
-    title: 'Built with latest technologies',
-    hours: 2,
-  },
-  {
-    id: 2,
-    title: 'Custom Design',
-    hours: 10,
-  },
-  {
-    id: 3,
-    title: 'Custom Functionality',
-    hours: 5,
-  },
-  {
-    id: 4,
-    title: 'News Letters Signup',
-    hours: 2,
-  },
-  {
-    id: 5,
-    title: 'Contact Us',
-    hours: 5,
-  },
-  {
-    id: 6,
-    title: 'Customer Scheduling Automation',
-    hours: 10,
-  },
-  {
-    id: 7,
-    title: ' Team Administrative Dashboard',
-    hours: 20,
-  },
-  {
-    id: 8,
-    title: 'Customer Conatact Automation',
-    hours: 20,
-  },
-  {
-    id: 9,
-    title: 'Customer Conatact Integration',
-    hours: 20,
-  },
-  {
-    id: 10,
-    title: 'One Click Purchase Option',
-    hours: 20,
-  },
-  {
-    id: 11,
-    title: '6 Month payment plan option',
-    hours: 20,
-  },
-  {
-    id: 12,
-    title: '__Changes',
-    hours: 2,
-  },
-  {
-    id: 13,
-    title: '__Custom Graphics',
-    hours: 5,
-  },
-  {
-    id: 14,
-    title: '__Pages',
-    hours: 10,
-  },
-  {
-    id: 15,
-    title: '__Adverts',
-    hours: 3,
-  },
-  {
-    id: 16,
-    title: '__Month of SEO',
-    hours: 30,
-  },
-  {
-    id: 17,
-    title: '__Months of Web-Hosting',
-    hours: 1,
-  },
-];
+          {
+            id: 1,
+            title: 'Built with latest technologies',
+            hours: 2,
+          },
+          {
+            id: 2,
+            title: 'Custom Design',
+            hours: 10,
+          },
+          {
+            id: 3,
+            title: 'Custom Functionality',
+            hours: 5,
+          },
+          {
+            id: 4,
+            title: 'News Letters Signup',
+            hours: 2,
+          },
+          {
+            id: 5,
+            title: 'Contact Us',
+            hours: 5,
+          },
+          {
+            id: 6,
+            title: 'Customer Scheduling Automation',
+            hours: 10,
+          },
+          {
+            id: 7,
+            title: ' Team Administrative Dashboard',
+            hours: 20,
+          },
+          {
+            id: 8,
+            title: 'Customer Conatact Automation',
+            hours: 20,
+          },
+          {
+            id: 9,
+            title: 'Customer Conatact Integration',
+            hours: 20,
+          },
+          {
+            id: 10,
+            title: 'One Click Purchase Option',
+            hours: 20,
+          },
+          {
+            id: 11,
+            title: '6 Month payment plan option',
+            hours: 20,
+          },
+          {
+            id: 12,
+            title: '__Changes',
+            hours: 2,
+            count: 0,
+          },
+          {
+            id: 13,
+            title: '__Custom Graphics',
+            hours: 5,
+            count: 0,
+          },
+          {
+            id: 14,
+            title: '__Pages',
+            hours: 10,
+            count: 0,
+          },
+          {
+            id: 15,
+            title: '__Adverts',
+            hours: 3,
+            count: 0,
+          },
+          {
+            id: 16,
+            title: '__Month of SEO',
+            hours: 30,
+            count: 0,
+          },
+          {
+            id: 17,
+            title: '__Months of Web-Hosting',
+            hours: 1,
+            count: 0,
+          },
+        ];
 
 
 
 export  const dataAddOns = [
-  {
-    id: 1,
-    title: 'Data Scraping - Custom Web/App Integration',
-    hours: 60,
-  },
-  {
-    id: 3,
-    title: '__Custom Data Targets',
-    hours: 10,
-  },
- 
-  {
-    id: 4,
-    title: '__Months Of Server Hosting',
-    hours: 2,
-  },
-];
+          {
+            id: 1,
+            title: 'Data Scraping - Custom Web/App Integration',
+            hours: 60,
+          },
+          {
+            id: 3,
+            title: '__Custom Data Targets',
+            hours: 10,
+            count: 0,
+          },
+
+          {
+            id: 4,
+            title: '__Months Of Server Hosting',
+            hours: 2,
+            count: 0,
+          },
+        ];
 
 export  const scriptingAddOns = [
           {
@@ -452,6 +486,7 @@ export  const scriptingAddOns = [
             id: 2,
             title: '__Number of tasks (Each task is 3 steps)',
             hours: 10,
+            count: 0,
           },
           {
             id: 3,
@@ -462,6 +497,7 @@ export  const scriptingAddOns = [
             id: 5,
             title: '__Months Of Server Hosting',
             hours: 2,
+            count: 0,
           },
           {
             id: 6,
@@ -472,60 +508,65 @@ export  const scriptingAddOns = [
             id: 7,
             title: '__Custom Data Targets',
             hours: 10,
+            count: 0,
           },
-
-          
         ];
 
 export  const marketingAddOns = [
-  {
-    id: 1,
-    title: '__Months of Premium SEO(Search Engine Optimization)',
-    hours: 25,
-  },
-  {
-    id: 2,
-    title: '__Pages Of Content Writing',
-    hours: 10,
-  },
-  {
-    id: 3,
-    title: '_ Months of Google Analytics Ads',
-    hours: 50,
-  },
-  {
-    id: 4,
-    title: '_ Months of Social  Media Ads',
-    hours: 2,
-  },
-  {
-    id: 5,
-    title: 'Auto Lead Generator',
-    hours: 10,
-  },
-  {
-    id: 6,
-    title: '__Hours Of Brand and Business Development',
-    hours: 42,
-  },
-  {
-    id: 7,
-    title: '__Months Of Social Media Strategy',
-    hours: 42,
-  },
-  {
-    id: 7,
-    title: ' Introductory Branding Suite',
-    hours: 36,
-  },
-  {
-    id: 8,
-    title: 'Making Some Impressions Branding Suite',
-    hours: 44,
-  },
-  {
-    id: 9,
-    title: 'Established - Branding Suite',
-    hours: 70,
-  },
-];
+          {
+            id: 1,
+            title: '__Months of Premium SEO(Search Engine Optimization)',
+            hours: 25,
+            count: 0,
+          },
+          {
+            id: 2,
+            title: '__Pages Of Content Writing',
+            hours: 10,
+            count: 0,
+          },
+          {
+            id: 3,
+            title: '_ Months of Google Analytics Ads',
+            hours: 50,
+            count: 0,
+          },
+          {
+            id: 4,
+            title: '_ Months of Social  Media Ads',
+            hours: 2,
+            count: 0,
+          },
+          {
+            id: 5,
+            title: 'Auto Lead Generator',
+            hours: 10,
+          },
+          {
+            id: 6,
+            title: '__Hours Of Brand and Business Development',
+            hours: 42,
+            count: 0,
+          },
+          {
+            id: 7,
+            title: '__Months Of Social Media Strategy',
+            hours: 42,
+            count: 0,
+          },
+          {
+            id: 7,
+            title: ' Introductory Branding Suite',
+            hours: 36,
+          },
+          {
+            id: 8,
+            title: 'Making Some Impressions Branding Suite',
+            hours: 44,
+          },
+          {
+            id: 9,
+            title: 'Established - Branding Suite',
+            hours: 70,
+          },
+        ];

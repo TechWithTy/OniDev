@@ -12,7 +12,7 @@ import { SelectPackage } from '../selectPackage';
 import { ScheduleConsultation } from '../scheduleConsultation';
 import Fade from 'react-reveal/Fade';
 import { QuoteSteps } from '../quoteSteps';
-import { finalQuote } from '../finalQuote';
+import { FinalQuote } from '../finalQuote';
 const ModalExample = (props) => {
   const productConsumer = useContext(ProductContext);
   const [packageShowing, setpackageShowing] = useState([]);
@@ -35,15 +35,22 @@ const ModalExample = (props) => {
         className="modal_div"
       >
         <ModalHeader toggle={productConsumer.handleModal}>
-          Choose a package
+          {
+            {
+              0: 'Choose Your Packages',
+              33.33: 'Select Additional Add Ons',
+              66.66: 'Your Final Quote',
+              99.99: 'Schedule A Consultation',
+            }[productConsumer.progress]
+          }
         </ModalHeader>
         <ModalBody>
           {
             {
-              0: <SelectPackage/>,
+              0: <SelectPackage />,
               33.33: <SelectAddons />,
-              66.66: <finalQuote />,
-              99.99: <ScheduleConsultation/>
+              66.66: <FinalQuote />,
+              99.99: <ScheduleConsultation />,
             }[productConsumer.progress]
           }
           <QuoteSteps />

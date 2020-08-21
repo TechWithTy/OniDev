@@ -1,1 +1,0 @@
-{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\n\nfunction Image(props) {\n  return __jsx(\"img\", {\n    src: props.Path,\n    className: props.Class,\n    title: props.Title,\n    alt: props.Alt\n  });\n}\n\nexport default Image;","map":null,"metadata":{},"sourceType":"module"}

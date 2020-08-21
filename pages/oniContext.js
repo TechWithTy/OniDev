@@ -14,7 +14,7 @@ import {
   marketingAddOns,
 } from '../data/business-services/index';
 const ProductContext = React.createContext();
-const ratePerHour = 50
+const ratePerHour = 50;
 let initstate = {
   name: '',
   number: '',
@@ -43,7 +43,6 @@ export default class ProductProvider extends Component {
     messageSent: false,
     errors: {},
     addOns: [],
-
     moreInfoNeeded: true,
     isModalOpen: false,
     activeAddOns: [],
@@ -91,6 +90,27 @@ export default class ProductProvider extends Component {
     }
   };
 
+  //7/20/20
+  addOnIncriment = (addOn) => {
+    alert('Ran')
+    addOn.count = addOn.count + 1;
+    this.setState({ hours: this.state.hours + addOn.hours * addOn.count });
+    console.log(addOn.count);
+  };
+
+  addOnDecriment = (addOn) => {
+    if (addOn.count > 0) {
+            console.warn(`${this.state.hours} - ${addOn.hours} * ${addOn.count}`, this.state.hours - addOn.hours * addOn.count);
+            addOn.count = addOn.count - 1;
+            this.setState({
+            hours: this.state.hours - addOn.hours * addOn.count  , 
+            });
+    } else {
+      return
+    }
+    console.log(this.state.hours,'Decriment');
+  };
+
   //99,99 = sum of 3 steps 33.33*3
   progressIncrement = (incrBy) => {
     if (this.state.progress < 99.99) {
@@ -100,18 +120,40 @@ export default class ProductProvider extends Component {
     }
   };
 
-  selectAddOn = (addOn) => {
+  setTotal = () => {
+    if (this.state.hours > 0) {
+       this.setState((prevState) => {
+         if (prevState.hours === this.state.hours) {
+           console.log(prevState.hours);
+         }
+         return {
+           total: this.state.total + this.state.hours * ratePerHour * Math.PI,
+         };
+       });
+      console.log(this.state.total, '+', this.state.hours, '*', ratePerHour);
+    }
     
+  };
+
+  selectAddOn = (addOn) => {
     if (this.state.addOns.includes(addOn.title)) {
-      console.warn("Found")
+      console.clear();
       this.state.addOns.pop(addOn.title);
-       this.setState({ hours: this.state.hours - addOn.hours });
+      this.setState({ hours: this.state.hours - addOn.hours });
+      this.setState({
+        total: this.state.total - addOn.hours * ratePerHour * Math.PI,
+      });
+
+      // console.error(this.state.hours - addOn.hours);
     } else {
       this.state.addOns.push(addOn.title);
       this.setState({ hours: this.state.hours + addOn.hours });
+      // console.error(this.state.hours + addOn.hours);
+      // this.setState({ total: this.state.total + (this.state.hours * ratePerHour * Math.PI) })
     }
+
     setTimeout(() => {
-      console.log(this.state.addOns,this.state.hours);
+      // console.warn(this.state.addOns, this.state.hours, this.state.total);
     }, 300);
   };
   progressDecrement = (decrBy) => {
@@ -123,20 +165,26 @@ export default class ProductProvider extends Component {
   };
 
   handleFinalPackage = (servicePackage) => {
+    let total = 0;
+    if (this.state.finalPackage.length === 0) {
+      this.setState({ total: servicePackage.price });
+    } else {
+      this.setState({ total: this.state.total + servicePackage.price });
+    }
     this.setState({ finalPackage: servicePackage });
+
     this.progressIncrement(33.33);
     {
       servicePackage.addOns.map((addOn, index) => {
-          if (this.state.addOns.includes(addOn)) {
-            return;
-          } else {
-            this.state.addOns.push(addOn);
-          }
+        if (this.state.addOns.includes(addOn)) {
+          return;
+        } else {
+          this.state.addOns.push(addOn);
+        }
       });
     }
     setTimeout(() => {
-     
-      console.log(this.state.finalPackage, this.state.addOns);
+      console.warn(this.state.total);
     }, 300);
   };
 
@@ -163,7 +211,7 @@ export default class ProductProvider extends Component {
         console.error('No packages Found');
     }
     setTimeout(() => {
-      console.log(this.state.activeAddOns);
+      // console.log(this.state.activeAddOns);
     }, 300);
   };
 
@@ -195,7 +243,6 @@ export default class ProductProvider extends Component {
   };
 
   sendEmail = (e) => {
-
     this.handleErrors();
     if (!this.state.errors) {
       console.log(this.state);
@@ -226,7 +273,6 @@ export default class ProductProvider extends Component {
           },
           (error) => {
             console.log(error.text);
-            
           }
         );
     } else {
@@ -265,7 +311,6 @@ export default class ProductProvider extends Component {
       this.setState({ message: 'Message field shouldn’t be empty' });
     }
     if (Object.keys(error).length === 0) {
-    
       this.setState({
         errors: false,
       });
@@ -292,6 +337,9 @@ export default class ProductProvider extends Component {
           selectAddOn: this.selectAddOn,
           incrProgress: this.progressIncrement,
           decrProgress: this.progressDecrement,
+          setTotal: this.setTotal,
+          addOnIncriment: this.addOnIncriment,
+          addOnDecriment: this.addOnDecriment,
         }}
       >
         {this.props.children}
