@@ -32,6 +32,8 @@ let initstate = {
   progress: 0,
   total: 0,
   hours: 0,
+  packageTotal: 0,
+  addOnTotal: 0,
 };
 
 export default class ProductProvider extends Component {
@@ -51,6 +53,8 @@ export default class ProductProvider extends Component {
     finalAddOns: [],
     progress: 0,
     hours: 0,
+    packageTotal: 0,
+    addOnTotal: 0,
     total: 0,
   };
 
@@ -92,7 +96,7 @@ export default class ProductProvider extends Component {
 
   //7/20/20
   addOnIncriment = (addOn) => {
-    alert('Ran')
+    alert('Ran');
     addOn.count = addOn.count + 1;
     this.setState({ hours: this.state.hours + addOn.hours * addOn.count });
     console.log(addOn.count);
@@ -100,15 +104,18 @@ export default class ProductProvider extends Component {
 
   addOnDecriment = (addOn) => {
     if (addOn.count > 0) {
-            console.warn(`${this.state.hours} - ${addOn.hours} * ${addOn.count}`, this.state.hours - addOn.hours * addOn.count);
-            addOn.count = addOn.count - 1;
-            this.setState({
-            hours: this.state.hours - addOn.hours * addOn.count  , 
-            });
+      console.warn(
+        `${this.state.hours} - ${addOn.hours} * ${addOn.count}`,
+        this.state.hours - addOn.hours * addOn.count
+      );
+      addOn.count = addOn.count - 1;
+      this.setState({
+        hours: this.state.hours - addOn.hours * addOn.count,
+      });
     } else {
-      return
+      return;
     }
-    console.log(this.state.hours,'Decriment');
+    console.log(this.state.hours, 'Decriment');
   };
 
   //99,99 = sum of 3 steps 33.33*3
@@ -121,41 +128,54 @@ export default class ProductProvider extends Component {
   };
 
   setTotal = () => {
-    if (this.state.hours > 0) {
-       this.setState((prevState) => {
-         if (prevState.hours === this.state.hours) {
-           console.log(prevState.hours);
-         }
-         return {
-           total: this.state.total + this.state.hours * ratePerHour * Math.PI,
-         };
-       });
-      console.log(this.state.total, '+', this.state.hours, '*', ratePerHour);
-    }
-    
+    this.setState({
+      total:
+        this.state.addOnTotal +
+        this.state.packageTotal +
+        this.state.hours * ratePerHour * Math.PI,
+    });
+
+    console.log(this.state);
   };
 
+
+
   selectAddOn = (addOn) => {
+    
+
     if (this.state.addOns.includes(addOn.title)) {
       console.clear();
-      this.state.addOns.pop(addOn.title);
+    let tempAddOns = this.state.addOns.filter((obj) => obj !== addOn.title);
+      console.warn(tempAddOns)
+      this.setState({addOns: tempAddOns})
       this.setState({ hours: this.state.hours - addOn.hours });
-      this.setState({
-        total: this.state.total - addOn.hours * ratePerHour * Math.PI,
-      });
-
-      // console.error(this.state.hours - addOn.hours);
+        console.log(' Found', this.state.hours + addOn.hours);
+        setTimeout(() => {
+          
+          console.log(this.state.hours - addOn.hours * ratePerHour * Math.PI);
+          this.setState({
+            addOnTotal: Math.round(this.state.addOnTotal -  addOn.hours * ratePerHour * Math.PI),
+          });
+        }, 300);
+      
+      setTimeout(() => {
+        this.setTotal();
+      }, 300);
     } else {
       this.state.addOns.push(addOn.title);
       this.setState({ hours: this.state.hours + addOn.hours });
-      // console.error(this.state.hours + addOn.hours);
-      // this.setState({ total: this.state.total + (this.state.hours * ratePerHour * Math.PI) })
+      console.log('Not Found', this.state.hours + addOn.hours);
+      setTimeout(() => {
+        this.setState({
+          addOnTotal: Math.round(this.state.addOnTotal + addOn.hours * ratePerHour * Math.PI),
+        });
+      }, 300);
+      setTimeout(() => {
+        this.setTotal();
+      }, 300);
     }
-
-    setTimeout(() => {
-      // console.warn(this.state.addOns, this.state.hours, this.state.total);
-    }, 300);
   };
+
   progressDecrement = (decrBy) => {
     if (this.state.progress > 0) {
       this.setState({ progress: this.state.progress - decrBy });
@@ -164,27 +184,38 @@ export default class ProductProvider extends Component {
     }
   };
 
+   hasNumber(myString) {
+  return /\d/.test(myString);
+}
+
   handleFinalPackage = (servicePackage) => {
     let total = 0;
+    let slicedNum = 0;
     if (this.state.finalPackage.length === 0) {
-      this.setState({ total: servicePackage.price });
+      this.setState({ packageTotal: servicePackage.price });
     } else {
-      this.setState({ total: this.state.total + servicePackage.price });
+      this.setState({ packageTotal: this.state.total + servicePackage.price });
     }
     this.setState({ finalPackage: servicePackage });
-
+      
     this.progressIncrement(33.33);
     {
       servicePackage.addOns.map((addOn, index) => {
         if (this.state.addOns.includes(addOn)) {
           return;
         } else {
-          this.state.addOns.push(addOn);
+          // if (this.hasNumber(addOn)) {
+          //   slicedNum = 5
+          //   addOn.count = slicedNum
+          // }
+          
+            this.state.addOns.push(addOn);
+          
         }
       });
     }
     setTimeout(() => {
-      console.warn(this.state.total);
+      console.warn(this.state.packageTotal);
     }, 300);
   };
 

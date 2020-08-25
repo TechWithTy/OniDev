@@ -235,7 +235,10 @@ const NumInputBoxes = props => {
       cursor: 'pointer'
     },
     className: " btn btn-black mx-1",
-    onClick: () => pCR.addOnDecriment(props.addOn),
+    onClick: () => {
+      pCR.addOnDecriment(props.addOn);
+      console.warn(props.addOn);
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -247,7 +250,7 @@ const NumInputBoxes = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 19,
       columnNumber: 9
     }
   }, props.addOn.count), __jsx("span", {
@@ -259,7 +262,7 @@ const NumInputBoxes = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 20,
       columnNumber: 9
     }
   }, "+"));
@@ -1249,35 +1252,27 @@ const FinalQuote = () => {
     total,
     activeAddOns
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_1__["ProductContext"]);
-  const prevCountRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  const {
-    0: initialRun,
-    1: setinitialRun
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (!initialRun) {
-      alert('Run');
-      console.log(hours, 'Final Quote Run', total);
-      setTotal();
-      console.error(hours);
-    }
+  const prevCountRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // useEffect(() => {
+  //   alert('Run');
+  //   console.log(hours, 'Final Quote Run', total);
+  //   setTotal();
+  //   console.error(hours);
+  // }, [hours]);
 
-    setinitialRun(true);
-  }, [hours]);
   return __jsx("section", {
     className: "testimonial-wrapper gradient-color",
     id: "testimonial",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 23,
       columnNumber: 5
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 24,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -1285,7 +1280,7 @@ const FinalQuote = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 25,
       columnNumber: 9
     }
   }, __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_3__["Subtitle"], {
@@ -1294,7 +1289,7 @@ const FinalQuote = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 26,
       columnNumber: 11
     }
   }), __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_3__["Titlespan2"], {
@@ -1303,7 +1298,7 @@ const FinalQuote = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 27,
       columnNumber: 11
     }
   }), __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_3__["Description"], {
@@ -1312,7 +1307,7 @@ const FinalQuote = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 31,
       columnNumber: 11
     }
   }), activeAddOns.map((service, index) => __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Badge"], {
@@ -1321,7 +1316,7 @@ const FinalQuote = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 36,
       columnNumber: 13
     }
   }, service.title)))));
@@ -7980,7 +7975,9 @@ let initstate = {
   finalAddOns: [],
   progress: 0,
   total: 0,
-  hours: 0
+  hours: 0,
+  packageTotal: 0,
+  addOnTotal: 0
 };
 class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
   constructor(...args) {
@@ -8002,6 +7999,8 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       finalAddOns: [],
       progress: 0,
       hours: 0,
+      packageTotal: 0,
+      addOnTotal: 0,
       total: 0
     });
 
@@ -8062,40 +8061,48 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "setTotal", () => {
-      if (this.state.hours > 0) {
-        this.setState(prevState => {
-          if (prevState.hours === this.state.hours) {
-            console.log(prevState.hours);
-          }
-
-          return {
-            total: this.state.total + this.state.hours * ratePerHour * Math.PI
-          };
-        });
-        console.log(this.state.total, '+', this.state.hours, '*', ratePerHour);
-      }
+      this.setState({
+        total: this.state.addOnTotal + this.state.packageTotal + this.state.hours * ratePerHour * Math.PI
+      });
+      console.log(this.state);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "selectAddOn", addOn => {
       if (this.state.addOns.includes(addOn.title)) {
         console.clear();
-        this.state.addOns.pop(addOn.title);
+        let tempAddOns = this.state.addOns.filter(obj => obj !== addOn.title);
+        console.warn(tempAddOns);
+        this.setState({
+          addOns: tempAddOns
+        });
         this.setState({
           hours: this.state.hours - addOn.hours
         });
-        this.setState({
-          total: this.state.total - addOn.hours * ratePerHour * Math.PI
-        }); // console.error(this.state.hours - addOn.hours);
+        console.log(' Found', this.state.hours + addOn.hours);
+        setTimeout(() => {
+          console.log(this.state.hours - addOn.hours * ratePerHour * Math.PI);
+          this.setState({
+            addOnTotal: Math.round(this.state.addOnTotal - addOn.hours * ratePerHour * Math.PI)
+          });
+        }, 300);
+        setTimeout(() => {
+          this.setTotal();
+        }, 300);
       } else {
         this.state.addOns.push(addOn.title);
         this.setState({
           hours: this.state.hours + addOn.hours
-        }); // console.error(this.state.hours + addOn.hours);
-        // this.setState({ total: this.state.total + (this.state.hours * ratePerHour * Math.PI) })
+        });
+        console.log('Not Found', this.state.hours + addOn.hours);
+        setTimeout(() => {
+          this.setState({
+            addOnTotal: Math.round(this.state.addOnTotal + addOn.hours * ratePerHour * Math.PI)
+          });
+        }, 300);
+        setTimeout(() => {
+          this.setTotal();
+        }, 300);
       }
-
-      setTimeout(() => {// console.warn(this.state.addOns, this.state.hours, this.state.total);
-      }, 300);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "progressDecrement", decrBy => {
@@ -8110,14 +8117,15 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "handleFinalPackage", servicePackage => {
       let total = 0;
+      let slicedNum = 0;
 
       if (this.state.finalPackage.length === 0) {
         this.setState({
-          total: servicePackage.price
+          packageTotal: servicePackage.price
         });
       } else {
         this.setState({
-          total: this.state.total + servicePackage.price
+          packageTotal: this.state.total + servicePackage.price
         });
       }
 
@@ -8130,12 +8138,16 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
           if (this.state.addOns.includes(addOn)) {
             return;
           } else {
+            // if (this.hasNumber(addOn)) {
+            //   slicedNum = 5
+            //   addOn.count = slicedNum
+            // }
             this.state.addOns.push(addOn);
           }
         });
       }
       setTimeout(() => {
-        console.warn(this.state.total);
+        console.warn(this.state.packageTotal);
       }, 300);
     });
 
@@ -8307,6 +8319,10 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
     });
   }
 
+  hasNumber(myString) {
+    return /\d/.test(myString);
+  }
+
   render() {
     return __jsx(ProductContext.Provider, {
       value: _objectSpread({}, this.state, {
@@ -8327,7 +8343,7 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 327,
+        lineNumber: 358,
         columnNumber: 7
       }
     }, this.props.children);

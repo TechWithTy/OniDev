@@ -8,20 +8,16 @@ import {
 } from '../components/common/title/index';
 import { total } from '../components/total';
 export const FinalQuote = () => {
-  const { hours, setTotal, total, activeAddOns } = useContext(ProductContext);
+  const { hours, setTotal,total,activeAddOns, } = useContext(ProductContext);
   const prevCountRef = useRef();
-  const [initialRun, setinitialRun] = useState(false);
+  
 
-  useEffect(() => {
-    if (!initialRun) {
-      alert('Run')
-      console.log(hours, 'Final Quote Run', total);
-      setTotal();
-      console.error(hours);
-    }
-        setinitialRun(true);
-
-  }, [hours]);
+  // useEffect(() => {
+  //   alert('Run');
+  //   console.log(hours, 'Final Quote Run', total);
+  //   setTotal();
+  //   console.error(hours);
+  // }, [hours]);
 
   return (
     <section className="testimonial-wrapper gradient-color" id="testimonial">

@@ -9,7 +9,10 @@ export const NumInputBoxes = (props) => {
         <span
           style={{ cursor: 'pointer' }}
           className=" btn btn-black mx-1"
-          onClick={() => pCR.addOnDecriment(props.addOn)}
+          onClick={() => {
+            pCR.addOnDecriment(props.addOn)
+            console.warn(props.addOn)
+          }}
         >
           -
         </span>
