@@ -8041,7 +8041,13 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "addOnIncriment", addOn => {
       this.state.addOns.push(addOn.title);
-      this.state.activeNumAddOns.push(addOn);
+
+      if (!this.state.activeNumAddOns.includes(addOn)) {
+        this.state.activeNumAddOns.push(addOn);
+      } else {
+        console.log("Num Add On Found");
+      }
+
       console.warn(this.state.activeNumAddOns);
       addOn.count = addOn.count + 1;
       this.setState({
@@ -8051,9 +8057,11 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "addOnDecriment", addOn => {
+      let tempAddOns = [];
+
       if (addOn.count > 0) {
         console.warn(`${this.state.hours} - ${addOn.hours} * ${addOn.count}`, this.state.hours - addOn.hours * addOn.count);
-        addOn.count = addOn.count - 1;
+        addOn.count = addOn.count > 0 && addOn.count - 1;
         console.log(`${this.state.addOnTotal} -
             ${addOn.hours} * ${addOn.count} * ${ratePerHour} * ${Math.PI}`);
         this.setState({
@@ -8061,6 +8069,19 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         });
       } else {
         return;
+      }
+
+      if (addOn.count === 0) {
+        console.warn('Num Add On  length', this.state.activeNumAddOns.length);
+
+        if (this.state.activeNumAddOns.length <= 1) {
+          alert('Last One');
+          this.state.activeNumAddOns.pop();
+        }
+
+        tempAddOns = this.state.activeNumAddOns.filter(obj => obj !== addOn);
+        console.clear();
+        console.error(tempAddOns, 'Temp Add');
       }
 
       console.log(addOn.hours * addOn.count * ratePerHour * Math.PI, 'Decriment');
@@ -8362,7 +8383,7 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 378,
+        lineNumber: 398,
         columnNumber: 7
       }
     }, this.props.children);

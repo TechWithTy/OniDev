@@ -100,26 +100,34 @@ export default class ProductProvider extends Component {
 
   //7/20/20
   addOnIncriment = (addOn) => {
-          this.state.addOns.push(addOn.title);
-    this.state.activeNumAddOns.push(addOn);
-    console.warn(this.state.activeNumAddOns)
-    addOn.count = addOn.count + 1;
-    this.setState({
-      addOnTotal: Math.round(
-        this.state.addOnTotal +
-          addOn.hours  * ratePerHour * Math.PI
-      ),
-    });
-    console.log(addOn.count);
+    this.state.addOns.push(addOn.title);
+    if (!this.state.activeNumAddOns.includes(addOn)) {
+      this.state.activeNumAddOns.push(addOn);
+    } else {
+      console.log("Num Add On Found")
+    }
+      console.warn(this.state.activeNumAddOns);
+      addOn.count = addOn.count + 1;
+      this.setState({
+        addOnTotal: Math.round(
+          this.state.addOnTotal + addOn.hours * ratePerHour * Math.PI
+        ),
+      });
+   
+        console.log(addOn.count);
+
   };
 
   addOnDecriment = (addOn) => {
+            let tempAddOns = []
     if (addOn.count > 0) {
       console.warn(
         `${this.state.hours} - ${addOn.hours} * ${addOn.count}`,
         this.state.hours - addOn.hours * addOn.count
       );
-      addOn.count = addOn.count - 1;
+      addOn.count = addOn.count > 0 && addOn.count - 1;
+      
+      
       console.log(`${this.state.addOnTotal} -
             ${addOn.hours} * ${addOn.count} * ${ratePerHour} * ${Math.PI}`)
       
@@ -131,6 +139,18 @@ export default class ProductProvider extends Component {
       });
     } else {
       return;
+    }
+    if (addOn.count === 0) {
+      console.warn('Num Add On  length', this.state.activeNumAddOns.length);
+      if (this.state.activeNumAddOns.length <= 1) {
+        alert('Last One')
+        this.state.activeNumAddOns.pop()
+      }
+       tempAddOns = this.state.activeNumAddOns.filter(
+        (obj) => obj !== addOn
+      );
+      console.clear();
+      console.error(tempAddOns, 'Temp Add');
     }
     console.log(
        addOn.hours * addOn.count * ratePerHour * Math.PI,
