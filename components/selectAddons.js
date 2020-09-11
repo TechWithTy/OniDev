@@ -63,6 +63,7 @@ export const SelectAddons = () => {
               
             </Fade>
           )}
+          <span>{pCR.addOnTotal}</span>
         </div>
       </div>
     );

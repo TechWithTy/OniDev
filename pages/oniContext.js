@@ -14,7 +14,7 @@ import {
   marketingAddOns,
 } from '../data/business-services/index';
 const ProductContext = React.createContext();
-const ratePerHour = 50;
+const ratePerHour = 25;
 let initstate = {
   name: '',
   number: '',
@@ -27,6 +27,7 @@ let initstate = {
   isModalOpen: false,
   activePackage: [],
   activeAddOns: [],
+  activeNumAddOns: [],
   finalPackage: {},
   finalAddOns: [],
   progress: 0,
@@ -48,6 +49,7 @@ export default class ProductProvider extends Component {
     moreInfoNeeded: true,
     isModalOpen: false,
     activeAddOns: [],
+    activeNumAddOns: [],
     activePackage: [],
     finalPackage: {},
     finalAddOns: [],
@@ -57,6 +59,8 @@ export default class ProductProvider extends Component {
     addOnTotal: 0,
     total: 0,
   };
+
+ 
 
   setThemeColor = (color) => {
     switch (color) {
@@ -96,9 +100,16 @@ export default class ProductProvider extends Component {
 
   //7/20/20
   addOnIncriment = (addOn) => {
-    alert('Ran');
+          this.state.addOns.push(addOn.title);
+    this.state.activeNumAddOns.push(addOn);
+    console.warn(this.state.activeNumAddOns)
     addOn.count = addOn.count + 1;
-    this.setState({ hours: this.state.hours + addOn.hours * addOn.count });
+    this.setState({
+      addOnTotal: Math.round(
+        this.state.addOnTotal +
+          addOn.hours  * ratePerHour * Math.PI
+      ),
+    });
     console.log(addOn.count);
   };
 
@@ -109,13 +120,22 @@ export default class ProductProvider extends Component {
         this.state.hours - addOn.hours * addOn.count
       );
       addOn.count = addOn.count - 1;
+      console.log(`${this.state.addOnTotal} -
+            ${addOn.hours} * ${addOn.count} * ${ratePerHour} * ${Math.PI}`)
+      
+   
       this.setState({
-        hours: this.state.hours - addOn.hours * addOn.count,
+        addOnTotal: Math.round(
+          this.state.addOnTotal - addOn.hours * ratePerHour * Math.PI
+        ),
       });
     } else {
       return;
     }
-    console.log(this.state.hours, 'Decriment');
+    console.log(
+       addOn.hours * addOn.count * ratePerHour * Math.PI,
+      'Decriment'
+    );
   };
 
   //99,99 = sum of 3 steps 33.33*3
@@ -138,36 +158,37 @@ export default class ProductProvider extends Component {
     console.log(this.state);
   };
 
-
-
   selectAddOn = (addOn) => {
-    
-
     if (this.state.addOns.includes(addOn.title)) {
       console.clear();
-    let tempAddOns = this.state.addOns.filter((obj) => obj !== addOn.title);
-      console.warn(tempAddOns)
-      this.setState({addOns: tempAddOns})
-      this.setState({ hours: this.state.hours - addOn.hours });
+      let tempAddOns = this.state.addOns.filter((obj) => obj !== addOn.title);
+      console.warn(tempAddOns);
+      if (this.state.addOnTotal > 0) {
+        this.setState({ addOns: tempAddOns });
+        this.setState({ hours: this.state.hours - addOn.hours });
         console.log(' Found', this.state.hours + addOn.hours);
         setTimeout(() => {
-          
           console.log(this.state.hours - addOn.hours * ratePerHour * Math.PI);
           this.setState({
-            addOnTotal: Math.round(this.state.addOnTotal -  addOn.hours * ratePerHour * Math.PI),
+            addOnTotal: Math.round(
+              this.state.addOnTotal - addOn.hours * ratePerHour * Math.PI
+            ),
           });
         }, 300);
-      
-      setTimeout(() => {
-        this.setTotal();
-      }, 300);
+
+        setTimeout(() => {
+          this.setTotal();
+        }, 300);
+      }
     } else {
       this.state.addOns.push(addOn.title);
       this.setState({ hours: this.state.hours + addOn.hours });
       console.log('Not Found', this.state.hours + addOn.hours);
       setTimeout(() => {
         this.setState({
-          addOnTotal: Math.round(this.state.addOnTotal + addOn.hours * ratePerHour * Math.PI),
+          addOnTotal: Math.round(
+            this.state.addOnTotal + addOn.hours * ratePerHour * Math.PI
+          ),
         });
       }, 300);
       setTimeout(() => {
@@ -184,9 +205,9 @@ export default class ProductProvider extends Component {
     }
   };
 
-   hasNumber(myString) {
-  return /\d/.test(myString);
-}
+  hasNumber(myString) {
+    return /\d/.test(myString);
+  }
 
   handleFinalPackage = (servicePackage) => {
     let total = 0;
@@ -197,7 +218,7 @@ export default class ProductProvider extends Component {
       this.setState({ packageTotal: this.state.total + servicePackage.price });
     }
     this.setState({ finalPackage: servicePackage });
-      
+
     this.progressIncrement(33.33);
     {
       servicePackage.addOns.map((addOn, index) => {
@@ -208,9 +229,8 @@ export default class ProductProvider extends Component {
           //   slicedNum = 5
           //   addOn.count = slicedNum
           // }
-          
-            this.state.addOns.push(addOn);
-          
+
+          this.state.addOns.push(addOn);
         }
       });
     }

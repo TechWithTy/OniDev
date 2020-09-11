@@ -1250,7 +1250,9 @@ const FinalQuote = () => {
     hours,
     setTotal,
     total,
-    activeAddOns
+    activeAddOns,
+    addOnTotal,
+    packageTotal
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_oniContext__WEBPACK_IMPORTED_MODULE_1__["ProductContext"]);
   const prevCountRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // useEffect(() => {
   //   alert('Run');
@@ -1294,7 +1296,7 @@ const FinalQuote = () => {
     }
   }), __jsx(_components_common_title_index__WEBPACK_IMPORTED_MODULE_3__["Titlespan2"], {
     Class: "sitemain-subtitle",
-    Name: `$${Math.round(total)}`,
+    Name: `$${Math.round(packageTotal + addOnTotal)}`,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -1312,6 +1314,7 @@ const FinalQuote = () => {
     }
   }), activeAddOns.map((service, index) => __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Badge"], {
     color: "info",
+    id: index,
     pill: true,
     __self: undefined,
     __source: {
@@ -1767,7 +1770,14 @@ const SelectAddons = () => {
       lineNumber: 62,
       columnNumber: 15
     }
-  }))));
+  })), __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 11
+    }
+  }, pCR.addOnTotal)));
 };
 
 /***/ }),
@@ -7958,7 +7968,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 const ProductContext = react__WEBPACK_IMPORTED_MODULE_7___default.a.createContext();
-const ratePerHour = 50;
+const ratePerHour = 25;
 let initstate = {
   name: '',
   number: '',
@@ -7971,6 +7981,7 @@ let initstate = {
   isModalOpen: false,
   activePackage: [],
   activeAddOns: [],
+  activeNumAddOns: [],
   finalPackage: {},
   finalAddOns: [],
   progress: 0,
@@ -7994,6 +8005,7 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       moreInfoNeeded: true,
       isModalOpen: false,
       activeAddOns: [],
+      activeNumAddOns: [],
       activePackage: [],
       finalPackage: {},
       finalAddOns: [],
@@ -8028,10 +8040,12 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "addOnIncriment", addOn => {
-      alert('Ran');
+      this.state.addOns.push(addOn.title);
+      this.state.activeNumAddOns.push(addOn);
+      console.warn(this.state.activeNumAddOns);
       addOn.count = addOn.count + 1;
       this.setState({
-        hours: this.state.hours + addOn.hours * addOn.count
+        addOnTotal: Math.round(this.state.addOnTotal + addOn.hours * ratePerHour * Math.PI)
       });
       console.log(addOn.count);
     });
@@ -8040,14 +8054,16 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       if (addOn.count > 0) {
         console.warn(`${this.state.hours} - ${addOn.hours} * ${addOn.count}`, this.state.hours - addOn.hours * addOn.count);
         addOn.count = addOn.count - 1;
+        console.log(`${this.state.addOnTotal} -
+            ${addOn.hours} * ${addOn.count} * ${ratePerHour} * ${Math.PI}`);
         this.setState({
-          hours: this.state.hours - addOn.hours * addOn.count
+          addOnTotal: Math.round(this.state.addOnTotal - addOn.hours * ratePerHour * Math.PI)
         });
       } else {
         return;
       }
 
-      console.log(this.state.hours, 'Decriment');
+      console.log(addOn.hours * addOn.count * ratePerHour * Math.PI, 'Decriment');
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "progressIncrement", incrBy => {
@@ -8072,22 +8088,25 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         console.clear();
         let tempAddOns = this.state.addOns.filter(obj => obj !== addOn.title);
         console.warn(tempAddOns);
-        this.setState({
-          addOns: tempAddOns
-        });
-        this.setState({
-          hours: this.state.hours - addOn.hours
-        });
-        console.log(' Found', this.state.hours + addOn.hours);
-        setTimeout(() => {
-          console.log(this.state.hours - addOn.hours * ratePerHour * Math.PI);
+
+        if (this.state.addOnTotal > 0) {
           this.setState({
-            addOnTotal: Math.round(this.state.addOnTotal - addOn.hours * ratePerHour * Math.PI)
+            addOns: tempAddOns
           });
-        }, 300);
-        setTimeout(() => {
-          this.setTotal();
-        }, 300);
+          this.setState({
+            hours: this.state.hours - addOn.hours
+          });
+          console.log(' Found', this.state.hours + addOn.hours);
+          setTimeout(() => {
+            console.log(this.state.hours - addOn.hours * ratePerHour * Math.PI);
+            this.setState({
+              addOnTotal: Math.round(this.state.addOnTotal - addOn.hours * ratePerHour * Math.PI)
+            });
+          }, 300);
+          setTimeout(() => {
+            this.setTotal();
+          }, 300);
+        }
       } else {
         this.state.addOns.push(addOn.title);
         this.setState({
@@ -8343,7 +8362,7 @@ class ProductProvider extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 358,
+        lineNumber: 378,
         columnNumber: 7
       }
     }, this.props.children);

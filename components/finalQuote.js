@@ -8,7 +8,7 @@ import {
 } from '../components/common/title/index';
 import { total } from '../components/total';
 export const FinalQuote = () => {
-  const { hours, setTotal,total,activeAddOns, } = useContext(ProductContext);
+  const { hours, setTotal,total,activeAddOns,addOnTotal,packageTotal } = useContext(ProductContext);
   const prevCountRef = useRef();
   
 
@@ -26,14 +26,14 @@ export const FinalQuote = () => {
           <Subtitle Class="site-subtitle gradient-color" Name="Your Quote" />
           <Titlespan2
             Class="sitemain-subtitle"
-            Name={`$${Math.round(total)}`}
+            Name={`$${Math.round(packageTotal + addOnTotal)}`}
           />
           <Description
             Class="site-dec"
             Name="The Shown Price is only an estimate and may increase or decrease based on demand and extent of work"
           />
           {activeAddOns.map((service, index) => (
-            <Badge color="info" pill>
+            <Badge color="info" id={index} pill>
               {service.title}
             </Badge>
           ))}
