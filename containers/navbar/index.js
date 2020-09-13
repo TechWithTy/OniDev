@@ -54,17 +54,17 @@ function Navbar() {
                             <div className="search-menu-account-wrapper">
                                 <div className="menu-right-1">
                                     <div className="account-wrapper">
-                                        <div className="account-icon" onClick={loginClick}>
+                                        {/* <div className="account-icon" onClick={loginClick}>
                                             <User />
-                                        </div>
-                                        <div className={`login-register-wrapper ${login ? 'open' : ''}`}>
+                                        </div> */}
+                                        {/* <div className={`login-register-wrapper ${login ? 'open' : ''}`}>
                                             <Login Click={loginClick} />
                                         </div>
                                     </div>
                                     <div className="search-wrapper">
                                         <div className="search-header" onClick={searchClick}>
                                             <Search />
-                                        </div>
+                                        </div> */}
 
                                         <div className={`search-outer-wrapper ${search ? 'open' : ''}`}>
                                             <div className="search-close gradient-color" onClick={searchClick}>

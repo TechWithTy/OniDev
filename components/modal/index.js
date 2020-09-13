@@ -21,8 +21,17 @@ const ModalExample = (props) => {
   }, [productConsumer.activePackage]);
   const { buttonLabel, className } = props;
   
-  let handlePackageModal = (packageName) => {};
-
+  
+  let setRButton = () => {
+    if (!productConsumer.messageSent && productConsumer.progress !== 99.99) {
+      return 'Next';
+    } if (productConsumer.messageSent) {
+        return 'Sent';
+      }
+    if (!productConsumer.messageSent && productConsumer.progress === 99.99) {
+      return 'Submit';
+    }
+  };
   
   return (
     <div>
@@ -69,8 +78,8 @@ const ModalExample = (props) => {
           <div>
             <Button
               Class="button1 btn button2 gradient-color"
-              Name={!productConsumer.messageSent ? 'SUBMIT' : 'SENT'}
-              Clickble={() => productConsumer.incrProgress(33.33)}
+              Name={ setRButton()}
+              Clickble={() =>productConsumer.progress !== 99.99 ? productConsumer.incrProgress(33.33) : productConsumer.handleSubmit()}
               send={productConsumer.messageSent}
               BtnIcon="btn-icon"
               type="contact"

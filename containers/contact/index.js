@@ -22,34 +22,12 @@ function Contact(props) {
 
   useEffect(() => {
     console.log('ProductContext', productConsumer.messageSent);
-    productConsumer.setValue('name', 'Tyrique Daniel');
-  }, []);
+    
+  }, [productConsumer.errors]);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
-  // const { name, email } = productConsumer;
-
-  // const handelSubmit2 = () => {
-  //     const error = {}
-  //     if (!name) {
-  //         error.name = 'First Name field shouldn’t be empty';
-  //     }
-  //     if (!email) {
-  //         error.email = 'Email field shouldn’t be empty';
-  //     }
-  //     if (!message) {
-  //         error.message = 'Message field shouldn’t be empty';
-  //     }
-
-  //     if (error) {
-  //         setErrors(error)
-  //     } else {
-  //         setName('');
-  //         setEmail('');
-  //         setMessage('');
-  //     }
-  // }
 
   return (
     <section className="contact-wrapper" id="contact">
@@ -94,7 +72,7 @@ function Contact(props) {
                       Value={productConsumer.name}
                       ChangeValue={productConsumer.setValue}
                       Class={
-                        productConsumer.errors &&
+                        
                         productConsumer.errors.name &&
                         'error'
                       }
@@ -105,14 +83,13 @@ function Contact(props) {
                     <InputBox
                       Type="text"
                       Name="number"
-                      handlechange={productConsumer.setValue}
+                      // handlechange={productConsumer.setValue}
                       PlaceHolder="000-000-0000"
                       Value={productConsumer.number}
                       ChangeValue={productConsumer.setValue}
                       Class={
-                        productConsumer.errors &&
-                        productConsumer.errors.name &&
-                        'error'
+                        productConsumer.number &&
+                        ''
                       }
                     />
                   </FormGroup>
@@ -125,7 +102,6 @@ function Contact(props) {
                       Value={productConsumer.email}
                       ChangeValue={productConsumer.setValue}
                       Class={
-                        productConsumer.errors &&
                         productConsumer.errors.email &&
                         'error'
                       }
@@ -138,7 +114,7 @@ function Contact(props) {
                       Name="message"
                       PlaceHolder="Tell us more about your business"
                       Class={`textbox ${
-                        productConsumer.errors &&
+                        
                         productConsumer.errors.message &&
                         'error'
                       }`}

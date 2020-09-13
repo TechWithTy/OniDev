@@ -100,9 +100,12 @@ export default class ProductProvider extends Component {
 
   //7/20/20
   addOnIncriment = (addOn) => {
-    this.state.addOns.push(addOn.title);
     if (!this.state.activeNumAddOns.includes(addOn)) {
       this.state.activeNumAddOns.push(addOn);
+      setTimeout(() => {
+        
+        console.warn(this.state.activeNumAddOns,'ActiveAddONs')
+      }, 300);
     } else {
       console.log("Num Add On Found")
     }
@@ -118,15 +121,31 @@ export default class ProductProvider extends Component {
 
   };
 
+  clearNumAddOn = (filter) => {
+    let filtered = filter.filter(function( obj ) {
+    return obj.count !== 0;
+    });
+    this.setState({activeNumAddOns: filtered})
+    console.error("Filtered",filtered)
+    
+  }
   addOnDecriment = (addOn) => {
-            let tempAddOns = []
+            
     if (addOn.count > 0) {
       console.warn(
         `${this.state.hours} - ${addOn.hours} * ${addOn.count}`,
         this.state.hours - addOn.hours * addOn.count
       );
       addOn.count = addOn.count > 0 && addOn.count - 1;
-      
+      if (addOn.count === 0) {
+          let tempAddOns = this.state.activeNumAddOns.filter(
+            (obj) => obj !== addOn
+        );
+        ;
+        this.clearNumAddOn(tempAddOns)
+         
+         console.error(tempAddOns, 'Temp Add');
+      }
       
       console.log(`${this.state.addOnTotal} -
             ${addOn.hours} * ${addOn.count} * ${ratePerHour} * ${Math.PI}`)
@@ -138,19 +157,7 @@ export default class ProductProvider extends Component {
         ),
       });
     } else {
-      return;
-    }
-    if (addOn.count === 0) {
-      console.warn('Num Add On  length', this.state.activeNumAddOns.length);
-      if (this.state.activeNumAddOns.length <= 1) {
-        alert('Last One')
-        this.state.activeNumAddOns.pop()
-      }
-       tempAddOns = this.state.activeNumAddOns.filter(
-        (obj) => obj !== addOn
-      );
-      console.clear();
-      console.error(tempAddOns, 'Temp Add');
+      console.log("Return")
     }
     console.log(
        addOn.hours * addOn.count * ratePerHour * Math.PI,
@@ -180,7 +187,7 @@ export default class ProductProvider extends Component {
 
   selectAddOn = (addOn) => {
     if (this.state.addOns.includes(addOn.title)) {
-      console.clear();
+      ;
       let tempAddOns = this.state.addOns.filter((obj) => obj !== addOn.title);
       console.warn(tempAddOns);
       if (this.state.addOnTotal > 0) {
@@ -251,6 +258,11 @@ export default class ProductProvider extends Component {
           // }
 
           this.state.addOns.push(addOn);
+          
+          setTimeout(() => {
+          console.warn(this.state.addOns);
+
+          }, 300);
         }
       });
     }
@@ -281,9 +293,7 @@ export default class ProductProvider extends Component {
       default:
         console.error('No packages Found');
     }
-    setTimeout(() => {
-      // console.log(this.state.activeAddOns);
-    }, 300);
+   
   };
 
   handleActivePackage = (packageName) => {
@@ -314,41 +324,53 @@ export default class ProductProvider extends Component {
   };
 
   sendEmail = (e) => {
+    alert("Email Sent")
+    
     this.handleErrors();
-    if (!this.state.errors) {
-      console.log(this.state);
-      emailjs
-        .send(
-          'OniDev',
-          'onidev',
-          {
-            senderEmail: this.state.email,
-            senderName: this.state.name,
-            senderMessage: this.state.message,
-            senderPhoneNumber: this.state.number,
-            receiverEmail: 'tyriquedaniel14@gmail.com',
-            number: 0,
-            total: '10000',
-            addOns: 'Everything',
-          },
-          'user_ra9kLqa47SSFhb4QI3Swp'
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-            this.setState({ messageSent: true });
-            setTimeout(() => {
-              this.setState((prev) => ({ ...prev, ...initstate }));
-              console.log(this.state);
-            }, 3000);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    } else {
-      console.log('Error');
-    }
+    setTimeout(() => {
+      if (!this.state.errors) {
+        console.log(this.state);
+        emailjs
+          .send(
+            'OniDev',
+            'onidev',
+            {
+              senderEmail: this.state.email,
+              senderName: this.state.name,
+              senderMessage: this.state.message,
+              senderPhoneNumber: this.state.number,
+              receiverEmail: 'oni.contact.mail@gmail.com',
+              number: 0,
+              total: this.state.total,
+              addOns:  !this.state.activeNumAddOns.length > 0 ? "No Add Ons" :this.state.addOns.map((addOn, index) => {
+                return addOn;
+              }),
+              numAddOns: !this.state.activeNumAddOns.length > 0 ? 'No Add Ons':this.state.activeNumAddOns.map(
+                (addOn, index) => {
+                  return `(${addOn.count}) ${addOn.title}`;
+                }
+              ),
+            },
+            'user_ra9kLqa47SSFhb4QI3Swp'
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+              this.setState({ messageSent: true });
+              setTimeout(() => {
+                this.setState((prev) => ({ ...prev, ...initstate }));
+                console.log(this.state);
+              }, 3000);
+            },
+            (error) => {
+              console.log(error.text, 'Error Text');
+            }
+          );
+      } else {
+        console.error('*Submit Error*', this.state.errors);
+      }
+    }, 300);
+    
   };
   //Set FieldS State
   setField = (targetID, textValue) => {
@@ -367,21 +389,24 @@ export default class ProductProvider extends Component {
     const error = {};
     if (!this.state.name) {
       error.name = 'First Name field shouldn’t be empty';
-      this.setState({ name: 'First Name field shouldn’t be empty' });
+    //  this.setField('name', 'First Name field shouldn’t be empty');
     }
     if (!this.state.number) {
       error.number = 'Number field shouldn’t be empty';
-      this.setState({ number: 'Number field shouldn’t be empty' });
+      // this.setState({ number: 'Number field shouldn’t be empty' });
     }
     if (!this.state.email) {
       error.email = 'Email field shouldn’t be empty';
-      this.setState({ email: 'Email field shouldn’t be empty' });
+      // this.setState({ email: 'Email field shouldn’t be empty' });
     }
     if (!this.state.message) {
       error.message = 'Message field shouldn’t be empty';
-      this.setState({ message: 'Message field shouldn’t be empty' });
+      // this.setState({ message: 'Message field shouldn’t be empty' });
     }
+    console.warn(error,Object.keys(error).length,"Set Errors Block")
+    
     if (Object.keys(error).length === 0) {
+      alert('No Errors')
       this.setState({
         errors: false,
       });
@@ -389,8 +414,11 @@ export default class ProductProvider extends Component {
       this.setState({
         errors: error,
       });
-      return;
+     
     }
+
+          console.warn(this.state.errors, 'Errors');
+
   };
 
   render() {

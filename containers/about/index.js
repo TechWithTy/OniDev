@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { Subtitle, Description, Title, Titlespan2 } from '../../components/common/title/index';
 import Button from '../../components/common/button';
 import Image from '../../components/common/image/index';
-import AboutImg from '../../public/assets/images/about/about-img.png';
+import AboutImg from '../../public/assets/images/about/about-img-2.png';
 import './about.scss';
 
 function About() {

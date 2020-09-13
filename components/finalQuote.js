@@ -8,16 +8,11 @@ import {
 } from '../components/common/title/index';
 import { total } from '../components/total';
 export const FinalQuote = () => {
-  const { hours, setTotal,total,activeAddOns,addOnTotal,packageTotal } = useContext(ProductContext);
+  const { hours, setTotal,total,activeAddOns,addOnTotal,packageTotal,activeNumAddOns,addOns } = useContext(ProductContext);
   const prevCountRef = useRef();
   
 
-  // useEffect(() => {
-  //   alert('Run');
-  //   console.log(hours, 'Final Quote Run', total);
-  //   setTotal();
-  //   console.error(hours);
-  // }, [hours]);
+
 
   return (
     <section className="testimonial-wrapper gradient-color" id="testimonial">
@@ -32,9 +27,14 @@ export const FinalQuote = () => {
             Class="site-dec"
             Name="The Shown Price is only an estimate and may increase or decrease based on demand and extent of work"
           />
-          {activeAddOns.map((service, index) => (
+          {addOns.map((service, index) => (
             <Badge color="info" id={index} pill>
-              {service.title}
+              {service}
+            </Badge>
+          ))}
+          {activeNumAddOns.map((service, index) => (
+            <Badge color="info" id={index} pill>
+              ({service.count}){service.title}
             </Badge>
           ))}
         </div>
