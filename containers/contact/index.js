@@ -15,12 +15,11 @@ import ContactBackgroundImages from '../../data/contact';
 import '../contact/contact.scss';
 import { ProductContext } from '../../pages/oniContext';
 import {webAppPackages} from '../../data/business-services'
-  import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+
 
 function Contact(props) {
   const productConsumer = useContext(ProductContext);
-      const notify = () => toast('Wow so easy !');
+     
 
   let handleInfo = () => {
     productConsumer.handleErrors();

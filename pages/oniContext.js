@@ -431,7 +431,7 @@ export default class ProductProvider extends Component {
     console.warn(error,Object.keys(error).length,"Set Errors Block")
     
     if (Object.keys(error).length === 0) {
-      alert('No Errors')
+      
       this.setState({
         errors: false,
       });
