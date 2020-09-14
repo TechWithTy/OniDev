@@ -15,15 +15,34 @@ import ContactBackgroundImages from '../../data/contact';
 import '../contact/contact.scss';
 import { ProductContext } from '../../pages/oniContext';
 import {webAppPackages} from '../../data/business-services'
-
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function Contact(props) {
   const productConsumer = useContext(ProductContext);
+      const notify = () => toast('Wow so easy !');
 
+  let handleInfo = () => {
+    productConsumer.handleErrors();
+    setTimeout(() => {
+     
+      console.log(productConsumer.errors);
+      console.warn(typeof(productConsumer.errors),Object.keys(productConsumer.errors).length);
+      if (!Object.keys(productConsumer.errors).length === 0) {
+           
+            alert("Errors")
+      } else {
+        console.log(productConsumer.errors);
+        productConsumer.handleModal();
+      }
+    }, 300);
+  
+    
+ }
   useEffect(() => {
     console.log('ProductContext', productConsumer.messageSent);
     
-  }, [productConsumer.errors]);
+  }, []);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -88,8 +107,8 @@ function Contact(props) {
                       Value={productConsumer.number}
                       ChangeValue={productConsumer.setValue}
                       Class={
-                        productConsumer.number &&
-                        ''
+                        productConsumer.errors.number &&
+                        'error'
                       }
                     />
                   </FormGroup>
@@ -138,7 +157,7 @@ function Contact(props) {
                 <Button
                   Class="button1 btn button2 gradient-color"
                   Name={'Tell Us More'}
-                  Clickble={productConsumer.handleModal}
+                  Clickble={() => handleInfo()}
                   moreInfo={productConsumer.moreInfoNeeded}
                   BtnIcon="btn-icon"
                   type="contact"

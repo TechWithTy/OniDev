@@ -320,13 +320,13 @@ export default class ProductProvider extends Component {
     }, 300);
   };
   handleModal = (e) => {
-    this.setState({ isModalOpen: !this.state.isModalOpen });
+    !this.state.errors && this.setState({ isModalOpen: !this.state.isModalOpen });
   };
 
   sendEmail = (e) => {
     alert("Email Sent")
     
-    this.handleErrors();
+   
     setTimeout(() => {
       if (!this.state.errors) {
         console.log(this.state);
@@ -386,23 +386,48 @@ export default class ProductProvider extends Component {
   };
 
   handleErrors = (e) => {
+   
     const error = {};
     if (!this.state.name) {
       error.name = 'First Name field shouldn’t be empty';
-    //  this.setField('name', 'First Name field shouldn’t be empty');
+     this.setField('name', 'First Name field shouldn’t be empty');
     }
     if (!this.state.number) {
       error.number = 'Number field shouldn’t be empty';
-      // this.setState({ number: 'Number field shouldn’t be empty' });
+      this.setState({ number: 'Number field shouldn’t be empty' });
     }
     if (!this.state.email) {
       error.email = 'Email field shouldn’t be empty';
-      // this.setState({ email: 'Email field shouldn’t be empty' });
+      this.setState({ email: 'Email field shouldn’t be empty' });
     }
     if (!this.state.message) {
       error.message = 'Message field shouldn’t be empty';
-      // this.setState({ message: 'Message field shouldn’t be empty' });
+      this.setState({ message: 'Message field shouldn’t be empty' });
     }
+    setTimeout(() => {
+      this.setState({ message: '',email: '', number: '', message: '', });
+      if (this.state.name = "Name field shouldn't be empty") {
+        this.setState({name: ""})
+      } else {
+        return;
+      }
+      if ((this.state.number = "Number field shouldn't be empty")) {
+        this.setState({ number: '' });
+      } else {
+        return;
+      }
+      if ((this.state.email = "Email field shouldn't be empty")) {
+        this.setState({ email: '' });
+      } else {
+        return;
+      }
+      if ((this.state.message = "Message field shouldn't be empty")) {
+        this.setState({ message: '' });
+      } else {
+        return;
+      }
+      
+    }, 1000);
     console.warn(error,Object.keys(error).length,"Set Errors Block")
     
     if (Object.keys(error).length === 0) {
@@ -411,13 +436,17 @@ export default class ProductProvider extends Component {
         errors: false,
       });
     } else {
-      this.setState({
-        errors: error,
-      });
+      console.clear()
+      console.log(error)
+     this.setState({errors: error})
      
     }
+      console.warn(this.state.errors, 'Errors');
+          // setInterval(() => {
+          //           
 
-          console.warn(this.state.errors, 'Errors');
+          // }, 300)
+          
 
   };
 
@@ -427,6 +456,7 @@ export default class ProductProvider extends Component {
         value={{
           ...this.state,
           setValue: this.setField,
+          handleErrors: this.handleErrors,
           handleSubmit: this.sendEmail,
           handleModal: this.handleModal,
           handleActPackage: this.handleActivePackage,
