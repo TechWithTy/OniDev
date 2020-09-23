@@ -4,7 +4,6 @@ import {Button} from '../../components/common/button';
 import { Titlespan, Description } from '../../components/common/title/index';
 import Image from '../../components/common/image/index';
 import BannerImg1 from '../../public/assets/images/banner/bannerimg2.png';
-import BannerImg from '../../public/assets/images/banner/bg.png';
 import BannerBackgroundImages from '../../data/bannerimages';
 import Shape2 from '../../public/assets/images/banner/bg-wave.svg';
 import Shape3 from '../../public/assets/images/banner/wave.png';

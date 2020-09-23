@@ -4,7 +4,7 @@ import { Subtitle, Description, Titlespan2 } from '../../components/common/title
 import FontAwesomeIcon from '../../components/common/icon';
 import { faCaretRight} from '@fortawesome/free-solid-svg-icons';
 import './video.scss';
-
+//https://app.vyond.com/videos/list
 function Video() {
     return (
         <section className="video-wrapper" id="video">
@@ -20,7 +20,6 @@ function Video() {
                         Class="site-subtitle2"
                         Name="You Should Know More About Us"
                     />
-
                     <Description
                         Class="video-dec"
                         Name="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make"
